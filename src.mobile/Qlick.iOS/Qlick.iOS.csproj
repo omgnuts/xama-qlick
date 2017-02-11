@@ -18,7 +18,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Javan Tan (AZNJFHLA2V)</CodesignKey>
+    <CodesignKey>iPhone Developer: javantan@gmail.com (SESJB33664)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchUseSGen>true</MtouchUseSGen>
@@ -29,6 +29,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>bfb81746-d0da-40b6-ad71-ac543c43b45f</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -159,7 +160,12 @@
     <BundleResource Include="Resources\tab-task%402.png" />
     <BundleResource Include="Resources\tab-task%403.png" />
   </ItemGroup>
-  <Import Project="..\Qlick\Qlick.projitems" Label="Shared" Condition="Exists('..\Qlick\Qlick.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\Qlick.Client.UI\Qlick.Client.UI.csproj">
+      <Project>{F6163747-4EA9-444B-8725-82065C6E8A76}</Project>
+      <Name>Qlick.Client.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

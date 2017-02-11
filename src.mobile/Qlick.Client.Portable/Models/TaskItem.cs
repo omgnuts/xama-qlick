@@ -1,5 +1,6 @@
 ﻿using System;
-namespace Qlick
+
+namespace Qlick.Client.Portable
 {
 	public class TaskItem
 	{

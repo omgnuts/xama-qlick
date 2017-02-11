@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace Qlick
+namespace Qlick.Client.UI
 {
-	public partial class QSettings : ContentPage
+	public partial class SearchPage : ContentPage
 	{
-		public QSettings()
+		public SearchPage()
 		{
 			InitializeComponent();
 		}

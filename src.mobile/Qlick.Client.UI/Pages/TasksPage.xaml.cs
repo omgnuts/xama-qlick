@@ -1,11 +1,14 @@
-﻿using Xamarin.Forms;
+﻿using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
+using Qlick.Client.Portable;
 
-namespace Qlick
+namespace Qlick.Client.UI
 {
-	public partial class QTasks : ContentPage
+
+	public partial class TasksPage : ContentPage
 	{
-		public QTasks()
+		public TasksPage()
 		{
 			InitializeComponent();
 
@@ -43,14 +46,15 @@ namespace Qlick
 		}
 
 
-		void OnTapListener(object sender, ItemTappedEventArgs e) {
+		void OnTapListener(object sender, ItemTappedEventArgs e)
+		{
 			DisplayAlert("ItemTapped", e.Item.ToString(), "Ok");
 		}
 
 	}
 
 
-	class AppView : StackLayout 
+	class AppView : StackLayout
 	{
 		//public static readonly BindableProperty FoobarProperty = BindableProperty.Create<AppView, bool>(p => p.Foobar, false);
 
@@ -79,7 +83,7 @@ namespace Qlick
 		//}
 
 
-        public AppView()
+		public AppView()
 		{
 			BoxView boxView = new BoxView
 			{
@@ -100,7 +104,7 @@ namespace Qlick
 		{
 			//var lblApp = new AppView()
 			//{
-				
+
 			//};
 
 			//lblApp.SetBinding(lblApp.TextProperty, "AppId");
@@ -123,5 +127,4 @@ namespace Qlick
 
 		}
 	}
-
 }

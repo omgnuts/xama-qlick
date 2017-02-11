@@ -1,6 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Qlick
+using Xamarin.Forms;
+
+namespace Qlick.Client.UI
 {
 	public partial class App : Application
 	{
@@ -8,7 +11,7 @@ namespace Qlick
 		{
 			InitializeComponent();
 
-			MainPage = new QlickTabs();
+			MainPage = new RootTabs();
 		}
 
 		protected override void OnStart()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace Qlick
+
+namespace Qlick.Client.Portable
 {
 	public static class MockFactory
 	{
