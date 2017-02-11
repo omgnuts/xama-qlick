@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Qlick", "Qlick\Qlick.shproj", "{7B52962C-72B4-4F5F-978B-F3DE60881B6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qlick.iOS", "iOS\Qlick.iOS.csproj", "{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Release|iPhone.ActiveCfg = Release|iPhone
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Release|iPhone.Build.0 = Release|iPhone
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
