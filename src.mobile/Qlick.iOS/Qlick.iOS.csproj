@@ -159,6 +159,9 @@
     <BundleResource Include="Resources\tab-task.png" />
     <BundleResource Include="Resources\tab-task%402.png" />
     <BundleResource Include="Resources\tab-task%403.png" />
+    <BundleResource Include="Resources\tab_sessions.png" />
+    <BundleResource Include="Resources\tab_sessions%402x.png" />
+    <BundleResource Include="Resources\tab_sessions%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Qlick.Client.UI\Qlick.Client.UI.csproj">
