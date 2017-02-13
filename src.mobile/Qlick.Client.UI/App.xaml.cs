@@ -11,7 +11,7 @@ namespace Qlick.Client.UI
 		{
 			InitializeComponent();
 
-			MainPage = new RootTabs();
+			MainPage = new NavigationPage(new RootTabs());
 		}
 
 		protected override void OnStart()

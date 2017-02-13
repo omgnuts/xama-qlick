@@ -13,7 +13,6 @@ namespace Qlick.Client.UI
 
 			listView.ItemsSource = MockFactory.GenerateMockTasks();
 			listView.ItemTapped += OnTapListener;
-
 		}
 
 		protected override void OnAppearing()
@@ -22,6 +21,7 @@ namespace Qlick.Client.UI
 
 			SegControl.SetTintColor(Styles.ThemeColor);
 			SegControl.SelectTab(1);
+
 		}
 
 
@@ -38,7 +38,8 @@ namespace Qlick.Client.UI
 
 		void OnTapListener(object sender, ItemTappedEventArgs e)
 		{
-			DisplayAlert("ItemTapped", e.Item.ToString(), "Ok");
+			Navigation.PushAsync(new SettingsPage());
+			//DisplayAlert("ItemTapped", e.Item.ToString(), "Ok");
 		}
 
 	}
