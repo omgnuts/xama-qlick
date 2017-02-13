@@ -4,17 +4,22 @@ namespace Qlick.Client.Portable
 {
 	public class TaskItem
 	{
-		public string Title { get; private set;}
+		public TaskItem Self { get; }
 
-		public string Description { get; private set; }
+		public string Title { get; }
 
-		public string AppId { get; private set; }
+		public string Description { get; }
+
+		public string AppId { get; }
 
 		public TaskItem(string title, string description , string appId)
 		{
+			Self = this;
+			
 			Title = title;
 			Description = description;
 			AppId = appId;
 		}
+
 	}
 }

@@ -16,7 +16,7 @@
 		<ListView x:Name="listView" RowHeight="50" HasUnevenRows="true">
 		    <ListView.ItemTemplate>
 		        <DataTemplate>
-		            <local:TaskCell Title="{Binding Title}" Description="{Binding Description}" />
+		            <local:TaskCell Self="{Binding Self}" />
 		        </DataTemplate>
 		    </ListView.ItemTemplate>
 		</ListView>

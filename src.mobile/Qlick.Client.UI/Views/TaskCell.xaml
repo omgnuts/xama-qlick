@@ -3,7 +3,7 @@
 		x:Class="Qlick.Client.UI.TaskCell">
 	<StackLayout BackgroundColor="#eee" Orientation="Vertical">
 	    <StackLayout Orientation="Horizontal">
-			<Label x:Name="lblTitle" TextColor="#ff0000" />
+			<Label x:Name="lblTitle" TextColor="#00ff00" />
 	        <Label x:Name="lblDescription" HorizontalOptions="EndAndExpand" TextColor="#503026" />
 	    </StackLayout>
 	</StackLayout>
