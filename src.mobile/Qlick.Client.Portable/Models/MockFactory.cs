@@ -8,7 +8,7 @@ namespace Qlick.Client.Portable
 		public static List<TaskItem> GenerateMockTasks()
 		{
 			List<TaskItem> tasks = new List<TaskItem>();
-			for (int c = 0; c < 200; c++)
+			for (int c = 0; c < 500; c++)
 			{
 				tasks.Add(new TaskItem("Title " + c, "Descr " + c, randAppId()));
 			}
