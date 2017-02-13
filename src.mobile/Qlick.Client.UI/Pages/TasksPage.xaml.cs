@@ -19,14 +19,14 @@ namespace Qlick.Client.UI
 		{
 			base.OnAppearing();
 
-			SegControl.SetTintColor(Styles.ThemeColor);
-			SegControl.SelectTab(1);
+			segmentControl.SetTintColor(Styles.ThemeColor);
+			segmentControl.SelectTab(1);
 		}
 
 
-		public void Handle_ValueChanged(object o, EventArgs e)
+		public void OnSegmentControlSelected(object o, EventArgs e)
 		{
-			switch (SegControl.SelectedSegment)
+			switch (segmentControl.SelectedSegment)
 			{
 				case 0:
 					break;
