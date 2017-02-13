@@ -13,7 +13,7 @@
            </controls:SegmentedControl.Children>
         </controls:SegmentedControl>
 
-		<ListView x:Name="listView" RowHeight="50" HasUnevenRows="true">
+		<ListView x:Name="listView" HasUnevenRows="true" SeparatorColor="Silver">
 		    <ListView.ItemTemplate>
 		        <DataTemplate>
 		            <local:TaskCell Self="{Binding .}" />

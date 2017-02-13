@@ -21,7 +21,6 @@ namespace Qlick.Client.UI
 
 			SegControl.SetTintColor(Styles.ThemeColor);
 			SegControl.SelectTab(1);
-
 		}
 
 
