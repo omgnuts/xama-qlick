@@ -12,25 +12,21 @@ namespace Qlick.Client.UI
 		{
 			InitializeComponent();
 
-			List<TaskItem> tasks = MockFactory.GenerateMockTasks();
+			listView.ItemsSource = MockFactory.GenerateMockTasks();
 
-			var dataTemplate = new DataTemplate(typeof(TaskItemCell));
+			//var dataTemplate = new DataTemplate(typeof(TaskCell));
 
-			var listView = new ListView()
-			{
-				ItemsSource = tasks,
-				ItemTemplate = dataTemplate,
-				RowHeight = 50,
-				HasUnevenRows = true,
-			};
+			//var listView = new ListView()
+			//{
+			//	ItemsSource = tasks,
+			//	ItemTemplate = dataTemplate,
+			//	RowHeight = 50,
+			//	HasUnevenRows = true,
+			//};
 
 			listView.ItemTapped += OnTapListener;
 
-			fatStack.Children.Add(listView);
-
-			SegControl.SetTintColor(Styles.ThemeColor);
-			SegControl.SelectTab(1);
-
+			container.Children.Add(listView);
 
 			//SegContent.GestureRecognizers.Add(new TapGestureRecognizer
 			//{
@@ -71,77 +67,77 @@ namespace Qlick.Client.UI
 	}
 
 
-	class AppView : StackLayout
-	{
-		//public static readonly BindableProperty FoobarProperty = BindableProperty.Create<AppView, bool>(p => p.Foobar, false);
+	//class AppView : StackLayout
+	//{
+	//	//public static readonly BindableProperty FoobarProperty = BindableProperty.Create<AppView, bool>(p => p.Foobar, false);
 
-		//public bool Foobar
-		//		{
-		//			get
-		//			{
-		//				return (bool)GetValue(FoobarProperty);
-		//			}
-		//			set
-		//			{
-		//				SetValue(FoobarProperty, value);
-		//			}
-		//		}
+	//	//public bool Foobar
+	//	//		{
+	//	//			get
+	//	//			{
+	//	//				return (bool)GetValue(FoobarProperty);
+	//	//			}
+	//	//			set
+	//	//			{
+	//	//				SetValue(FoobarProperty, value);
+	//	//			}
+	//	//		}
 
-		//protected override void OnPropertyChanged(string propertyName)
-		//{
-		//	base.OnPropertyChanged(propertyName);
+	//	//protected override void OnPropertyChanged(string propertyName)
+	//	//{
+	//	//	base.OnPropertyChanged(propertyName);
 
-		//	switch (propertyName)
-		//	{
-		//		case "Foobar":
-		//			UpdateFoobar();
-		//			break;
-		//	}
-		//}
-
-
-		public AppView()
-		{
-			BoxView boxView = new BoxView
-			{
-				Color = Color.Yellow,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand
-			};
-
-			Children.Add(boxView);
-		}
-
-	}
+	//	//	switch (propertyName)
+	//	//	{
+	//	//		case "Foobar":
+	//	//			UpdateFoobar();
+	//	//			break;
+	//	//	}
+	//	//}
 
 
-	class TaskItemCell : ViewCell
-	{
-		public TaskItemCell()
-		{
-			//var lblApp = new AppView()
-			//{
+	//	public AppView()
+	//	{
+	//		BoxView boxView = new BoxView
+	//		{
+	//			Color = Color.Yellow,
+	//			VerticalOptions = LayoutOptions.FillAndExpand,
+	//			HorizontalOptions = LayoutOptions.FillAndExpand
+	//		};
 
-			//};
+	//		Children.Add(boxView);
+	//	}
 
-			//lblApp.SetBinding(lblApp.TextProperty, "AppId");
+	//}
 
-			var stateText = new Label();
-			stateText.SetBinding(Label.TextProperty, "Title");
 
-			var cityText = new Label();
-			cityText.SetBinding(Label.TextProperty, "Description");
+	//class TaskItemCell : ViewCell
+	//{
+	//	public TaskItemCell()
+	//	{
+	//		//var lblApp = new AppView()
+	//		//{
 
-			View = new StackLayout()
-			{
-				Orientation = StackOrientation.Vertical,
-				Children =
-				{
-					stateText,
-					cityText
-				}
-			};
+	//		//};
 
-		}
-	}
+	//		//lblApp.SetBinding(lblApp.TextProperty, "AppId");
+
+	//		var stateText = new Label();
+	//		stateText.SetBinding(Label.TextProperty, "Title");
+
+	//		var cityText = new Label();
+	//		cityText.SetBinding(Label.TextProperty, "Description");
+
+	//		View = new StackLayout()
+	//		{
+	//			Orientation = StackOrientation.Vertical,
+	//			Children =
+	//			{
+	//				stateText,
+	//				cityText
+	//			}
+	//		};
+
+	//	}
+	//}
 }

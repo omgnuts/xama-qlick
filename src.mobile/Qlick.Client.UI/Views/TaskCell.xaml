@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Qlick.Client.UI.TaskCell">
+	<StackLayout BackgroundColor="#eee" Orientation="Vertical">
+	    <StackLayout Orientation="Horizontal">
+			<Label x:Name="lblTitle" TextColor="#ff0000" />
+	        <Label x:Name="lblDescription" HorizontalOptions="EndAndExpand" TextColor="#503026" />
+	    </StackLayout>
+	</StackLayout>
+</ViewCell>

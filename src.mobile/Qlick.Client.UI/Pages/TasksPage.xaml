@@ -2,14 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="Qlick.Client.UI.TasksPage"
+		xmlns:local ="clr-namespace:Qlick.Client.UI" 
 		xmlns:controls="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions">
 
-	<StackLayout x:Name="fatStack" Padding="0,20,0,0">
+	<StackLayout x:Name="container" Padding="0,20,0,0">
 		<controls:SegmentedControl x:Name="SegControl" Margin="80,10,80,10" IsEnabled="true" ValueChanged="Handle_ValueChanged">
            <controls:SegmentedControl.Children>
                <controls:SegmentedControlOption Text="Urgent" />
                <controls:SegmentedControlOption Text="All" />
            </controls:SegmentedControl.Children>
         </controls:SegmentedControl>
+
+		<ListView x:Name="listView" RowHeight="50" HasUnevenRows="true">
+		    <ListView.ItemTemplate>
+		        <DataTemplate>
+		            <local:TaskCell Title="{Binding Title}" Description="{Binding Description}" />
+		        </DataTemplate>
+		    </ListView.ItemTemplate>
+		</ListView>
 	</StackLayout>
 </ContentPage>
