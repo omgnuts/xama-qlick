@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Qlick.Client.UI.TasksPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Qlick.Client.UI.TasksPage"
+		xmlns:controls="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions">
+
+	<StackLayout x:Name="fatStack" Padding="0,20,0,0">
+		<controls:SegmentedControl x:Name="SegControl" Margin="80,10,80,10" IsEnabled="true" ValueChanged="Handle_ValueChanged">
+           <controls:SegmentedControl.Children>
+               <controls:SegmentedControlOption Text="Urgent" />
+               <controls:SegmentedControlOption Text="All" />
+           </controls:SegmentedControl.Children>
+        </controls:SegmentedControl>
+	</StackLayout>
 </ContentPage>

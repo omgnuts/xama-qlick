@@ -12,15 +12,6 @@ namespace Qlick.Client.UI
 		{
 			InitializeComponent();
 
-			Label header = new Label
-			{
-				Text = "Quick View",
-				FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-				HorizontalOptions = LayoutOptions.Center,
-				Margin = new Thickness(0, 10, 0, 10)
-			};
-
-
 			List<TaskItem> tasks = MockFactory.GenerateMockTasks();
 
 			var dataTemplate = new DataTemplate(typeof(TaskItemCell));
@@ -35,16 +26,34 @@ namespace Qlick.Client.UI
 
 			listView.ItemTapped += OnTapListener;
 
-			Content = new StackLayout
-			{
-				Padding = new Thickness(0, 20, 0, 0),
-				Children = {
-					header,
-					listView
-				}
-			};
+			fatStack.Children.Add(listView);
+
+			SegControl.SetTintColor(Styles.ThemeColor);
+			SegControl.SelectTab(1);
+
+
+			//SegContent.GestureRecognizers.Add(new TapGestureRecognizer
+			//{
+			//	Command = new Command(() =>
+			//	{
+			//		SegControl.IsEnabled = !SegControl.IsEnabled;
+			//	}),
+			//	NumberOfTapsRequired = 1
+			//});
+
 		}
 
+
+		public void Handle_ValueChanged(object o, EventArgs e)
+		{
+			switch (SegControl.SelectedSegment)
+			{
+				case 0:
+					break;
+				case 1:
+					break;
+			}
+		}
 
 		void OnTapListener(object sender, ItemTappedEventArgs e)
 		{

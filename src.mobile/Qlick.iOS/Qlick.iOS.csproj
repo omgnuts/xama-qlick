@@ -84,7 +84,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>63d5bc64-09b5-4ad9-8b9f-fcab79b9d0e9</CodesignProvision>
+    <CodesignProvision>f44dd27d-1ef1-4500-8612-d8944f822ac7</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -106,6 +106,12 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.3.193\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="SegmentedControl.FormsPlugin.Abstractions">
+      <HintPath>..\packages\SegmentedControl.FormsPlugin.1.2.4\lib\Xamarin.iOS10\SegmentedControl.FormsPlugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="SegmentedControl.FormsPlugin.iOS">
+      <HintPath>..\packages\SegmentedControl.FormsPlugin.1.2.4\lib\Xamarin.iOS10\SegmentedControl.FormsPlugin.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -151,23 +157,6 @@
     <Compile Include="AppDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\hometab.png" />
-    <BundleResource Include="Resources\hometab%402.png" />
-    <BundleResource Include="Resources\hometab%403.png" />
-    <BundleResource Include="Resources\tab-search.png" />
-    <BundleResource Include="Resources\tab-search%402.png" />
-    <BundleResource Include="Resources\tab-search%403.png" />
-    <BundleResource Include="Resources\tab-settings.png" />
-    <BundleResource Include="Resources\tab-settings%402.png" />
-    <BundleResource Include="Resources\tab-settings%403.png" />
-    <BundleResource Include="Resources\tab-task.png" />
-    <BundleResource Include="Resources\tab-task%402.png" />
-    <BundleResource Include="Resources\tab-task%403.png" />
-    <BundleResource Include="Resources\tab_sessions.png" />
-    <BundleResource Include="Resources\tab_sessions%402x.png" />
-    <BundleResource Include="Resources\tab_sessions%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Qlick.Client.UI\Qlick.Client.UI.csproj">
       <Project>{F6163747-4EA9-444B-8725-82065C6E8A76}</Project>
       <Name>Qlick.Client.UI</Name>
@@ -176,6 +165,23 @@
       <Project>{387EB607-84DF-411A-9F23-07D6CF303908}</Project>
       <Name>Qlick.Client.Portable</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab-clarify.png" />
+    <BundleResource Include="Resources\tab-clarify%402x.png" />
+    <BundleResource Include="Resources\tab-clarify%403x.png" />
+    <BundleResource Include="Resources\tab-profile.png" />
+    <BundleResource Include="Resources\tab-profile%402x.png" />
+    <BundleResource Include="Resources\tab-profile%403x.png" />
+    <BundleResource Include="Resources\tab-search.png" />
+    <BundleResource Include="Resources\tab-search%402x.png" />
+    <BundleResource Include="Resources\tab-search%403x.png" />
+    <BundleResource Include="Resources\tab-settings.png" />
+    <BundleResource Include="Resources\tab-settings%402x.png" />
+    <BundleResource Include="Resources\tab-settings%403x.png" />
+    <BundleResource Include="Resources\tab-tasks.png" />
+    <BundleResource Include="Resources\tab-tasks%402x.png" />
+    <BundleResource Include="Resources\tab-tasks%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

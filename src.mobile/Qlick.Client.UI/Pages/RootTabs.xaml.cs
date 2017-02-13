@@ -10,8 +10,9 @@ namespace Qlick.Client.UI
 		public RootTabs()
 		{
 			InitializeComponent();
-			Children.Add(new TasksPage { Title = "Tasks", Icon = "tab-task.png" });
-			Children.Add(new SearchPage { Title = "Search", Icon = "tab_sessions.png" });
+			Children.Add(new TasksPage { Title = "Tasks", Icon = "tab-tasks.png" });
+			Children.Add(new SearchPage { Title = "Search", Icon = "tab-search.png" });
+			Children.Add(new ContentPage { Title = "Profile", Icon = "tab-profile.png" });
 			Children.Add(new SettingsPage { Title = "Settings", Icon = "tab-settings.png" });
 		}
 	}
