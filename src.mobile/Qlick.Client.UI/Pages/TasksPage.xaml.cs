@@ -43,6 +43,14 @@ namespace Qlick.Client.UI
 
 		}
 
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+			SegControl.SetTintColor(Styles.ThemeColor);
+			SegControl.SelectTab(1);
+		}
+
 
 		public void Handle_ValueChanged(object o, EventArgs e)
 		{

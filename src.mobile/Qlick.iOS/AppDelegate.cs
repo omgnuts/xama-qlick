@@ -15,6 +15,8 @@ namespace Qlick.iOS
 
 			LoadApplication(new Qlick.Client.UI.App());
 
+			Theme.SetAppearance();
+
 			return base.FinishedLaunching(uiApplication, launchOptions);
 		}
 	}

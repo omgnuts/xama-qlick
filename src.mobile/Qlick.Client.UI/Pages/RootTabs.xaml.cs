@@ -15,5 +15,11 @@ namespace Qlick.Client.UI
 			Children.Add(new ContentPage { Title = "Profile", Icon = "tab-profile.png" });
 			Children.Add(new SettingsPage { Title = "Settings", Icon = "tab-settings.png" });
 		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+		}
 	}
 }

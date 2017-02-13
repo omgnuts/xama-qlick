@@ -155,6 +155,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Theme.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Qlick.Client.UI\Qlick.Client.UI.csproj">
