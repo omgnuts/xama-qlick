@@ -13,7 +13,10 @@ namespace Qlick.Client.Portable
 				tasks.Add(new TaskItem("Update database structure for new module (prod) " + c, 
 				                       "New datetime field has been added to keep track of the datetime whenever records are updated." + c, 
 				                       randAppId(),
-									   "tanjavan"
+									   "tanjavan",
+				                       randDT(),
+				                       randDT(true),
+				                       randPriority()
 				));
 			}
 
@@ -24,12 +27,25 @@ namespace Qlick.Client.Portable
 			"prism", "rekiweb", "leave", "daw"
 		};
 
-
 		static Random rand = new Random();
 
 		static string randAppId()
 		{
 			return apps[rand.Next(0, apps.Length)];
+		}
+
+		static DateTime randDT(bool past = false)
+		{
+			int m = past ? -1 : 1;
+			return DateTime.Now.AddDays(m * rand.Next(0, 10))
+					.AddHours(m * rand.Next(0, 24))
+					.AddMinutes(m * rand.Next(0, 60))
+						   .AddSeconds(m * rand.Next(0, 60));
+		}
+
+		static Priority randPriority()
+		{
+			return (Priority)rand.Next(0, 2);
 		}
 	}
 }

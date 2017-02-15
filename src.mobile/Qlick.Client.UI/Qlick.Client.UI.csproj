@@ -49,6 +49,9 @@
       <DependentUpon>TaskCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\PantoneColors.cs" />
+    <Compile Include="Pages\SingleTaskPage.xaml.cs">
+      <DependentUpon>SingleTaskPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -93,6 +96,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TaskCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SingleTaskPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

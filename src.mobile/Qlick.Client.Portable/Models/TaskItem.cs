@@ -16,14 +16,20 @@ namespace Qlick.Client.Portable
 
 		public DateTime DueDT { get; }
 
-		public TaskItem(string title, string description, string systId, string userId)
+		public Priority Priority { get; } 
+
+		public TaskItem(string title, string description, string systId, string userId,
+		                DateTime createdDT, DateTime dueDT, Priority priority)
 		{
 			Title = title;
 			Description = description;
 			SystId = systId;
 			UserId = userId;
-			CreatedDT = DateTime.Now.AddDays(-3);
-			DueDT = DateTime.Now.AddDays(2);
+			CreatedDT = createdDT;
+			DueDT = dueDT;
+			Priority = priority;
 		}
+
+		
 	}
 }
