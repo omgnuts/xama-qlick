@@ -17,7 +17,7 @@ namespace Qlick.iOS
 
 			Theme.SetAppearance();
 
-			NSThread.SleepFor(2);
+			//NSThread.SleepFor(2);
 
 			return base.FinishedLaunching(uiApplication, launchOptions);
 		}

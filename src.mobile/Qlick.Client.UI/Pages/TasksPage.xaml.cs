@@ -12,7 +12,9 @@ namespace Qlick.Client.UI
 			InitializeComponent();
 
 			listView.ItemsSource = MockFactory.GenerateMockTasks();
-			listView.ItemTapped += OnTapListener;
+			listView.ItemTapped += OnItemTappedListener;
+			listView.ItemSelected += OnItemSelectedListener;
+
 		}
 
 		protected override void OnAppearing()
@@ -35,10 +37,18 @@ namespace Qlick.Client.UI
 			}
 		}
 
-		void OnTapListener(object sender, ItemTappedEventArgs e)
+		void OnItemSelectedListener(object sender, SelectedItemChangedEventArgs e)
 		{
-			Navigation.PushAsync(new SettingsPage());
-			//DisplayAlert("ItemTapped", e.Item.ToString(), "Ok");
+			//System.Diagnostics.Debug.WriteLine(e.SelectedItem);
+
+			//Navigation.PushAsync(new SettingsPage());
+
+		}
+
+		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
+		{
+			//System.Diagnostics.Debug.WriteLine(e.Item);
+			DisplayAlert("ItemTapped", e.Item.ToString(), "Ok");
 		}
 
 	}

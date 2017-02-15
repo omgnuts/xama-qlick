@@ -1,10 +1,36 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="Qlick.Client.UI.TaskCell">
-	<StackLayout Orientation="Vertical" Padding="20,5,20,5">
-	    <StackLayout Orientation="Horizontal">
-			<Label x:Name="lblTitle" TextColor="#0000ff" />
-	        <Label x:Name="lblDescription" HorizontalOptions="EndAndExpand" TextColor="#503026" />
+
+	<Grid Padding="20,10,20,10">
+	    <Grid.RowDefinitions>
+	      <RowDefinition Height="Auto" />
+	    </Grid.RowDefinitions>
+
+	    <Grid.ColumnDefinitions>
+	      <ColumnDefinition Width="*" />
+	      <ColumnDefinition Width="Auto" />
+	    </Grid.ColumnDefinitions>
+
+		<StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+
+			<Label x:Name="lblTitle" />
+	        <Label x:Name="lblDescription" TextColor="#503026" />
+			<Label x:Name="lblUserId" TextColor="#503026" />
+			<Label x:Name="lblCreatedDT" TextColor="#503026" />
+			<Label x:Name="lblDueDT" TextColor="#503026" />
+
 	    </StackLayout>
-	</StackLayout>
+
+		<StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+			<Label x:Name="lblSystIdLetter" 
+				FontAttributes="Bold" FontSize="40"
+				TextColor="#ffffff" 
+				XAlign="Center" YAlign="Center" 
+				HeightRequest="75" WidthRequest="75"
+			/>
+			<Label x:Name="lblSystId" FontSize="Micro" TextColor="#ABABAB" XAlign="Center"/>
+		</StackLayout>
+	</Grid>
+
 </ViewCell>

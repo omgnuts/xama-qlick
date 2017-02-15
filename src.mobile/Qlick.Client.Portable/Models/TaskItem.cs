@@ -8,14 +8,22 @@ namespace Qlick.Client.Portable
 
 		public string Description { get; }
 
-		public string AppId { get; }
+		public string SystId { get; }
 
-		public TaskItem(string title, string description , string appId)
+		public string UserId { get; }
+
+		public DateTime CreatedDT { get; }
+
+		public DateTime DueDT { get; }
+
+		public TaskItem(string title, string description, string systId, string userId)
 		{
 			Title = title;
 			Description = description;
-			AppId = appId;
+			SystId = systId;
+			UserId = userId;
+			CreatedDT = DateTime.Now.AddDays(-3);
+			DueDT = DateTime.Now.AddDays(2);
 		}
-
 	}
 }
