@@ -27,6 +27,9 @@ namespace Qlick.Client.UI
 		void OnStart()
 		{
 			started = true;
+			segmentControl.SetTintColor(Styles.ThemeColor);
+			segmentControl.SelectTab(0);
+
 			ViewModel.RefreshCommand.Execute(null);
 		}
 
@@ -39,18 +42,19 @@ namespace Qlick.Client.UI
 				OnStart();
 			}
 
-			segmentControl.SetTintColor(Styles.ThemeColor);
-			segmentControl.SelectTab(1);
 		}
 
 
 		void OnSegmentControlSelected(object o, EventArgs e)
 		{
+			System.Diagnostics.Debug.WriteLine("OnSegmentControlSelected");
 			switch (segmentControl.SelectedSegment)
 			{
 				case 0:
+					ViewModel.PrioritySelected = Priority.High;
 					break;
 				case 1:
+					ViewModel.PrioritySelected = Priority.Normal;
 					break;
 			}
 		}

@@ -9,13 +9,42 @@ namespace Qlick.Client.UI
 {
 	public partial class SingleTaskPage : ContentPage
 	{
-		readonly TaskItem task;
+		public TaskItem Context
+		{
+			get { return BindingContext as TaskItem; }
+		}
 
 		public SingleTaskPage(TaskItem task)
 		{
 			InitializeComponent();
+			BindingContext = task;
+		}
 
-			this.task = task;
+		bool started = false;
+		void OnStart()
+		{
+			started = true;
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			if (!started)
+			{
+				OnStart();
+			}
+		}
+
+		protected override void OnBindingContextChanged()
+		{
+			base.OnBindingContextChanged();
+
+			if (BindingContext != null)
+			{
+				Color pc = PantoneColor.FromString(Context.SystId);
+				header.BackgroundColor = pc;
+
+			}
 		}
 	}
 }

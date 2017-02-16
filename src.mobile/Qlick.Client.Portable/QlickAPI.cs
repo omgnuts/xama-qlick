@@ -52,7 +52,7 @@ namespace Qlick.Client.Portable
 		}
 
 
-		public async Task<IEnumerable<TaskItem>> GetAllTasksObservableAsync()
+		public async Task<List<TaskItem>> GetAllTasksObservableAsync()
 		{
 			HttpResponseMessage resp = await client.GetAsync(Q_ALLTASKS_GET);
 			if (resp.IsSuccessStatusCode)
