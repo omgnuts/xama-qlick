@@ -14,6 +14,7 @@ namespace Qlick.iOS
 			SegmentedControlRenderer.Init();
 
 			LoadApplication(new Qlick.Client.UI.App());
+			UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
 
 			Theme.SetAppearance();
 

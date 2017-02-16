@@ -14,10 +14,17 @@ namespace Qlick.Client.UI
 			get { return BindingContext as TaskItem; }
 		}
 
+		readonly Color taskColor;
+
 		public SingleTaskPage(TaskItem task)
 		{
 			InitializeComponent();
 			BindingContext = task;
+
+			taskColor = PantoneColor.FromString(task.SystId);
+			App.NavPage.BarBackgroundColor = taskColor;
+			App.NavPage.BarTextColor = Color.White;
+
 		}
 
 		bool started = false;
@@ -35,16 +42,23 @@ namespace Qlick.Client.UI
 			}
 		}
 
+		protected override void OnDisappearing()
+		{
+			App.NavPage.BarTextColor = Color.Black;
+			base.OnDisappearing();
+		}
+
 		protected override void OnBindingContextChanged()
 		{
 			base.OnBindingContextChanged();
 
 			if (BindingContext != null)
 			{
-				Color pc = PantoneColor.FromString(Context.SystId);
-				header.BackgroundColor = pc;
+				header.BackgroundColor = taskColor;
 
 			}
 		}
+
+
 	}
 }

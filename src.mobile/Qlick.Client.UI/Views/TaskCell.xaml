@@ -14,11 +14,11 @@
 
 		<StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
 			<Label x:Name="lblTitle" FontAttributes="Bold" FontSize="Medium" />
-	        <Label x:Name="lblDescription" TextColor="#545454" FontSize="Small"/>
+	        <Label x:Name="lblDescription" TextColor="#545454" FontSize="Medium"/>
 			
-			<Label x:Name="lblUserCreated" TextColor="#ABABAB" FontSize="Micro"/>
+			<Label x:Name="lblUserCreated" TextColor="#ABABAB" FontSize="Small"/>
 			<!--<Label x:Name="lblCreatedDT" TextColor="#ABABAB" FontSize="Micro" />-->
-			<Label x:Name="lblDueDT" TextColor="#ABABAB" FontSize="Micro" />
+			<Label x:Name="lblDueDT" TextColor="#ABABAB" FontSize="Small" />
 	    </StackLayout>
 
 		<StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">

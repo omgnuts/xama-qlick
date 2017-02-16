@@ -7,11 +7,17 @@ namespace Qlick.Client.UI
 {
 	public partial class App : Application
 	{
+		public static NavigationPage NavPage { get; private set; } 
+
 		public App()
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new RootTabs());
+			MainPage = NavPage = new NavigationPage(new RootTabs())
+			{
+				BarTextColor = Color.Black
+			};
+			//_navigationPage.SetValue(NavigationPage.BarTextColorProperty, Color.White);
 		}
 
 		protected override void OnStart()
