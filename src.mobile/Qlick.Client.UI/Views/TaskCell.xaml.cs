@@ -36,9 +36,8 @@ namespace Qlick.Client.UI
 
 				lblTitle.Text = Self.Title;
 				lblDescription.Text = Self.Description;
-				lblUserId.Text = "@" + Self.UserId;
-				lblCreatedDT.Text = Self.CreatedDT.Humanize();
-				lblDueDT.Text = Self.DueDT.Humanize();
+				lblUserCreated.Text = "@" + Self.UserId + " • " + Self.CreatedDT.Humanize();
+				lblDueDT.Text = "Due " + Self.DueDT.Humanize();
 
 				lblSystId.Text = Self.SystId;
 				lblSystIdLetter.Text = Self.SystId[0].ToString().ToUpper();

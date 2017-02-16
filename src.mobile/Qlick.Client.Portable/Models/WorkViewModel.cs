@@ -1,77 +1,77 @@
-﻿using System;
-using System.ComponentModel;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
+﻿//using System;
+//using System.ComponentModel;
+//using System.Collections.Generic;
+//using System.Collections.ObjectModel;
+//using System.Threading.Tasks;
+//using System.Windows.Input;
+//using Xamarin.Forms;
 
-namespace Qlick.Client.Portable
-{
-	public class WorkViewModel : INotifyPropertyChanged
-	{
-		public ObservableCollection<WorkItem> Items { get; }
+//namespace Qlick.Client.Portable
+//{
+//	public class WorkViewModel : INotifyPropertyChanged
+//	{
+//		public ObservableCollection<WorkItem> Items { get; }
 
-		public WorkViewModel()
-		{
-			Items = new ObservableCollection<WorkItem>();
-		}
+//		public WorkViewModel()
+//		{
+//			Items = new ObservableCollection<WorkItem>();
+//		}
 
-		bool isBusy;
+//		bool isBusy;
 
-		public bool IsBusy
-		{
-			get { return isBusy; }
-			set
-			{
-				if (isBusy == value)
-					return;
+//		public bool IsBusy
+//		{
+//			get { return isBusy; }
+//			set
+//			{
+//				if (isBusy == value)
+//					return;
 
-				isBusy = value;
-				OnPropertyChanged("IsBusy");
-			}
-		}
+//				isBusy = value;
+//				OnPropertyChanged("IsBusy");
+//			}
+//		}
 
-		ICommand refreshCommand;
+//		ICommand refreshCommand;
 
-		public ICommand RefreshCommand
-		{
-			get { return refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand())); }
-		}
+//		public ICommand RefreshCommand
+//		{
+//			get { return refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand())); }
+//		}
 
-		async Task ExecuteRefreshCommand()
-		{
-			if (IsBusy)
-				return;
+//		async Task ExecuteRefreshCommand()
+//		{
+//			if (IsBusy)
+//				return;
 
-			IsBusy = true;
-			Items.Clear();
+//			IsBusy = true;
+//			Items.Clear();
 
-			Device.StartTimer(TimeSpan.FromSeconds(5), () =>
-				{
-					for (int i = 0; i < 100; i++)
-					Items.Add(new WorkItem("work " + i));
+//			Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+//				{
+//					for (int i = 0; i < 100; i++)
+//					Items.Add(new WorkItem("work " + i));
 
-					IsBusy = false;
+//					IsBusy = false;
 
-					//page.DisplayAlert("Refreshed", "You just refreshed the page! Nice job!", "OK");
-					return false;
-				});
-		}
+//					//page.DisplayAlert("Refreshed", "You just refreshed the page! Nice job!", "OK");
+//					return false;
+//				});
+//		}
 
-		#region INotifyPropertyChanged implementation
+//		#region INotifyPropertyChanged implementation
 
-		public event PropertyChangedEventHandler PropertyChanged;
+//		public event PropertyChangedEventHandler PropertyChanged;
 
-		#endregion
+//		#endregion
 
-		public void OnPropertyChanged(string propertyName)
-		{
-			if (PropertyChanged == null)
-				return;
+//		public void OnPropertyChanged(string propertyName)
+//		{
+//			if (PropertyChanged == null)
+//				return;
 
-			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
+//			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+//		}
 
-	}
-}
+//	}
+//}

@@ -13,12 +13,12 @@
 	    </Grid.ColumnDefinitions>
 
 		<StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
-			<Label x:Name="lblTitle" />
-	        <Label x:Name="lblDescription" TextColor="#503026" />
+			<Label x:Name="lblTitle" FontSize="Small" FontAttributes="Bold" />
+	        <Label x:Name="lblDescription" TextColor="#545454" FontSize="Small"/>
 			
-			<Label x:Name="lblUserId" TextColor="#ABABAB" FontSize="Small"/>
-			<Label x:Name="lblCreatedDT" TextColor="#ABABAB" />
-			<Label x:Name="lblDueDT" TextColor="#503026" />
+			<Label x:Name="lblUserCreated" TextColor="#ABABAB" FontSize="Micro"/>
+			<!--<Label x:Name="lblCreatedDT" TextColor="#ABABAB" FontSize="Micro" />-->
+			<Label x:Name="lblDueDT" TextColor="#E03E52" FontSize="Micro" />
 	    </StackLayout>
 
 		<StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
@@ -26,7 +26,7 @@
 				FontAttributes="Bold" FontSize="40"
 				TextColor="#ffffff" 
 				XAlign="Center" YAlign="Center" 
-				HeightRequest="75" WidthRequest="75"
+				HeightRequest="60" WidthRequest="60"
 			/>
 			<Label x:Name="lblSystId" FontSize="Micro" TextColor="#ABABAB" XAlign="Center"/>
 		</StackLayout>

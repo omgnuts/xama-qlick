@@ -25,7 +25,7 @@ namespace Qlick.Client.Portable
 			Description = description;
 			SystId = systId;
 			UserId = userId;
-			CreatedDT = createdDT;
+			CreatedDT = createdDT.AddHours(-8);
 			DueDT = dueDT;
 			Priority = priority;
 		}
