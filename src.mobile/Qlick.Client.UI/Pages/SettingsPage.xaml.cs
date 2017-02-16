@@ -8,15 +8,15 @@ namespace Qlick.Client.UI
 {
 	public partial class SettingsPage : ContentPage
 	{
-		public WorkViewModel ViewModel
+		public TaskItemViewModel ViewModel
 		{
-			get { return BindingContext as WorkViewModel; }
+			get { return BindingContext as TaskItemViewModel; }
 		}
 
 		public SettingsPage()
 		{
 			InitializeComponent();
-			BindingContext = new WorkViewModel();
+			BindingContext = new TaskItemViewModel();
 		}
 
 

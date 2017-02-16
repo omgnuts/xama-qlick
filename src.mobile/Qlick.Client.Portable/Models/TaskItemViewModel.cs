@@ -10,26 +10,25 @@ namespace Qlick.Client.Portable
 {
     public class TaskItemViewModel : INotifyPropertyChanged
 	{
-		public ObservableCollection<TaskItem> Items { get; set; }
+		public ObservableCollection<TaskItem> Items { get; }
 
 		public TaskItemViewModel()
 		{
 			Items = new ObservableCollection<TaskItem>();
-			//ExecuteRefreshCommand();
 		}
 
-		bool isRefreshing;
+		bool isBusy;
 
-		public bool IsRefreshing
+		public bool IsBusy
 		{
-			get { return isRefreshing; }
+			get { return isBusy; }
 			set
 			{
-				if (isRefreshing == value)
+				if (isBusy == value)
 					return;
 
-				isRefreshing = value;
-				OnPropertyChanged(nameof(IsRefreshing));
+				isBusy = value;
+				OnPropertyChanged("IsBusy");
 			}
 		}
 
@@ -42,9 +41,12 @@ namespace Qlick.Client.Portable
 
 		async Task ExecuteRefreshCommand()
 		{
-			//if (IsRefreshing) return;
-			IsRefreshing = true;
+			if (IsBusy)
+				return;
+
+			IsBusy = true;
 			Items.Clear();
+
 			IEnumerable<TaskItem> itms = await QlickAPI.Instance.GetAllTasksObservableAsync();
 
 			foreach (TaskItem ti in itms)
@@ -52,9 +54,9 @@ namespace Qlick.Client.Portable
 				Items.Add(ti);
 			}
 
-			//Items = new ObservableCollection<TaskItem>(itms);
-			System.Diagnostics.Debug.WriteLine(".... exectiging = " + Items.Count);
-			IsRefreshing = false;
+			IsBusy = false;
+
+			//return false;
 		}
 
 		#region INotifyPropertyChanged implementation

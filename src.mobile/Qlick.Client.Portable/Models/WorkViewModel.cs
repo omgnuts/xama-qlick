@@ -10,7 +10,7 @@ namespace Qlick.Client.Portable
 {
 	public class WorkViewModel : INotifyPropertyChanged
 	{
-		public ObservableCollection<WorkItem> Items { get; set; }
+		public ObservableCollection<WorkItem> Items { get; }
 
 		public WorkViewModel()
 		{
