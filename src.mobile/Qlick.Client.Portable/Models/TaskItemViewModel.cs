@@ -10,11 +10,11 @@ namespace Qlick.Client.Portable
 {
     public class TaskItemViewModel : INotifyPropertyChanged
 	{
-		public ObservableCollection<TaskItem> Items { get; }
+		public SimpleObservableCollection<TaskItem> Items { get; }
 
 		public TaskItemViewModel()
 		{
-			Items = new ObservableCollection<TaskItem>();
+			Items = new SimpleObservableCollection<TaskItem>();
 		}
 
 		bool isBusy;
@@ -45,18 +45,14 @@ namespace Qlick.Client.Portable
 				return;
 
 			IsBusy = true;
+
+			IEnumerable<TaskItem> items = await QlickAPI.Instance.GetAllTasksObservableAsync();
+
 			Items.Clear();
-
-			IEnumerable<TaskItem> itms = await QlickAPI.Instance.GetAllTasksObservableAsync();
-
-			foreach (TaskItem ti in itms)
-			{
-				Items.Add(ti);
-			}
+			Items.AddRange(items);
 
 			IsBusy = false;
 
-			//return false;
 		}
 
 		#region INotifyPropertyChanged implementation

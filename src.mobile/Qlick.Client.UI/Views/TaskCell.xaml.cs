@@ -20,7 +20,6 @@ namespace Qlick.Client.UI
 		public TaskCell()
 		{
 			InitializeComponent();
-			System.Diagnostics.Debug.WriteLine(".. init taskcell");
 			lblTitle.TextColor = Styles.ThemeColor;
 		}
 

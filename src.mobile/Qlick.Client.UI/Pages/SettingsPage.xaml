@@ -3,13 +3,19 @@
 		x:Class="Qlick.Client.UI.SettingsPage"
 		xmlns:local ="clr-namespace:Qlick.Client.UI" 
 		>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BooleanNegationConverter x:Key="not" />
+        </ResourceDictionary>
+    </ContentPage.Resources>	
 	<StackLayout x:Name="container" Padding="0,20,0,0">
+		<!--IsVisible="{Binding IsBusy, Converter={StaticResource not}"-->
 		<ListView x:Name="listView" 
 				ItemsSource="{Binding Items}"
 				IsPullToRefreshEnabled="True"
            		RefreshCommand="{Binding RefreshCommand}"
            		IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
-				HasUnevenRows="true" SeparatorColor="Silver">
+				HasUnevenRows="true" SeparatorVisibility="None">
 		    <ListView.ItemTemplate>
 		        <DataTemplate>
 		            <local:TaskCell Self="{Binding .}" />

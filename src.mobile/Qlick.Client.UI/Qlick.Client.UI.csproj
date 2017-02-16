@@ -52,6 +52,7 @@
     <Compile Include="Pages\SingleTaskPage.xaml.cs">
       <DependentUpon>SingleTaskPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\BooleanNegationConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
