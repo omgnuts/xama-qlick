@@ -20,7 +20,7 @@
 		        </DataTemplate>
 		    </ListView.ItemTemplate>
 		</ListView>
-		<ActivityIndicator x:Name="Indicator" IsVisible="{Binding Isbusy}" IsRunning="{Binding Isbusy}" VerticalOptions="Center" HorizontalOptions="Center"/>
+<!--		<ActivityIndicator x:Name="Indicator" Style="{StaticResource ActivityIndicatorStyle}" IsVisible="{Binding Isbusy}" IsRunning="{Binding Isbusy}" VerticalOptions="Center" HorizontalOptions="Center"/>-->
 	</StackLayout>
 
 

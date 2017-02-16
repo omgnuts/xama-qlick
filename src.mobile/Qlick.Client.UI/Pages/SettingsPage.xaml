@@ -1,6 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Qlick.Client.UI.SettingsPage">
-	<ContentPage.Content>
-		<Label Text="Settings" VerticalOptions="Center" HorizontalOptions="Center" />
-	</ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Qlick.Client.UI.SettingsPage"
+		>
+	<StackLayout x:Name="container" Padding="0,20,0,0">
+		<ListView x:Name="listView" 
+				ItemsSource="{Binding Items}"
+				IsPullToRefreshEnabled="True"
+           		RefreshCommand="{Binding RefreshCommand}"
+           		IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
+				HasUnevenRows="true" SeparatorColor="Silver">
+		    <ListView.ItemTemplate>
+		        <DataTemplate>
+		            <TextCell Text="{Binding Title}" />
+		        </DataTemplate>
+		    </ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
 </ContentPage>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+
 
 namespace Qlick.Client.Portable
 {
@@ -40,6 +42,19 @@ namespace Qlick.Client.Portable
 		{
 			HttpResponseMessage resp = await client.GetAsync(Q_ALLTASKS_GET);
 
+			if (resp.IsSuccessStatusCode)
+			{
+				var content = await resp.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<List<TaskItem>>(content);
+			}
+
+			return null;
+		}
+
+
+		public async Task<IEnumerable<TaskItem>> GetAllTasksObservableAsync()
+		{
+			HttpResponseMessage resp = await client.GetAsync(Q_ALLTASKS_GET);
 			if (resp.IsSuccessStatusCode)
 			{
 				var content = await resp.Content.ReadAsStringAsync();
