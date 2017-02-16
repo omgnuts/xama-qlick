@@ -6,49 +6,37 @@ using Qlick.Client.Portable;
 
 namespace Qlick.Client.UI
 {
-
 	public partial class TasksPage : ContentPage
 	{
-		//public bool IsBusy = true;
+		public TaskItemViewModel ViewModel
+		{
+			get { return BindingContext as TaskItemViewModel; }
+		}
 
 		public TasksPage()
 		{
 			InitializeComponent();
 
-			IsBusy = true;
+			BindingContext = new TaskItemViewModel();
 
-			//QlickAPI.Instance.GetAllTasksAsync().ContinueWith(t =>
-			//{
-			//	if (t,Status = TaskStatus.RanToCompletion)
-			//	{
-					
-			//	}
-			//});
-
-			//listView.ItemsSource = MockFactory.GenerateMockTasks();
 			listView.ItemTapped += OnItemTappedListener;
 			listView.ItemSelected += OnItemSelectedListener;
-
 		}
 
 		bool started = false;
-		async Task<bool> OnStart()
+		void OnStart()
 		{
 			started = true;
-
-			listView.ItemsSource = await QlickAPI.Instance.GetAllTasksAsync();
-
-			return true;
+			ViewModel.RefreshCommand.Execute(null);
 		}
 
 
-		protected override async void OnAppearing()
+		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-
 			if (!started)
 			{
-				IsBusy = !await OnStart();
+				OnStart();
 			}
 
 			segmentControl.SetTintColor(Styles.ThemeColor);
@@ -70,17 +58,11 @@ namespace Qlick.Client.UI
 		void OnItemSelectedListener(object sender, SelectedItemChangedEventArgs e)
 		{
 			listView.SelectedItem = null;
-
 		}
 
 		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
 		{
-			//System.Diagnostics.Debug.WriteLine(e.Item);
-			//DisplayAlert("ItemTapped", e.Item.ToString(), "Ok");
-
 			Navigation.PushAsync(new SingleTaskPage((TaskItem)e.Item));
-
-
 		}
 
 	}

@@ -13,14 +13,25 @@
            </controls:SegmentedControl.Children>
         </controls:SegmentedControl>
 
-		<ListView x:Name="listView" HasUnevenRows="true" SeparatorColor="Silver">
+		<!--<ContentPage.Resources>
+        	<ResourceDictionary>
+            	<local:BooleanNegationConverter x:Key="not" />
+        	</ResourceDictionary>
+    	</ContentPage.Resources>-->
+		<ListView x:Name="listView" 
+				ItemsSource="{Binding Items}"
+				IsPullToRefreshEnabled="True"
+           		RefreshCommand="{Binding RefreshCommand}"
+           		IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
+				HasUnevenRows="true" SeparatorVisibility="None">
+			<!--IsVisible="{Binding IsBusy, Converter={StaticResource not}"-->
 		    <ListView.ItemTemplate>
 		        <DataTemplate>
 		            <local:TaskCell Self="{Binding .}" />
 		        </DataTemplate>
 		    </ListView.ItemTemplate>
 		</ListView>
-<!--		<ActivityIndicator x:Name="Indicator" Style="{StaticResource ActivityIndicatorStyle}" IsVisible="{Binding Isbusy}" IsRunning="{Binding Isbusy}" VerticalOptions="Center" HorizontalOptions="Center"/>-->
+		
 	</StackLayout>
 
 
