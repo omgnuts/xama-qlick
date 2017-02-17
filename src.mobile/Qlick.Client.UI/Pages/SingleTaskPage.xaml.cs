@@ -16,10 +16,13 @@ namespace Qlick.Client.UI
 		}
 
 		readonly Color taskColor;
+		readonly TaskItemViewModel viewModel;
 
-		public SingleTaskPage(TaskItem task)
+		public SingleTaskPage(TaskItemViewModel viewModel, TaskItem task)
 		{
 			InitializeComponent();
+
+			this.viewModel = viewModel;
 
 			taskColor = PantoneColor.FromString(task.SystId);
 			App.NavPage.BarBackgroundColor = taskColor;
@@ -114,16 +117,18 @@ namespace Qlick.Client.UI
 			return button;
 		}
 
-		void OnClickListener(object sender, EventArgs e)
+		async void OnClickListener(object sender, EventArgs e)
 		{
 			if (((Button)sender).Text.Equals("APPROVE")) {
-				QlickAPI.Instance.PerformActionAsync(
+				await QlickAPI.Instance.PerformActionAsync(
 					Context.Id,
 					"APPROVED",
 					"Shay",
 					"DummyComments");
 			}
-			//Navigation.PopAsync();
+			await Navigation.PopAsync();
+			await viewModel.DeleteCommand(Context);
+
 		}
 
 	}

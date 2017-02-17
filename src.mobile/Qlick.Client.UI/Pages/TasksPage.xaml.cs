@@ -50,10 +50,10 @@ namespace Qlick.Client.UI
 			switch (segmentControl.SelectedSegment)
 			{
 				case 0:
-					ViewModel.PrioritySelected = Priority.High;
+					//ViewModel.PrioritySelected = Priority.High;
 					break;
 				case 1:
-					ViewModel.PrioritySelected = Priority.Normal;
+					//ViewModel.PrioritySelected = Priority.Normal;
 					break;
 			}
 		}
@@ -65,7 +65,7 @@ namespace Qlick.Client.UI
 
 		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
 		{
-			Navigation.PushAsync(new SingleTaskPage((TaskItem)e.Item));
+			Navigation.PushAsync(new SingleTaskPage(ViewModel, (TaskItem)e.Item));
 		}
 
 	}
