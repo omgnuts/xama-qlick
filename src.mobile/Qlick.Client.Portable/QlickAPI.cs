@@ -23,10 +23,12 @@ namespace Qlick.Client.Portable
 			}
 		}
 
-		static string Q_BASE = "http://go.munchpress.com";
-		static string Q_ALLTASKS_GET = "qlick.json"; 
-		//static string Q_BASE = "http://192.168.100.224:4000";
-		//static string Q_ALLTASKS_GET = "api/MiWork/GetAllApprovalWorkflow?userID=Shay"; // api/tasks
+		//static string Q_BASE = "http://go.munchpress.com";
+		//static string Q_ALLTASKS_GET = "qlick.json"; 
+		static string Q_BASE = "http://192.168.100.224:4000";
+		static string Q_ALLTASKS_GET = "api/MiWork/GetAllApprovalWorkflow?userID=Shay"; // api/tasks
+
+		static string Q_ACTION = "api/MiWork/PerformAction";
 
 		//static string Q_USERTASKS_GET = "qlick.json"; // api/tasks/{userid}
 		//static string Q_USERTASKS_PENDING_GET = "qlick.json"; // api/tasks/{userid}/pending
@@ -65,6 +67,25 @@ namespace Qlick.Client.Portable
 			}
 
 			return null;
+		}
+
+
+		public async Task<int> PerformActionAsync(
+			string id, string act, string userId, string comments)
+		{
+			string action = Q_ACTION + "?"
+				+ "qlickid=" + id
+				+ "&action=" + act
+				+ "&userid=" + userId
+				+ "&comments=" + comments;
+
+			//HttpResponseMessage resp = await client.GetAsync(action);
+			//if (resp.IsSuccessStatusCode)
+			//{
+			//	var content = await resp.Content.ReadAsStringAsync();
+			//	return JsonConvert.DeserializeObject<List<TaskItem>>(content);
+			//}
+			return 1;
 		}
 	}
 }

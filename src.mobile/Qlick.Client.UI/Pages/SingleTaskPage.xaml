@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Qlick.Client.UI.SingleTaskPage">
-	<Grid>
+	<Grid RowSpacing="0">
 	    <Grid.RowDefinitions>
 	      <RowDefinition Height="Auto" />
+		  <RowDefinition Height="Auto" />
 		  <RowDefinition Height="Auto" />
 		  <RowDefinition Height="Auto" />
 	    </Grid.RowDefinitions>
@@ -10,19 +11,23 @@
 	      <ColumnDefinition Width="*" />
 	    </Grid.ColumnDefinitions>
 
-		<StackLayout Padding="20,10,20,50" x:Name="header" Grid.Row="0" Grid.Column="0">
+		<StackLayout Padding="20,10,20,30" x:Name="header" Grid.Row="0" Grid.Column="0">
 			<Label x:Name="lblTitle" TextColor="White" FontSize="Large" />
 			<Label x:Name="lblUserCreated" TextColor="White" FontSize="Small"/>
 
-			<Label x:Name="lblSystId" XAlign="End" BackgroundColor="White" TextColor="White" FontSize="Medium"/>
-		</StackLayout>
-		<StackLayout Padding="20,0,20,0" Grid.Row="1" Grid.Column="0">
+			<StackLayout BackgroundColor="White" Padding="20,5,20,5" HorizontalOptions="End" Opacity="0.3" >
+				<Label x:Name="lblSystId" HorizontalOptions="Center"  TextColor="Black" FontSize="Small"/>
+			</StackLayout>
 			
-			<Label Text="Justification" TextColor="Black" FontSize="Medium" HorizontalOptions="FillAndExpand" />
-			<Label x:Name="lblDescription" TextColor="Black" FontSize="Medium" />
-			<Label x:Name="lblJustification" TextColor="Black" FontSize="Medium" />
 		</StackLayout>
-		<StackLayout Padding="0,50,0,0" x:Name="cmdActions" Grid.Row="2" Grid.Column="0" 
+		<StackLayout BackgroundColor="#EFEFEF" Padding="10,10,10,10" Margin="0" Grid.Row="1" Grid.Column="0">
+			<Label Text="JUSTIFICATION" TextColor="Black" FontSize="Micro" HorizontalOptions="FillAndExpand" />
+		</StackLayout>
+		<StackLayout Padding="20,10,20,0" Grid.Row="2" Grid.Column="0">
+			<Label x:Name="lblDescription" TextColor="Black" FontSize="Medium" />
+			<!--<Label x:Name="lblDetails" TextColor="Black" FontSize="Medium" />-->
+		</StackLayout>
+		<StackLayout Padding="0,50,0,0" x:Name="cmdActions" Grid.Row="3" Grid.Column="0" 
 				Orientation="Vertical">
 		</StackLayout>
 	</Grid>

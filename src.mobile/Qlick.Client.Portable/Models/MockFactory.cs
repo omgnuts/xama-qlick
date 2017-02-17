@@ -16,7 +16,8 @@ namespace Qlick.Client.Portable
 									   "tanjavan",
 				                       randDT(),
 				                       randDT(true),
-				                       randPriority()
+				                       randPriority(),
+				                       "Details"
 				));
 			}
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using Humanizer;
 using Qlick.Client.Portable;
@@ -63,14 +64,35 @@ namespace Qlick.Client.UI
 				lblUserCreated.Text = "@" + Context.UserId + " • " + Context.CreatedDT.Humanize();
 				lblSystId.Text = Context.SystId;
 
-				cmdActions.Children.Add(createButton("Approve", clGreen));
-				cmdActions.Children.Add(createButton("Reject", clRed));
-				//cmdActions.Children.Add(createButton("Verify", Color.Red));
+				cmdActions.Children.Add(createButton("APPROVE", clGreen));
+				cmdActions.Children.Add(createButton("REJECT", clRed));
+				//cmdActions.Children.Add(createButton("QUERY", Color.Blue));
+
+				//lblDetails.Text = ParseDetails(Context.Details);
 			}
 		}
 
-		static Color clGreen = Color.FromHex("4ed52a");
-		static Color clRed = Color.FromHex("ff5454");
+		static string ParseDetails(string details) {
+
+			if (details != null)
+			{
+				string[] pairs = details.Split(';');
+
+				StringBuilder sb = new StringBuilder();
+				foreach (string pair in pairs)
+				{
+					sb.AppendLine(pair);
+				}
+
+				return sb.ToString();
+			}
+
+			return "";
+
+		}
+
+		static Color clGreen = Color.FromHex("27ae60");
+		static Color clRed = Color.FromHex("e74c3c");	
 		//static Color clOrange = Color.FromHex("");
 		static double fontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button));
 
@@ -85,7 +107,7 @@ namespace Qlick.Client.UI
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HeightRequest = 50,
-				WidthRequest = 320
+				WidthRequest = 350
 				                               
 			};
 		}

@@ -18,8 +18,10 @@ namespace Qlick.Client.Portable
 
 		public Priority Priority { get; } 
 
+		public string Details { get; } 
+
 		public TaskItem(string title, string description, string systId, string userId,
-		                DateTime createdDT, DateTime dueDT, Priority priority)
+		                DateTime createdDT, DateTime dueDT, Priority priority, string details)
 		{
 			Title = title;
 			Description = description;
@@ -28,6 +30,8 @@ namespace Qlick.Client.Portable
 			CreatedDT = createdDT.AddHours(-8);
 			DueDT = dueDT;
 			Priority = priority;
+			Details = details;
+
 		}
 
 		
