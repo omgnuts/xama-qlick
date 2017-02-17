@@ -75,16 +75,14 @@ namespace Qlick.Client.Portable
 		{
 			string action = Q_ACTION + "?"
 				+ "qlickid=" + id
-				+ "&action=" + act
+				+ "&act=" + act
 				+ "&userid=" + userId
 				+ "&comments=" + comments;
 
-			//HttpResponseMessage resp = await client.GetAsync(action);
-			//if (resp.IsSuccessStatusCode)
-			//{
-			//	var content = await resp.Content.ReadAsStringAsync();
-			//	return JsonConvert.DeserializeObject<List<TaskItem>>(content);
-			//}
+			System.Diagnostics.Debug.WriteLine(action);
+
+			HttpResponseMessage resp = await client.GetAsync(action);
+
 			return 1;
 		}
 	}

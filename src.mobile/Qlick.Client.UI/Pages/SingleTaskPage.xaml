@@ -25,7 +25,7 @@
 		</StackLayout>
 		<StackLayout Padding="20,10,20,0" Grid.Row="2" Grid.Column="0">
 			<Label x:Name="lblDescription" TextColor="Black" FontSize="Medium" />
-			<!--<Label x:Name="lblDetails" TextColor="Black" FontSize="Medium" />-->
+			<Label x:Name="lblDetails" TextColor="Black" FontSize="Medium" />
 		</StackLayout>
 		<StackLayout Padding="0,50,0,0" x:Name="cmdActions" Grid.Row="3" Grid.Column="0" 
 				Orientation="Vertical">

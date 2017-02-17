@@ -68,7 +68,7 @@ namespace Qlick.Client.UI
 				cmdActions.Children.Add(createButton("REJECT", clRed));
 				//cmdActions.Children.Add(createButton("QUERY", Color.Blue));
 
-				//lblDetails.Text = ParseDetails(Context.Details);
+				lblDetails.Text = ParseDetails(Context.Details);
 			}
 		}
 
@@ -98,7 +98,7 @@ namespace Qlick.Client.UI
 
 		Button createButton(string name, Color bnColor)
 		{
-			return new Button()
+			Button button = new Button()
 			{
 				Text = name,
 				BackgroundColor = bnColor,
@@ -108,8 +108,19 @@ namespace Qlick.Client.UI
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HeightRequest = 50,
 				WidthRequest = 350
-				                               
 			};
+
+			button.Clicked += OnClickListener;
+			return button;
+		}
+
+		void OnClickListener(object sender, EventArgs e)
+		{
+			QlickAPI.Instance.PerformActionAsync(
+				Context.Id,
+				"APPROVE",
+				"Shay",
+				"DummyComments");                     
 		}
 
 	}

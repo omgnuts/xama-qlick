@@ -4,6 +4,8 @@ namespace Qlick.Client.Portable
 {
 	public class TaskItem
 	{
+		public string Id { get; }
+
 		public string Title { get; }
 
 		public string Description { get; }
@@ -20,9 +22,10 @@ namespace Qlick.Client.Portable
 
 		public string Details { get; } 
 
-		public TaskItem(string title, string description, string systId, string userId,
+		public TaskItem(string id, string title, string description, string systId, string userId,
 		                DateTime createdDT, DateTime dueDT, Priority priority, string details)
 		{
+			Id = id; 
 			Title = title;
 			Description = description;
 			SystId = systId;
@@ -31,7 +34,6 @@ namespace Qlick.Client.Portable
 			DueDT = dueDT;
 			Priority = priority;
 			Details = details;
-
 		}
 
 		

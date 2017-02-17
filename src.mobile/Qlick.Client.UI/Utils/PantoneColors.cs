@@ -8,13 +8,13 @@ namespace Qlick.Client.UI
 	{
 		static Color[] colors = new Color[] {
 			Color.FromHex("#16a085"),
-			Color.FromHex("#27ae60"),
+			//Color.FromHex("#27ae60"),
 			Color.FromHex("#2980b9"),
 			Color.FromHex("#8e44ad"),
 			Color.FromHex("#2c3e50"),
 			Color.FromHex("#f1c40f"),
 			Color.FromHex("#e67e22"),
-			Color.FromHex("#e74c3c")
+			//Color.FromHex("#e74c3c")
 		};
 
 		static int colorsLength = colors.Length;
