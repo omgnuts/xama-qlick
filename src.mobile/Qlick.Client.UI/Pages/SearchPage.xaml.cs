@@ -13,10 +13,11 @@ namespace Qlick.Client.UI
 		public SearchPage()
 		{
 			InitializeComponent();
-			items.Add(new SearchItem("#Prism (last 30 days)", "500 approvals"));
-			items.Add(new SearchItem("#Jenkins (last 30 days)", "500 approvals"));
-			items.Add(new SearchItem("#Reki (last 30 days)", "500 approvals"));
-			items.Add(new SearchItem("#DAW (last 30 days)", "500 approvals"));
+			items.Add(new SearchItem("#Prism (last 90 days)", "145 approvals"));
+			items.Add(new SearchItem("#eFlow (last 90 days)", "103 approvals"));
+			items.Add(new SearchItem("#eLeave (last 90 days)", "33 approvals"));
+			items.Add(new SearchItem("#eClaims (last 90 days)", "21 approvals"));
+			items.Add(new SearchItem("#EPS (last 90 days)", "8 approvals"));
 
 			listView.ItemsSource = items;
 

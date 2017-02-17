@@ -69,6 +69,8 @@ namespace Qlick.Client.UI
 				lblSystId.Text = Context.SystId;
 				lblDueDT.Text = "Due " + Context.DueDT.Humanize();
 
+				attachmentStack.IsVisible = Context.SystId.Equals("Prism");
+
 				cmdActions.Children.Add(createButton("APPROVE", clGreen));
 				cmdActions.Children.Add(createButton("REJECT", clRed));
 				//cmdActions.Children.Add(createButton("QUERY", Color.Blue));
