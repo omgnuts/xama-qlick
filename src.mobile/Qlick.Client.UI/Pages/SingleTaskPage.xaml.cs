@@ -123,7 +123,7 @@ namespace Qlick.Client.UI
 					"Shay",
 					"DummyComments");
 			}
-
+			//Navigation.PopAsync();
 		}
 
 	}
