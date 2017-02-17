@@ -4,8 +4,8 @@
 	    <Grid.RowDefinitions>
 	      <RowDefinition Height="Auto" />
 		  <RowDefinition Height="Auto" />
+		  <RowDefinition Height="Auto" />
 	    </Grid.RowDefinitions>
-
 	    <Grid.ColumnDefinitions>
 	      <ColumnDefinition Width="*" />
 	    </Grid.ColumnDefinitions>
@@ -13,13 +13,18 @@
 		<StackLayout Padding="20,10,20,50" x:Name="header" Grid.Row="0" Grid.Column="0">
 			<Label x:Name="lblTitle" TextColor="White" FontSize="Large" />
 			<Label x:Name="lblUserCreated" TextColor="White" FontSize="Small"/>
-			<Label x:Name="lblSystId" TextColor="White" FontSize="Large" />
+
+			<Label x:Name="lblSystId" XAlign="End" BackgroundColor="White" TextColor="White" FontSize="Medium"/>
 		</StackLayout>
-		<StackLayout Padding="0,0,0,0"  Grid.Row="1" Grid.Column="0">
+		<StackLayout Padding="20,0,20,0" Grid.Row="1" Grid.Column="0">
+			
+			<Label Text="Justification" TextColor="Black" FontSize="Medium" HorizontalOptions="FillAndExpand" />
 			<Label x:Name="lblDescription" TextColor="Black" FontSize="Medium" />
-<!--			<Label x:Name="lbl2" TextColor="Black" FontSize="Large" />
-			<Label x:Name="lbl2" TextColor="Black" FontSize="Large" />
--->		</StackLayout>
+			<Label x:Name="lblJustification" TextColor="Black" FontSize="Medium" />
+		</StackLayout>
+		<StackLayout Padding="0,50,0,0" x:Name="cmdActions" Grid.Row="2" Grid.Column="0" 
+				Orientation="Vertical">
+		</StackLayout>
 	</Grid>
 		
 </ContentPage>

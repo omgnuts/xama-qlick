@@ -56,21 +56,39 @@ namespace Qlick.Client.UI
 			if (BindingContext != null)
 			{
 				header.BackgroundColor = taskColor;
-
-				//lblTitle.TextColor = pc;
-				//lblSystId.TextColor = pc;
-				//lblSystIdLetter.BackgroundColor = pc;
+				lblSystId.TextColor = taskColor;
 
 				lblTitle.Text = Context.Title;
 				lblDescription.Text = Context.Description;
 				lblUserCreated.Text = "@" + Context.UserId + " • " + Context.CreatedDT.Humanize();
-				lblSystId.Text = Context.SystId; 
-				//lblDueDT.Text = "Due " + Self.DueDT.Humanize();
-
 				lblSystId.Text = Context.SystId;
+
+				cmdActions.Children.Add(createButton("Approve", clGreen));
+				cmdActions.Children.Add(createButton("Reject", clRed));
+				//cmdActions.Children.Add(createButton("Verify", Color.Red));
 			}
 		}
 
+		static Color clGreen = Color.FromHex("4ed52a");
+		static Color clRed = Color.FromHex("ff5454");
+		//static Color clOrange = Color.FromHex("");
+		static double fontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button));
+
+		Button createButton(string name, Color bnColor)
+		{
+			return new Button()
+			{
+				Text = name,
+				BackgroundColor = bnColor,
+				TextColor = Color.White,
+				FontSize = fontSize,
+				HorizontalOptions = LayoutOptions.CenterAndExpand,
+				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HeightRequest = 50,
+				WidthRequest = 320
+				                               
+			};
+		}
 
 	}
 }
