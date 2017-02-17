@@ -28,6 +28,7 @@ namespace Qlick.Client.UI
 			App.NavPage.BarBackgroundColor = taskColor;
 			App.NavPage.BarTextColor = Color.White;
 
+			BackgroundColor = taskColor;
 			BindingContext = task;
 
 		}
@@ -71,33 +72,44 @@ namespace Qlick.Client.UI
 				cmdActions.Children.Add(createButton("REJECT", clRed));
 				//cmdActions.Children.Add(createButton("QUERY", Color.Blue));
 
-				lblDetails.Text = ParseDetails(Context.Details);
+				ParseDetails(Context.Details);
 			}
 		}
 
-		static string ParseDetails(string details) {
+		static double lblFontSizeMedium = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
+		static double lblFontSizeSmall = Device.GetNamedSize(NamedSize.Small, typeof(Label));
+
+		void ParseDetails(string details) {
 
 			if (details != null)
 			{
 				string[] pairs = details.Split(',');
 
-				StringBuilder sb = new StringBuilder();
 				foreach (string pair in pairs)
 				{
-					sb.AppendLine(pair);
+					string[] kv = pair.Split(':');
+
+					detailStack.Children.Add(new Label()
+					{
+						Text = kv[0],
+						FontSize = lblFontSizeSmall,
+						FontAttributes = FontAttributes.Bold,
+						TextColor = Color.Silver
+					});
+					detailStack.Children.Add(new Label()
+					{
+						Text = kv[1],
+						FontSize = lblFontSizeMedium
+					});
 				}
-
-				return sb.ToString();
 			}
-
-			return "";
 
 		}
 
 		static Color clGreen = Color.FromHex("27ae60");
 		static Color clRed = Color.FromHex("e74c3c");	
 		//static Color clOrange = Color.FromHex("");
-		static double fontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button));
+		static double fontSizeMedium = Device.GetNamedSize(NamedSize.Medium, typeof(Button));
 
 		Button createButton(string name, Color bnColor)
 		{
@@ -106,7 +118,7 @@ namespace Qlick.Client.UI
 				Text = name,
 				BackgroundColor = bnColor,
 				TextColor = Color.White,
-				FontSize = fontSize,
+				FontSize = fontSizeMedium,
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HeightRequest = 50,
