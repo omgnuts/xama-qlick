@@ -118,9 +118,9 @@ namespace Qlick.Client.UI
 		{
 			QlickAPI.Instance.PerformActionAsync(
 				Context.Id,
-				"APPROVE",
+				"APPROVED",
 				"Shay",
-				"DummyComments");                     
+				"DummyComments");                 
 		}
 
 	}

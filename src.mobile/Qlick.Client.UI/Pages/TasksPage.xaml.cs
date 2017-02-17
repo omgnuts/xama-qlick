@@ -28,7 +28,7 @@ namespace Qlick.Client.UI
 		{
 			started = true;
 			segmentControl.SetTintColor(Styles.ThemeColor);
-			segmentControl.SelectTab(0);
+			segmentControl.SelectTab(1);
 
 			ViewModel.RefreshCommand.Execute(null);
 		}
@@ -43,7 +43,6 @@ namespace Qlick.Client.UI
 			}
 
 		}
-
 
 		void OnSegmentControlSelected(object o, EventArgs e)
 		{
