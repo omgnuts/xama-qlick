@@ -15,6 +15,8 @@ namespace Qlick.Client.UI
 			InitializeComponent();
 			items.Add(new SearchItem("#Prism (last 30 days)", "500 approvals"));
 			listView.ItemsSource = items;
+
+			listView.ItemSelected += OnItemSelectedListener;
 		}
 
 		void OnItemSelectedListener(object sender, SelectedItemChangedEventArgs e)
