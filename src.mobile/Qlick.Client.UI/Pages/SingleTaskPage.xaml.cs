@@ -109,6 +109,7 @@ namespace Qlick.Client.UI
 
 		}
 
+
 		static Color clGreen = Color.FromHex("27ae60");
 		static Color clRed = Color.FromHex("e74c3c");	
 		//static Color clOrange = Color.FromHex("");
