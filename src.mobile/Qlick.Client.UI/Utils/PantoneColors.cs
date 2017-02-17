@@ -14,7 +14,7 @@ namespace Qlick.Client.UI
 			Color.FromHex("#2c3e50"),
 			Color.FromHex("#f1c40f"),
 			Color.FromHex("#e67e22"),
-			//Color.FromHex("#e74c3c")
+			Color.FromHex("#f26522")
 		};
 
 		static int colorsLength = colors.Length;

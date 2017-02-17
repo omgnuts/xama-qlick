@@ -116,11 +116,14 @@ namespace Qlick.Client.UI
 
 		void OnClickListener(object sender, EventArgs e)
 		{
-			QlickAPI.Instance.PerformActionAsync(
-				Context.Id,
-				"APPROVED",
-				"Shay",
-				"DummyComments");                 
+			if (((Button)sender).Text.Equals("APPROVE")) {
+				QlickAPI.Instance.PerformActionAsync(
+					Context.Id,
+					"APPROVED",
+					"Shay",
+					"DummyComments");
+			}
+
 		}
 
 	}

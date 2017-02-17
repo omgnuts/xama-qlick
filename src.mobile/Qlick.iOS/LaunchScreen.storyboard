@@ -37,5 +37,6 @@
         <image name="tab-profile.png" width="32" height="30"/>
         <image name="tab-tasks.png" width="32" height="30"/>
         <image name="launchboard.png" width="923" height="518"/>
+        <image name="screen-settings.png" width="1242" height="2208"/>
     </resources>
 </document>
