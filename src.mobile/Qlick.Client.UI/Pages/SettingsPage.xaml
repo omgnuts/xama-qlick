@@ -1,26 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="Qlick.Client.UI.SettingsPage"
-		xmlns:local ="clr-namespace:Qlick.Client.UI" 
-		>
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <local:BooleanNegationConverter x:Key="not" />
-        </ResourceDictionary>
-    </ContentPage.Resources>	
-	<StackLayout x:Name="container" Padding="0,20,0,0">
-		<!--IsVisible="{Binding IsBusy, Converter={StaticResource not}"-->
-		<ListView x:Name="listView" 
-				ItemsSource="{Binding Items}"
-				IsPullToRefreshEnabled="True"
-           		RefreshCommand="{Binding RefreshCommand}"
-           		IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
-				HasUnevenRows="true" SeparatorVisibility="None">
-		    <ListView.ItemTemplate>
-		        <DataTemplate>
-		            <local:TaskCell Self="{Binding .}" />
-		        </DataTemplate>
-		    </ListView.ItemTemplate>
-		</ListView>
-	</StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Qlick.Client.UI.SettingsPage">
+	<ContentPage.Content>
+		<Label Text="Settings" VerticalOptions="Center" HorizontalOptions="Center" />
+	</ContentPage.Content>
 </ContentPage>

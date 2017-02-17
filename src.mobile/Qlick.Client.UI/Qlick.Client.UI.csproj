@@ -53,6 +53,9 @@
       <DependentUpon>SingleTaskPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\BooleanNegationConverter.cs" />
+    <Compile Include="Views\SearchCell.xaml.cs">
+      <DependentUpon>SearchCell.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -100,6 +103,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\SingleTaskPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SearchCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

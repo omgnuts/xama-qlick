@@ -39,6 +39,7 @@
     <Compile Include="Xama\ObservableList.cs" />
     <Compile Include="Xama\ObservableCollectionFast.cs" />
     <Compile Include="Xama\SimpleObservableList.cs" />
+    <Compile Include="Models\SearchItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
