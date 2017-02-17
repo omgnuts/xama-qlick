@@ -76,7 +76,7 @@ namespace Qlick.Client.UI
 
 			if (details != null)
 			{
-				string[] pairs = details.Split(';');
+				string[] pairs = details.Split(',');
 
 				StringBuilder sb = new StringBuilder();
 				foreach (string pair in pairs)
