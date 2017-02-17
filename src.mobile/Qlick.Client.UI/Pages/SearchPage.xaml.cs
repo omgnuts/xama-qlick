@@ -14,6 +14,10 @@ namespace Qlick.Client.UI
 		{
 			InitializeComponent();
 			items.Add(new SearchItem("#Prism (last 30 days)", "500 approvals"));
+			items.Add(new SearchItem("#Jenkins (last 30 days)", "500 approvals"));
+			items.Add(new SearchItem("#Reki (last 30 days)", "500 approvals"));
+			items.Add(new SearchItem("#DAW (last 30 days)", "500 approvals"));
+
 			listView.ItemsSource = items;
 
 			listView.ItemSelected += OnItemSelectedListener;
