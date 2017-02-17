@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Humanizer;
 using Qlick.Client.Portable;
 
 using Xamarin.Forms;
@@ -19,11 +19,12 @@ namespace Qlick.Client.UI
 		public SingleTaskPage(TaskItem task)
 		{
 			InitializeComponent();
-			BindingContext = task;
 
 			taskColor = PantoneColor.FromString(task.SystId);
 			App.NavPage.BarBackgroundColor = taskColor;
 			App.NavPage.BarTextColor = Color.White;
+
+			BindingContext = task;
 
 		}
 
@@ -56,6 +57,17 @@ namespace Qlick.Client.UI
 			{
 				header.BackgroundColor = taskColor;
 
+				//lblTitle.TextColor = pc;
+				//lblSystId.TextColor = pc;
+				//lblSystIdLetter.BackgroundColor = pc;
+
+				lblTitle.Text = Context.Title;
+				lblDescription.Text = Context.Description;
+				lblUserCreated.Text = "@" + Context.UserId + " • " + Context.CreatedDT.Humanize();
+				lblSystId.Text = Context.SystId; 
+				//lblDueDT.Text = "Due " + Self.DueDT.Humanize();
+
+				lblSystId.Text = Context.SystId;
 			}
 		}
 

@@ -23,10 +23,11 @@ namespace Qlick.Client.Portable
 			}
 		}
 
-		static string Q_BASE = "http://go.munchpress.com";
-		static string Q_ALLTASKS_GET = "qlick.json"; // api/tasks
-		static string Q_USERTASKS_GET = "qlick.json"; // api/tasks/{userid}
-		static string Q_USERTASKS_PENDING_GET = "qlick.json"; // api/tasks/{userid}/pending
+		//static string Q_BASE = "http://go.munchpress.com";
+		static string Q_BASE = "http://192.168.100.224:4000";
+		static string Q_ALLTASKS_GET = "api/MiWork/GetAllApprovalWorkflow?userID=Shay"; // api/tasks
+		//static string Q_USERTASKS_GET = "qlick.json"; // api/tasks/{userid}
+		//static string Q_USERTASKS_PENDING_GET = "qlick.json"; // api/tasks/{userid}/pending
 
 		// Let this live for as long as the app needs to draw data.
 		// TODO: handle it when user multi-tasks

@@ -10,9 +10,16 @@
 	      <ColumnDefinition Width="*" />
 	    </Grid.ColumnDefinitions>
 
-		<StackLayout Padding="20,10,20,100" x:Name="header" Grid.Row="0" Grid.Column="0">
-			<Label Text="{Binding Title}" TextColor="White" FontSize="Large" />
+		<StackLayout Padding="20,10,20,50" x:Name="header" Grid.Row="0" Grid.Column="0">
+			<Label x:Name="lblTitle" TextColor="White" FontSize="Large" />
+			<Label x:Name="lblUserCreated" TextColor="White" FontSize="Small"/>
+			<Label x:Name="lblSystId" TextColor="White" FontSize="Large" />
 		</StackLayout>
+		<StackLayout Padding="0,0,0,0"  Grid.Row="1" Grid.Column="0">
+			<Label x:Name="lblDescription" TextColor="Black" FontSize="Medium" />
+<!--			<Label x:Name="lbl2" TextColor="Black" FontSize="Large" />
+			<Label x:Name="lbl2" TextColor="Black" FontSize="Large" />
+-->		</StackLayout>
 	</Grid>
 		
 </ContentPage>
