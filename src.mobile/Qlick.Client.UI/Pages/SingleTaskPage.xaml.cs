@@ -67,6 +67,7 @@ namespace Qlick.Client.UI
 				lblDescription.Text = Context.Description;
 				lblUserCreated.Text = "@" + Context.UserId + " • " + Context.CreatedDT.Humanize();
 				lblSystId.Text = Context.SystId;
+				lblDueDT.Text = "Due " + Context.DueDT.Humanize();
 
 				cmdActions.Children.Add(createButton("APPROVE", clGreen));
 				cmdActions.Children.Add(createButton("REJECT", clRed));
