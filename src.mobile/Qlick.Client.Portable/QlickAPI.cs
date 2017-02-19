@@ -23,14 +23,14 @@ namespace Qlick.Client.Portable
 			}
 		}
 
-		//static string Q_BASE = "http://go.munchpress.com";
-		//static string Q_ALLTASKS_GET = "qlick.json"; 
-		//static string Q_ACTION = "api/MiWork/PerformAction";
+		static string Q_BASE = "http://go.munchpress.com";
+		static string Q_ALLTASKS_GET = "qlick.json"; 
+		static string Q_ACTION = "api/MiWork/PerformAction";
 
 		//PJAY PC
-		static string Q_BASE = "http://192.168.100.214:4000";
-		static string Q_ALLTASKS_GET = "api/MiWork/GetAllApprovalWorkflow?userID=Shay"; // api/tasks
-		static string Q_ACTION = "api/MiWork/PerformAction";
+		//static string Q_BASE = "http://192.168.100.214:4000";
+		//static string Q_ALLTASKS_GET = "api/MiWork/GetAllApprovalWorkflow?userID=Shay"; // api/tasks
+		//static string Q_ACTION = "api/MiWork/PerformAction";
 
 		// REAL THING
 		//static string Q_BASE = "http://192.168.100.224:4000";

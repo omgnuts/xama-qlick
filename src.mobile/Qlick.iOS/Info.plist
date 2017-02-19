@@ -32,9 +32,9 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleName</key>
-	<string>Quick Click </string>
+	<string>DEV.Quick Click</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.munchpress.ios.Pixel</string>
+	<string>com.munchpress.ios.PixelFake</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIStatusBarStyle</key>
