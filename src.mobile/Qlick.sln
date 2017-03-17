@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qlick.Client.Portable", "Ql
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qlick.Client.UI", "Qlick.Client.UI\Qlick.Client.UI.csproj", "{F6163747-4EA9-444B-8725-82065C6E8A76}"
 EndProject
-Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "Qlick.iOS", "Qlick.iOS\Qlick.iOS.csproj", "{C2E2D59F-96EC-4195-9F42-00A73B768D65}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qlick.iOS", "Qlick.iOS\Qlick.iOS.csproj", "{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,18 +35,18 @@ Global
 		{F6163747-4EA9-444B-8725-82065C6E8A76}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{F6163747-4EA9-444B-8725-82065C6E8A76}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{F6163747-4EA9-444B-8725-82065C6E8A76}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{C2E2D59F-96EC-4195-9F42-00A73B768D65}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{C2E2D59F-96EC-4195-9F42-00A73B768D65}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{C2E2D59F-96EC-4195-9F42-00A73B768D65}.Release|iPhone.ActiveCfg = Release|iPhone
-		{C2E2D59F-96EC-4195-9F42-00A73B768D65}.Release|iPhone.Build.0 = Release|iPhone
-		{C2E2D59F-96EC-4195-9F42-00A73B768D65}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{C2E2D59F-96EC-4195-9F42-00A73B768D65}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{C2E2D59F-96EC-4195-9F42-00A73B768D65}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{C2E2D59F-96EC-4195-9F42-00A73B768D65}.Debug|iPhone.Build.0 = Debug|iPhone
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Release|iPhone.ActiveCfg = Release|iPhone
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Release|iPhone.Build.0 = Release|iPhone
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}.Debug|iPhone.Build.0 = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{387EB607-84DF-411A-9F23-07D6CF303908} = {11618273-9587-4A19-B2FD-92E1637CDBA1}
 		{F6163747-4EA9-444B-8725-82065C6E8A76} = {11618273-9587-4A19-B2FD-92E1637CDBA1}
-		{C2E2D59F-96EC-4195-9F42-00A73B768D65} = {4228AD10-86F8-4728-AD56-472215A7AA0B}
+		{F08C8A01-FC25-41A1-912E-6A9B6A15BC85} = {4228AD10-86F8-4728-AD56-472215A7AA0B}
 	EndGlobalSection
 EndGlobal

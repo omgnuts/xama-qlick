@@ -34,7 +34,7 @@
 	<key>CFBundleName</key>
 	<string>Quick Click</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.munchpress.ios.Qlick</string>
+	<string>sg.com.gic.tdre.Qlick.uat</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIStatusBarStyle</key>
