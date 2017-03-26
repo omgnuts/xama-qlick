@@ -196,6 +196,7 @@
     <BundleResource Include="Resources\tab-watched.png" />
     <BundleResource Include="Resources\tab-watched%402x.png" />
     <BundleResource Include="Resources\tab-watched%403x.png" />
+    <BundleResource Include="Resources\launchscreen.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trak.Client.Portable\Trak.Client.Portable.csproj">
