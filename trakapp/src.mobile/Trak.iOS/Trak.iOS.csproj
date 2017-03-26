@@ -29,7 +29,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>fd75bfba-537b-43b0-ae30-c9fdf486d77e</CodesignProvision>
+    <CodesignProvision>06056e37-6996-4305-8eac-8552eb1813f3</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -190,6 +190,12 @@
     <BundleResource Include="Resources\screen-settings.png" />
     <BundleResource Include="Resources\icon-fileattached.png" />
     <BundleResource Include="Resources\screen-profile.png" />
+    <BundleResource Include="Resources\tab-statistics.png" />
+    <BundleResource Include="Resources\tab-statistics%402x.png" />
+    <BundleResource Include="Resources\tab-statistics%403x.png" />
+    <BundleResource Include="Resources\tab-watched.png" />
+    <BundleResource Include="Resources\tab-watched%402x.png" />
+    <BundleResource Include="Resources\tab-watched%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trak.Client.Portable\Trak.Client.Portable.csproj">

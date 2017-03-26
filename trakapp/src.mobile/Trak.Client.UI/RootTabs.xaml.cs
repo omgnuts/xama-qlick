@@ -15,10 +15,10 @@ namespace Trak.Client.UI
 
 			//if (App.NavPage != null) App.NavPage.BarTextColor = Color.Black;
 
-			//Children.Add(new RequestsPage { Title = "My Requests", Icon = "tab-tasks.png" });
-			Children.Add(new ProfilePage { Title = "Home", Icon = "tab-profile.png" });
-			Children.Add(new TasksPage { Title = "Approvals", Icon = "tab-tasks.png" });
+			Children.Add(new TasksPage { Title = "Shipments", Icon = "tab-tasks.png" });
 			Children.Add(new SearchPage { Title = "Search", Icon = "tab-search.png" });
+			Children.Add(new WatchedPage { Title = "Watched", Icon = "tab-watched.png" });
+			Children.Add(new StatsPage { Title = "Statistics", Icon = "tab-statistics.png" });
 			Children.Add(new SettingsPage { Title = "Settings", Icon = "tab-settings.png" });
 		}
 	}

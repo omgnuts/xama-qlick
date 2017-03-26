@@ -29,9 +29,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pages\RootTabs.xaml.cs">
-      <DependentUpon>RootTabs.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -59,8 +56,14 @@
     <Compile Include="Pages\RequestsPage.xaml.cs">
       <DependentUpon>RequestsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProfilePage.xaml.cs">
-      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    <Compile Include="Pages\StatsPage.xaml.cs">
+      <DependentUpon>StatsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RootTabs.xaml.cs">
+      <DependentUpon>RootTabs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WatchedPage.xaml.cs">
+      <DependentUpon>WatchedPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -84,9 +87,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\RootTabs.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -111,7 +111,13 @@
     <EmbeddedResource Include="Pages\RequestsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\ProfilePage.xaml">
+    <EmbeddedResource Include="Pages\StatsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RootTabs.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\WatchedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

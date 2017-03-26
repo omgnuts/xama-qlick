@@ -37,9 +37,9 @@
 	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
-	<key>XSLaunchImageAssets</key>
-	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>CFBundleName</key>
 	<string>Trak</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 </dict>
 </plist>

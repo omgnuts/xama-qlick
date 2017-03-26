@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace Trak.Client.UI
 {
-	public partial class ProfilePage : ContentPage
+	public partial class WatchedPage : ContentPage
 	{
-		public ProfilePage()
+		public WatchedPage()
 		{
 			InitializeComponent();
 			image.Source = "screen-profile.png";
