@@ -40,7 +40,6 @@ namespace Trak.Client.UI
 			{
 				OnStart();
 			}
-
 		}
 
 		void OnItemSelectedListener(object sender, SelectedItemChangedEventArgs e)

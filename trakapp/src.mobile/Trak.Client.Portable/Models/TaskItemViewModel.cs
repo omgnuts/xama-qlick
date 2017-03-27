@@ -10,12 +10,10 @@ namespace Trak.Client.Portable
 {
     public class TaskItemViewModel : INotifyPropertyChanged
 	{
-		//List<TaskItem> items;
 		public SimpleObservableCollection<TaskItem> Items { get; }
 
 		public TaskItemViewModel()
 		{
-			//items = new List<TaskItem>();
 			Items = new SimpleObservableCollection<TaskItem>();
 		}
 

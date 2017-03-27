@@ -14,18 +14,12 @@
            </controls:SegmentedControl.Children>
         </controls:SegmentedControl>
 
-		<!--<ContentPage.Resources>
-        	<ResourceDictionary>
-            	<local:BooleanNegationConverter x:Key="not" />
-        	</ResourceDictionary>
-    	</ContentPage.Resources>-->
 		<ListView x:Name="listView" 
-				ItemsSource="{Binding Items}"
 				IsPullToRefreshEnabled="True"
+				ItemsSource="{Binding Items}"
            		RefreshCommand="{Binding RefreshCommand}"
            		IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
 				HasUnevenRows="true" SeparatorVisibility="None">
-			<!--IsVisible="{Binding IsBusy, Converter={StaticResource not}"-->
 		    <ListView.ItemTemplate>
 		        <DataTemplate>
 		            <local:TaskCell Self="{Binding .}" />
