@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.090196078431372548" green="0.3843137254901961" blue="0.96862745098039216" alpha="1"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.16078431372549021" green="0.38039215686274508" blue="0.63921568627450975" alpha="1"/>
                         <color key="tintColor" colorSpace="calibratedRGB" red="0.090196078431372548" green="0.3843137254901961" blue="0.96862745098039216" alpha="1"/>
                     </view>
                 </viewController>

@@ -35,9 +35,6 @@
     <Compile Include="Pages\SearchPage.xaml.cs">
       <DependentUpon>SearchPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TasksPage.xaml.cs">
-      <DependentUpon>TasksPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -46,9 +43,6 @@
       <DependentUpon>TaskCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\PantoneColors.cs" />
-    <Compile Include="Pages\SingleTaskPage.xaml.cs">
-      <DependentUpon>SingleTaskPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Utils\BooleanNegationConverter.cs" />
     <Compile Include="Views\SearchCell.xaml.cs">
       <DependentUpon>SearchCell.xaml</DependentUpon>
@@ -64,6 +58,12 @@
     </Compile>
     <Compile Include="Pages\WatchedPage.xaml.cs">
       <DependentUpon>WatchedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tasks\TasksPage.xaml.cs">
+      <DependentUpon>TasksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tasks\SingleTaskPage.xaml.cs">
+      <DependentUpon>SingleTaskPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -93,16 +93,10 @@
     <EmbeddedResource Include="Pages\SearchPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\TasksPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TaskCell.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\SingleTaskPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SearchCell.xaml">
@@ -120,10 +114,17 @@
     <EmbeddedResource Include="Pages\WatchedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Tasks\TasksPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Tasks\SingleTaskPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="Utils\" />
+    <Folder Include="Pages\Tasks\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trak.Client.Portable\Trak.Client.Portable.csproj">

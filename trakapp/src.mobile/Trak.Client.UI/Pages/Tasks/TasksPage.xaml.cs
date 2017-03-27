@@ -33,7 +33,6 @@ namespace Trak.Client.UI
 			ViewModel.RefreshCommand.Execute(null);
 		}
 
-
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
@@ -44,9 +43,19 @@ namespace Trak.Client.UI
 
 		}
 
+		void OnItemSelectedListener(object sender, SelectedItemChangedEventArgs e)
+		{
+			listView.SelectedItem = null;
+		}
+
+		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
+		{
+			Navigation.PushAsync(new SingleTaskPage(ViewModel, (TaskItem)e.Item));
+		}
+
 		void OnSegmentControlSelected(object o, EventArgs e)
 		{
-			System.Diagnostics.Debug.WriteLine("OnSegmentControlSelected");
+			//System.Diagnostics.Debug.WriteLine("OnSegmentControlSelected");
 			switch (segmentControl.SelectedSegment)
 			{
 				case 0:
@@ -56,16 +65,6 @@ namespace Trak.Client.UI
 					//ViewModel.PrioritySelected = Priority.Normal;
 					break;
 			}
-		}
-
-		void OnItemSelectedListener(object sender, SelectedItemChangedEventArgs e)
-		{
-			listView.SelectedItem = null;
-		}
-
-		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
-		{
-			Navigation.PushAsync(new SingleTaskPage(ViewModel, (TaskItem)e.Item));
 		}
 
 	}
