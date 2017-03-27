@@ -10,7 +10,7 @@ namespace Trak.Client.UI
 		public SettingsPage()
 		{
 			InitializeComponent();
-			image.Source = "screen-settings.png";
+			//image.Source = "screen-settings.png";
 		}
 
 		protected override void OnAppearing()

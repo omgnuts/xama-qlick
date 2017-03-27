@@ -47,9 +47,6 @@
     <Compile Include="Views\SearchCell.xaml.cs">
       <DependentUpon>SearchCell.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RequestsPage.xaml.cs">
-      <DependentUpon>RequestsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\StatsPage.xaml.cs">
       <DependentUpon>StatsPage.xaml</DependentUpon>
     </Compile>
@@ -100,9 +97,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SearchCell.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\RequestsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\StatsPage.xaml">

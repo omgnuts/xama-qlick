@@ -10,7 +10,7 @@ namespace Trak.Client.UI
 		public WatchedPage()
 		{
 			InitializeComponent();
-			image.Source = "screen-profile.png";
+			//image.Source = "screen-profile.png";
 		}
 
 		protected override void OnAppearing()

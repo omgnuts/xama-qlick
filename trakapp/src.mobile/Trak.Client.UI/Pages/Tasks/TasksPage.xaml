@@ -6,10 +6,11 @@
 		xmlns:controls="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions">
 	<StackLayout x:Name="container" Padding="0,20,0,0">
 
-		<controls:SegmentedControl x:Name="segmentControl" Margin="80,10,80,10" IsEnabled="true" ValueChanged="OnSegmentControlSelected">
+		<controls:SegmentedControl x:Name="segmentControl" Margin="10,10,10,10" IsEnabled="true" ValueChanged="OnSegmentControlSelected">
            <controls:SegmentedControl.Children>
-               <controls:SegmentedControlOption Text="Urgent" />
-               <controls:SegmentedControlOption Text="All" />
+               <controls:SegmentedControlOption Text="Priority" />
+               <controls:SegmentedControlOption Text="In Transit" />
+				<controls:SegmentedControlOption Text="Done (1 week ago)" />
            </controls:SegmentedControl.Children>
         </controls:SegmentedControl>
 

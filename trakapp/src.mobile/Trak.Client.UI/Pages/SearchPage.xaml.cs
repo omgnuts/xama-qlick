@@ -13,11 +13,9 @@ namespace Trak.Client.UI
 		public SearchPage()
 		{
 			InitializeComponent();
-			items.Add(new SearchItem("#Prism (last 90 days)", "145 approvals"));
-			items.Add(new SearchItem("#eFlow (last 90 days)", "103 approvals"));
-			items.Add(new SearchItem("#eLeave (last 90 days)", "33 approvals"));
-			items.Add(new SearchItem("#eClaims (last 90 days)", "21 approvals"));
-			items.Add(new SearchItem("#EPS (last 90 days)", "8 approvals"));
+			items.Add(new SearchItem("#Ayoh Shipping Ltd (last 90 days)", "6,669 shipments"));
+			items.Add(new SearchItem("#Electronic Cargo (last 90 days)", "23,319 shipments"));
+			items.Add(new SearchItem("#To:Canada (last 90 days)", "56,701 shipments"));
 
 			listView.ItemsSource = items;
 
