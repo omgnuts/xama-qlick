@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Text;
 using System.Collections.Generic;
 using Humanizer;
 using Trak.Client.Portable;
-
+using Xamarin.Forms.Maps;
 using Xamarin.Forms;
+using Plugin.Geolocator;
 
 namespace Trak.Client.UI
 {
@@ -23,18 +25,15 @@ namespace Trak.Client.UI
 
 			this.viewModel = viewModel;
 
-			//taskColor = PantoneColor.FromString(task.SystId);
-			//App.NavPage.BarBackgroundColor = taskColor;
-			//App.NavPage.BarTextColor = Styles.ThemeColor;
 			App.NavPage.BarBackgroundColor = Styles.ColorBlue;
 			App.NavPage.BarTextColor = Color.White;
-			//App.NavPage.Tint = Styles.ColorRed;
 
 			BackgroundColor = Color.White;
 			BindingContext = task;
 
-		}
+			initRoutes();
 
+		}
 		bool started = false;
 		void OnStart()
 		{
@@ -50,24 +49,21 @@ namespace Trak.Client.UI
 			}
 		}
 
-		protected override bool OnBackButtonPressed()
-		{
-			App.NavPage.BarTextColor = Color.Black;
-			return base.OnBackButtonPressed();
-		}
-
 		protected override void OnDisappearing()
 		{
 			App.NavPage.BarTextColor = Color.Black;
 			base.OnDisappearing();
 		}
 
-		protected override void OnBindingContextChanged()
+		protected async override void OnBindingContextChanged()
 		{
 			base.OnBindingContextChanged();
 
 			if (BindingContext != null)
 			{
+				//MoveToUserLocation();
+				//Task.Run(() => MoveToUserLocation());
+
 				Title = Context.Title;
 				//header.BackgroundColor = taskColor;
 				//lblSystId.TextColor = taskColor;
@@ -77,26 +73,24 @@ namespace Trak.Client.UI
 				lblUserCreated.Text = "@" + Context.UserId + " • " + Context.CreatedDT.Humanize();
 				lblDescription.Text = Context.Description;
 				//lblSystId.Text = Context.SystId;
-				lblDueDT.Text = "Delivery is due " + Context.DueDT.Humanize();
+				//lblDueDT.Text = "Delivery is due " + Context.DueDT.Humanize();
 
-				attachmentStack.IsVisible = Context.SystId.Equals("Prism");
-
-				cmdActions.Children.Add(createButton("APPROVE", clGreen));
-				cmdActions.Children.Add(createButton("REJECT", clRed));
-				//cmdActions.Children.Add(createButton("QUERY", Color.Blue));
+				//attachmentStack.IsVisible = true; //Context.SystId.Equals("Prism");
 
 				ParseDetails(Context.Details);
+
+				await MoveToUserLocation();
 			}
 		}
 
-		static double lblFontSizeMedium = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
-		static double lblFontSizeSmall = Device.GetNamedSize(NamedSize.Small, typeof(Label));
+		static double lblFontSizeMedium = Device.GetNamedSize(NamedSize.Small, typeof(Label));
+		static double lblFontSizeSmall = Device.GetNamedSize(NamedSize.Micro, typeof(Label));
 
 		void ParseDetails(string details) {
 
 			if (details != null)
 			{
-				string[] pairs = details.Split(',');
+				string[] pairs = details.Split(';');
 
 				foreach (string pair in pairs)
 				{
@@ -116,46 +110,69 @@ namespace Trak.Client.UI
 					});
 				}
 			}
-
 		}
 
-
-		static Color clGreen = Color.FromHex("27ae60");
-		static Color clRed = Color.FromHex("e74c3c");	
-		//static Color clOrange = Color.FromHex("");
-		static double fontSizeMedium = Device.GetNamedSize(NamedSize.Medium, typeof(Button));
-
-		Button createButton(string name, Color bnColor)
+		async Task MoveToUserLocation()
 		{
-			Button button = new Button()
+			try
 			{
-				Text = name,
-				BackgroundColor = bnColor,
-				TextColor = Color.White,
-				FontSize = fontSizeMedium,
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand,
-				HeightRequest = 50,
-				WidthRequest = 350
-			};
+				//var locator = CrossGeolocator.Current;
+				//locator.DesiredAccuracy = 50;
 
-			button.Clicked += OnClickListener;
-			return button;
-		}
+				//Plugin.Geolocator.Abstractions.Position position = await locator.GetPositionAsync(timeoutMilliseconds: 20000);
+				//if (position == null)
+				//	return;
 
-		async void OnClickListener(object sender, EventArgs e)
-		{
-			if (((Button)sender).Text.Equals("APPROVE")) {
-				await TrakAPI.Instance.PerformActionAsync(
-					Context.Id,
-					"APPROVED",
-					"Shay",
-					"DummyComments");
+				// capitol towers
+				Position position = new Position(1.278150, 103.847611);
+
+				mapView.MoveToRegion(MapSpan.FromCenterAndRadius(
+					new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude), 
+					Distance.FromMiles(20)).WithZoom(10));
+
+				return;
 			}
-			await Navigation.PopAsync();
-			await viewModel.DeleteCommand(Context);
-
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine("Unable to get location, may need to increase timeout: " + ex);
+			}
 		}
+
+		public List<RouteItem> items = new List<RouteItem>();
+		void initRoutes()
+		{
+			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			items.Add(new RouteItem("#To:Canada (last 90 days)"));
+
+			listView.ItemsSource = items;
+
+			listView.ItemSelected += OnItemSelectedListener;
+		}
+
+		void OnItemSelectedListener(object sender, SelectedItemChangedEventArgs e)
+		{
+			listView.SelectedItem = null;
+		}
+
 
 	}
 }

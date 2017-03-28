@@ -39,6 +39,7 @@
     <Compile Include="Xama\ObservableCollectionFast.cs" />
     <Compile Include="Xama\SimpleObservableList.cs" />
     <Compile Include="Models\SearchItem.cs" />
+    <Compile Include="Models\RouteItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Xama\" />

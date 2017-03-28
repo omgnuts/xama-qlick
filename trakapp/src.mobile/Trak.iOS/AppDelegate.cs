@@ -1,6 +1,8 @@
 ﻿using Foundation;
 using UIKit;
 using SegmentedControl.FormsPlugin.iOS;
+using CoreLocation;
+
 
 namespace Trak.iOS
 {
@@ -10,6 +12,10 @@ namespace Trak.iOS
 		public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
 		{
 			global::Xamarin.Forms.Forms.Init();
+			global::Xamarin.FormsMaps.Init();
+
+			CLLocationManager locationManager = new CLLocationManager();
+			locationManager.RequestWhenInUseAuthorization();
 
 			SegmentedControlRenderer.Init();
 
