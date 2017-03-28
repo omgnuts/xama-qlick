@@ -5,7 +5,7 @@
 	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
 	x:Class="Trak.Client.UI.SingleTaskPage">
 
-<ListView x:Name="listView" HasUnevenRows="true" SeparatorColor="Silver" SeparatorVisibility="Default">
+<ListView x:Name="listView" HasUnevenRows="true" SeparatorVisibility="None">
 	<ListView.Header>
 		<Grid RowSpacing="0" BackgroundColor="White">
 		    <Grid.RowDefinitions>

@@ -186,6 +186,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Theme.cs" />
     <Compile Include="Renderers\JourneyViewRenderer.cs" />
+    <Compile Include="Renderers\RouteViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\tab-clarify.png" />
@@ -217,6 +218,7 @@
     <BundleResource Include="Resources\attachments.png" />
     <BundleResource Include="Resources\lock-broke.png" />
     <BundleResource Include="Resources\lock-secure.png" />
+    <BundleResource Include="Resources\right-arrow.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trak.Client.Portable\Trak.Client.Portable.csproj">

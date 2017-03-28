@@ -17,6 +17,9 @@ namespace Trak.Client.Portable
 		[JsonProperty("status")]
 		public int Status { get; set; }
 
+		[JsonProperty("point")]
+		public int Point { get; set; }
+
 		[JsonProperty("blockchain")]
 		public int BlockChain { get; set; }
 

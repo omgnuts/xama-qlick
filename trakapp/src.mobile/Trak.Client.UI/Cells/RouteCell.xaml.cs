@@ -38,6 +38,11 @@ namespace Trak.Client.UI
 					imgLock.Source = (Self.BlockChain > 0) ? "lock-secure.png" : "lock-broke.png";
 				}
 
+				roView.Route = new Views.RouteView.RouteValues
+				{
+					Status = Self.Status,
+					Point = Self.Point
+				};
 			}
 		}
 

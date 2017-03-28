@@ -8,7 +8,7 @@ namespace Trak.Client.UI
 
 		public static Color ColorBlue = ThemeColor;
 		public static Color ColorGreen = Color.FromHex("7ed321");
-		public static Color ColorGray = Color.FromHex("9b9b9b");
+		public static Color ColorGray = Color.FromHex("ababab");
 		public static Color ColorRed = Color.FromHex("e6112c");
 	}
 }

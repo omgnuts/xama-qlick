@@ -65,6 +65,7 @@
     <Compile Include="Cells\RouteCell.xaml.cs">
       <DependentUpon>RouteCell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RouteView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

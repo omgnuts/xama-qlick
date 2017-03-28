@@ -55,22 +55,22 @@ namespace Trak.iOS.Renderers
 
 		public override void Draw(CGRect rect)
 		{
-			JourneyView.JourneyValues values = Element.Journey;
+			//JourneyView.JourneyValues values = Element.Journey;
 
-			nfloat width = (Bounds.Width - gapSz * (values.PathSize - 1)) / values.PathSize;
+			nfloat width = (Bounds.Width - gapSz * (Jvalues.PathSize - 1)) / Jvalues.PathSize;
 			nfloat height = Bounds.Height;
 			nfloat widthGap = width + gapSz;
 
 			using (var context = UIGraphics.GetCurrentContext())
 			{
-				for (int c = 0; c < values.PathSize; c++)
+				for (int c = 0; c < Jvalues.PathSize; c++)
 				{
 					CGColor color;
-					if (c < values.PathIndx)
+					if (c < Jvalues.PathIndx)
 					{
 						color = COLOR_PREV;
 					}
-					else if (c == values.PathIndx)
+					else if (c == Jvalues.PathIndx)
 					{
 						color = COLOR_CURR;
 					}
