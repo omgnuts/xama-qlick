@@ -44,11 +44,14 @@ namespace Trak.Client.UI
 				lblSystId.Text = Self.SystId;
 				lblSystIdLetter.Text = Self.SystId[0].ToString().ToUpper();
 
-				System.Diagnostics.Debug.WriteLine("...... fuck binding");
-					
-
-				joView.Garbage = "fuk";
-				joView.PathCount = 10;
+				if (Self.SystId == "prism")
+				{
+					joView.PathCount = 1;
+				}
+				else
+				{
+					joView.PathCount = 5;
+				}
 
 
 			}

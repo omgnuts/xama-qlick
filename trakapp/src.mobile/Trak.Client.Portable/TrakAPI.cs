@@ -42,15 +42,15 @@ namespace Trak.Client.Portable
 
 		// Let this live for as long as the app needs to draw data.
 		// TODO: handle it when user multi-tasks
-		HttpClient client;
+		//HttpClient client;
 
-		TrakAPI()
-		{
-			client = new HttpClient();
-			client.BaseAddress = new Uri(Q_BASE);
-		}
+		//TrakAPI()
+		//{
+		//	client = new HttpClient();
+		//	client.BaseAddress = new Uri(Q_BASE);
+		//}
 
-  //      public async Task<List<TaskItem>> GetAllTasksAsync()
+		//      public async Task<List<TaskItem>> GetAllTasksAsync()
 		//{
 		//	HttpResponseMessage resp = await client.GetAsync(Q_ALLTASKS_GET);
 
@@ -63,9 +63,16 @@ namespace Trak.Client.Portable
 		//	return null;
 		//}
 
+		HttpClient CreateHttpClient()
+		{
+			HttpClient client = new HttpClient();
+			client.BaseAddress = new Uri(Q_BASE);
+			return client;
+		}
+
 		public async Task<List<TaskItem>> GetAllTasksObservableAsync()
 		{
-			HttpResponseMessage resp = await client.GetAsync(Q_ALLTASKS_GET);
+			HttpResponseMessage resp = await CreateHttpClient().GetAsync(Q_ALLTASKS_GET);
 			if (resp.IsSuccessStatusCode)
 			{
 				var content = await resp.Content.ReadAsStringAsync();
@@ -74,7 +81,6 @@ namespace Trak.Client.Portable
 
 			return null;
 		}
-
 
 		public async Task<int> PerformActionAsync(
 			string id, string act, string userId, string comments)
@@ -87,7 +93,7 @@ namespace Trak.Client.Portable
 
 			System.Diagnostics.Debug.WriteLine(action);
 
-			HttpResponseMessage resp = await client.GetAsync(action);
+			HttpResponseMessage resp = await CreateHttpClient().GetAsync(action);
 
 			return 1;
 		}

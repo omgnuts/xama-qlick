@@ -25,14 +25,15 @@ namespace Trak.Client.UI.Views
 			get { return (string)GetValue(GarbageProperty); }
 			set { 
 				SetValue(GarbageProperty, value);
+				OnPropertyChanged();
 			}
 		}
 
-		protected override void OnPropertyChanged(string propertyName = null)
-		{
-			System.Diagnostics.Debug.WriteLine("... propertyName = " + propertyName);
-			base.OnPropertyChanged(propertyName);
-		}
+		//protected override void OnPropertyChanged(string propertyName = null)
+		//{
+		//	System.Diagnostics.Debug.WriteLine("... propertyName = " + propertyName);
+		//	base.OnPropertyChanged(propertyName);
+		//}
 	}
 }
 
