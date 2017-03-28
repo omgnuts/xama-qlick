@@ -46,11 +46,19 @@ namespace Trak.Client.UI
 
 				if (Self.SystId == "prism")
 				{
-					joView.PathCount = 1;
+					joView.Journey = new JourneyView.JourneyValues
+					{
+						PathIndx = 2,
+						PathSize = 5
+					};
 				}
 				else
 				{
-					joView.PathCount = 5;
+					joView.Journey = new JourneyView.JourneyValues
+					{
+						PathIndx = 3,
+						PathSize = 8
+					};
 				}
 
 

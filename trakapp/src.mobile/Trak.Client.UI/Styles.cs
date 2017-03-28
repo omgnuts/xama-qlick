@@ -5,5 +5,9 @@ namespace Trak.Client.UI
 	public static class Styles
 	{
 		public static Color ThemeColor = Color.FromHex("1A7CF9");
+
+		public static Color ColorBlue = ThemeColor;
+		public static Color ColorGreen = Color.Green;
+		public static Color ColorGray = Color.Gray;
 	}
 }
