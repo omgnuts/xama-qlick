@@ -32,7 +32,7 @@
     <Compile Include="Models\MockFactory.cs" />
     <Compile Include="Models\TaskItem.cs" />
     <Compile Include="Models\Priority.cs" />
-    <Compile Include="QlickAPI.cs" />
+    <Compile Include="TrakAPI.cs" />
     <Compile Include="Models\TaskItemViewModel.cs" />
     <Compile Include="Models\WorkViewModel.cs" />
     <Compile Include="Models\WorkItem.cs" />

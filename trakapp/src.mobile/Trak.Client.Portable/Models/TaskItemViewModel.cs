@@ -85,7 +85,7 @@ namespace Trak.Client.Portable
 
 			IsBusy = true;
 
-			List<TaskItem> items = await QlickAPI.Instance.GetAllTasksObservableAsync();
+			List<TaskItem> items = await TrakAPI.Instance.GetAllTasksObservableAsync();
 
 			Items.Clear();
 			Items.AddRange(items);

@@ -8,16 +8,16 @@ using System.Collections.ObjectModel;
 
 namespace Trak.Client.Portable
 {
-	public class QlickAPI
+	public class TrakAPI
 	{
-		static QlickAPI instance;
-		public static QlickAPI Instance
+		static TrakAPI instance;
+		public static TrakAPI Instance
 		{
 			get
 			{
 				if (instance == null)
 				{
-					instance = new QlickAPI();
+					instance = new TrakAPI();
 				}
 				return instance;
 			}
@@ -44,25 +44,24 @@ namespace Trak.Client.Portable
 		// TODO: handle it when user multi-tasks
 		HttpClient client;
 
-		QlickAPI()
+		TrakAPI()
 		{
 			client = new HttpClient();
 			client.BaseAddress = new Uri(Q_BASE);
 		}
 
-        public async Task<List<TaskItem>> GetAllTasksAsync()
-		{
-			HttpResponseMessage resp = await client.GetAsync(Q_ALLTASKS_GET);
+  //      public async Task<List<TaskItem>> GetAllTasksAsync()
+		//{
+		//	HttpResponseMessage resp = await client.GetAsync(Q_ALLTASKS_GET);
 
-			if (resp.IsSuccessStatusCode)
-			{
-				var content = await resp.Content.ReadAsStringAsync();
-				return JsonConvert.DeserializeObject<List<TaskItem>>(content);
-			}
+		//	if (resp.IsSuccessStatusCode)
+		//	{
+		//		var content = await resp.Content.ReadAsStringAsync();
+		//		return JsonConvert.DeserializeObject<List<TaskItem>>(content);
+		//	}
 
-			return null;
-		}
-
+		//	return null;
+		//}
 
 		public async Task<List<TaskItem>> GetAllTasksObservableAsync()
 		{

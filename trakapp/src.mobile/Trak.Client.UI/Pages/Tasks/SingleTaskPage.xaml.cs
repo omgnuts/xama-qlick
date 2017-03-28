@@ -136,7 +136,7 @@ namespace Trak.Client.UI
 		async void OnClickListener(object sender, EventArgs e)
 		{
 			if (((Button)sender).Text.Equals("APPROVE")) {
-				await QlickAPI.Instance.PerformActionAsync(
+				await TrakAPI.Instance.PerformActionAsync(
 					Context.Id,
 					"APPROVED",
 					"Shay",
