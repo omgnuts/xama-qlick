@@ -31,45 +31,11 @@ namespace Trak.Client.Portable
 			}
 		}
 
-  //      private Priority prioritySelected;
-		//public Priority PrioritySelected
-		//{
-		//	get { return prioritySelected; }
-		//	set 
-		//	{ 
-		//		if (prioritySelected != value) 
-		//		{ 
-		//			prioritySelected = value; 
-		//			OnPropertyChanged("PrioritySelected"); 
-		//		} 
-
-		//	}
-		//}
-
-		//ICommand priorityCommand;
-		//public ICommand PriorityCommand
-		//{
-		//	get { return priorityCommand ?? (priorityCommand = new Command(async () => await ExecutePriorityCommand())); }
-		//}
-
-		//async Task ExecutePriorityCommand()
-		//{
-		//	System.Diagnostics.Debug.WriteLine("ExecutePriorityCommand");
-		//	if (items != null)
-		//	{
-		//		List<TaskItem> entities = items.FindAll((obj) =>
-		//		{
-		//			return obj.Priority == prioritySelected;
-		//		});
-
-		//		Items.Clear();
-		//		if (entities != null)
-		//		{
-		//			Items.AddRange(entities);
-		//		}
-		//	}
-		//}
-
+		public SeparatorVisibility HasSeparator
+		{
+			get { return Items.Count > 0 ? SeparatorVisibility.Default : SeparatorVisibility.None; }
+			set { OnPropertyChanged("HasSeparator"); }
+		}
 
 		ICommand refreshCommand;
 
@@ -85,14 +51,15 @@ namespace Trak.Client.Portable
 
 			IsBusy = true;
 
-			List<TaskItem> items = await MockFactory.GenerateMockTasks();
+			//List<TaskItem> items = await MockFactory.GenerateMockTasks();
 
-			//List<TaskItem> items = await TrakAPI.Instance.GetAllTasksObservableAsync();
+			List<TaskItem> items = await TrakAPI.Instance.GetAllTasksObservableAsync();
 
 			Items.Clear();
 			Items.AddRange(items);
 
 			IsBusy = false;
+			HasSeparator = SeparatorVisibility.Default;
 		}
 
 		public async Task DeleteCommand(TaskItem item)
@@ -101,8 +68,6 @@ namespace Trak.Client.Portable
 			{
 				Items.Remove(item);
 			}
-		
- 
 		}
 
 		#region INotifyPropertyChanged implementation

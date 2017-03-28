@@ -19,7 +19,7 @@
 				ItemsSource="{Binding Items}"
            		RefreshCommand="{Binding RefreshCommand}"
            		IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
-				HasUnevenRows="true" SeparatorVisibility="None">
+				HasUnevenRows="true" SeparatorVisibility="{Binding HasSeparator, Mode=OneWay}" SeparatorColor="Silver">
 		    <ListView.ItemTemplate>
 		        <DataTemplate>
 		            <local:TaskCell Self="{Binding .}" />

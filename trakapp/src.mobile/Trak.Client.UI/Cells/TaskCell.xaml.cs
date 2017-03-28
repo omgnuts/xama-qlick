@@ -21,8 +21,7 @@ namespace Trak.Client.UI
 		public TaskCell()
 		{
 			InitializeComponent();
-			lblTitle.TextColor = Styles.ThemeColor;
-
+			//lblTitle.TextColor = Styles.ThemeColor;
 		}
 
     	protected override void OnBindingContextChanged()
@@ -31,36 +30,24 @@ namespace Trak.Client.UI
 
 			if (BindingContext != null && Self != null)
 			{
-				Color pc = PantoneColor.FromString(Self.SystId);
-				lblTitle.TextColor = pc;
-				lblSystId.TextColor = pc;
-				lblSystIdLetter.BackgroundColor = pc;
+				//Color pc = PantoneColor.FromString(Self.SystId);
+				//lblTitle.TextColor = pc;
+				Color pc = Self.Priority == Priority.High ? Styles.ColorRed : Styles.ColorGreen;
+				lblDueDTTime.TextColor = pc;
+				lblDueDT.BackgroundColor = pc;
 
 				lblTitle.Text = Self.Title;
 				lblDescription.Text = Self.Description;
 				lblUserCreated.Text = "@" + Self.UserId + " • " + Self.CreatedDT.Humanize();
-				lblDueDT.Text = "Due " + Self.DueDT.Humanize();
 
-				lblSystId.Text = Self.SystId;
-				lblSystIdLetter.Text = Self.SystId[0].ToString().ToUpper();
+				lblDueDT.Text = Self.DueDT.ToString("dd MMM").ToLower();
+				lblDueDTTime.Text = Self.DueDT.ToString("HH:mm");
 
-				if (Self.SystId == "prism")
+				joView.Journey = new JourneyView.JourneyValues
 				{
-					joView.Journey = new JourneyView.JourneyValues
-					{
-						PathIndx = 2,
-						PathSize = 5
-					};
-				}
-				else
-				{
-					joView.Journey = new JourneyView.JourneyValues
-					{
-						PathIndx = 3,
-						PathSize = 8
-					};
-				}
-
+					PathIndx = Self.JoIndex,
+					PathSize = Self.JoSize
+				};
 
 			}
 		}

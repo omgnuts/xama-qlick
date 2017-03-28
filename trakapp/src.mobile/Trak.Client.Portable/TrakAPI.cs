@@ -24,7 +24,7 @@ namespace Trak.Client.Portable
 		}
 
 		static string Q_BASE = "http://go.munchpress.com";
-		static string Q_ALLTASKS_GET = "qlick.json"; 
+		static string Q_ALLTASKS_GET = "trak.json"; 
 		static string Q_ACTION = "api/MiWork/PerformAction";
 
 		//PJAY PC

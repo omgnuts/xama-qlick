@@ -88,7 +88,7 @@ namespace Trak.iOS.Renderers
 			}
 		}
 
-		static readonly nfloat gapSz = 5.0f;
+		static readonly nfloat gapSz = 2.0f;
 
 		static readonly CGColor COLOR_PREV = Styles.ColorBlue.ToCGColor();
 		static readonly CGColor COLOR_CURR = Styles.ColorGreen.ToCGColor();

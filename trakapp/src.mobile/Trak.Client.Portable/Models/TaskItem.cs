@@ -1,40 +1,60 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace Trak.Client.Portable
 {
 	public class TaskItem
 	{
-		public string Id { get; }
+		[JsonProperty("id")]
+		public string Id { get; set; }
 
-		public string Title { get; }
+		[JsonProperty("title")]
+		public string Title { get; set; }
 
-		public string Description { get; }
+		[JsonProperty("description")]
+		public string Description { get; set; }
 
-		public string SystId { get; }
+		[JsonProperty("tptId")]
+		public string UserId { get; set; }
 
-		public string UserId { get; }
+		[JsonProperty("createdDt")]
+		public DateTime CreatedDT { get; set; }
 
-		public DateTime CreatedDT { get; }
+		[JsonProperty("systId")]
+		public string SystId { get; set; }
 
-		public DateTime DueDT { get; }
+		[JsonProperty("dueDt")]
+		public DateTime DueDT { get; set; }
 
-		public Priority Priority { get; } 
+		[JsonProperty("priority")]
+		public Priority Priority { get; set; } 
 
-		public string Details { get; } 
+		[JsonProperty("details")]
+		public string Details { get; set; } 
 
-		public TaskItem(string id, string title, string description, string systId, string userId,
-		                DateTime createdDT, DateTime dueDT, Priority priority, string details)
-		{
-			Id = id; 
-			Title = title;
-			Description = description;
-			SystId = systId;
-			UserId = userId;
-			CreatedDT = createdDT.AddHours(-8);
-			DueDT = dueDT;
-			Priority = priority;
-			Details = details;
-		}
+		[JsonProperty("joSize")]
+		public int JoSize { get; set; }
+
+		[JsonProperty("joIndex")]
+		public int JoIndex { get; set; }
+
+		//public TaskItem(string id, string title, string description, string systId, string userId,
+		//                DateTime createdDT, DateTime dueDT, Priority priority, string details, 
+		//                int joSize, int joIndex)
+		//{
+		//	Id = id; 
+		//	Title = title;
+		//	Description = description;
+		//	SystId = systId;
+		//	UserId = userId;
+		//	CreatedDT = createdDT.AddHours(-8);
+		//	DueDT = dueDT;
+		//	Priority = priority;
+		//	Details = details;
+
+		//	JoSize = joSize;
+		//	JoIndex = joIndex;
+		//}
 
 		
 	}
