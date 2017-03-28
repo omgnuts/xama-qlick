@@ -15,7 +15,6 @@ namespace Trak.Client.UI
 			get { return BindingContext as TaskItem; }
 		}
 
-		readonly Color taskColor;
 		readonly TaskItemViewModel viewModel;
 
 		public SingleTaskPage(TaskItemViewModel viewModel, TaskItem task)
@@ -24,11 +23,14 @@ namespace Trak.Client.UI
 
 			this.viewModel = viewModel;
 
-			taskColor = PantoneColor.FromString(task.SystId);
-			App.NavPage.BarBackgroundColor = taskColor;
+			//taskColor = PantoneColor.FromString(task.SystId);
+			//App.NavPage.BarBackgroundColor = taskColor;
+			//App.NavPage.BarTextColor = Styles.ThemeColor;
+			App.NavPage.BarBackgroundColor = Styles.ColorBlue;
 			App.NavPage.BarTextColor = Color.White;
+			//App.NavPage.Tint = Styles.ColorRed;
 
-			BackgroundColor = taskColor;
+			BackgroundColor = Color.White;
 			BindingContext = task;
 
 		}
@@ -48,6 +50,12 @@ namespace Trak.Client.UI
 			}
 		}
 
+		protected override bool OnBackButtonPressed()
+		{
+			App.NavPage.BarTextColor = Color.Black;
+			return base.OnBackButtonPressed();
+		}
+
 		protected override void OnDisappearing()
 		{
 			App.NavPage.BarTextColor = Color.Black;
@@ -60,14 +68,16 @@ namespace Trak.Client.UI
 
 			if (BindingContext != null)
 			{
-				header.BackgroundColor = taskColor;
-				lblSystId.TextColor = taskColor;
+				Title = Context.Title;
+				//header.BackgroundColor = taskColor;
+				//lblSystId.TextColor = taskColor;
+				//App.NavPage.Title = Context.Title;
 
 				lblTitle.Text = Context.Title;
-				lblDescription.Text = Context.Description;
 				lblUserCreated.Text = "@" + Context.UserId + " • " + Context.CreatedDT.Humanize();
-				lblSystId.Text = Context.SystId;
-				lblDueDT.Text = "Due " + Context.DueDT.Humanize();
+				lblDescription.Text = Context.Description;
+				//lblSystId.Text = Context.SystId;
+				lblDueDT.Text = "Delivery is due " + Context.DueDT.Humanize();
 
 				attachmentStack.IsVisible = Context.SystId.Equals("Prism");
 

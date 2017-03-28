@@ -11,7 +11,7 @@ namespace Trak.Client.UI
 		{
 			InitializeComponent();
 
-			//NavigationPage.SetHasNavigationBar(this, false);
+			NavigationPage.SetHasNavigationBar(this, false);
 
 			//if (App.NavPage != null) App.NavPage.BarTextColor = Color.Black;
 

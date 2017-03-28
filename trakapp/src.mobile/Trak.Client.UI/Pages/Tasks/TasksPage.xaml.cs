@@ -49,7 +49,7 @@ namespace Trak.Client.UI
 
 		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
 		{
-			System.Diagnostics.Debug.WriteLine(sender);
+			//System.Diagnostics.Debug.WriteLine(sender);
 			Navigation.PushAsync(new SingleTaskPage(ViewModel, (TaskItem)e.Item));
 		}
 

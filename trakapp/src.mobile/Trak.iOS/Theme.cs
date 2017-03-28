@@ -8,6 +8,7 @@ namespace Trak.iOS
 		public static void SetAppearance()
 		{
 			UITabBar.Appearance.SelectedImageTintColor = Trak.Client.UI.Styles.ThemeColor.ToUIColor();
+			//UIBarButtonItem.Appearance.TintColor = Trak.Client.UI.Styles.ThemeColor.ToUIColor();
 		}
 	}
 }
