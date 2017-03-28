@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Trak.Client.Portable;
+using Trak.Client.UI.Views;
 using Humanizer;
 
 namespace Trak.Client.UI
@@ -21,6 +22,7 @@ namespace Trak.Client.UI
 		{
 			InitializeComponent();
 			lblTitle.TextColor = Styles.ThemeColor;
+
 		}
 
     	protected override void OnBindingContextChanged()
@@ -41,6 +43,14 @@ namespace Trak.Client.UI
 
 				lblSystId.Text = Self.SystId;
 				lblSystIdLetter.Text = Self.SystId[0].ToString().ToUpper();
+
+				System.Diagnostics.Debug.WriteLine("...... fuck binding");
+					
+
+				joView.Garbage = "fuk";
+				joView.PathCount = 10;
+
+
 			}
 		}
 	}

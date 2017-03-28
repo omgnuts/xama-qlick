@@ -5,10 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F6163747-4EA9-444B-8725-82065C6E8A76}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UseMSBuildEngine>true</UseMSBuildEngine>
     <OutputType>Library</OutputType>
-    <RootNamespace>Qlick.Client.UI</RootNamespace>
-    <AssemblyName>Qlick.Client.UI</AssemblyName>
+    <RootNamespace>Trak.Client.UI</RootNamespace>
+    <AssemblyName>Trak.Client.UI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
   </PropertyGroup>
@@ -62,6 +61,7 @@
     <Compile Include="Pages\Tasks\SingleTaskPage.xaml.cs">
       <DependentUpon>SingleTaskPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\JourneyView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -119,6 +119,7 @@
     <Folder Include="Cells\" />
     <Folder Include="Utils\" />
     <Folder Include="Pages\Tasks\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trak.Client.Portable\Trak.Client.Portable.csproj">
