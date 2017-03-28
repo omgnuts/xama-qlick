@@ -47,7 +47,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>f40bb828-ef6b-446b-b060-fb2af13b6938</CodesignProvision>
+    <CodesignProvision>b87ef157-d216-4bc4-8924-99c0431575b1</CodesignProvision>
 <AssemblyName>Trak.iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -86,7 +86,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision></CodesignProvision>
+    <CodesignProvision>b87ef157-d216-4bc4-8924-99c0431575b1</CodesignProvision>
 <AssemblyName>Trak.iOS</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
