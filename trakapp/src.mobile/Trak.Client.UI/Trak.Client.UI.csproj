@@ -62,9 +62,6 @@
     <Compile Include="Pages\Tasks\SingleTaskPage.xaml.cs">
       <DependentUpon>SingleTaskPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\JourneyView.xaml.cs">
-      <DependentUpon>JourneyView.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -115,9 +112,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Tasks\SingleTaskPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\JourneyView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
