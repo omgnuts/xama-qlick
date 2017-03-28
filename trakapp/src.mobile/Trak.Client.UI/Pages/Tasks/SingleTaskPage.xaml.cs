@@ -117,19 +117,27 @@ namespace Trak.Client.UI
 		{
 			try
 			{
-				//var locator = CrossGeolocator.Current;
-				//locator.DesiredAccuracy = 50;
+				var locator = CrossGeolocator.Current;
+				locator.DesiredAccuracy = 200;
 
-				//Plugin.Geolocator.Abstractions.Position position = await locator.GetPositionAsync(timeoutMilliseconds: 20000);
-				//if (position == null)
-				//	return;
+				Plugin.Geolocator.Abstractions.Position posse = await locator.GetPositionAsync(timeoutMilliseconds: 20000);
+				if (posse == null)
+					return;
 
 				// capitol towers
-				Position position = new Position(1.278150, 103.847611);
+				//Position position = new Position(1.278150, 103.847611);
 
 				mapView.MoveToRegion(MapSpan.FromCenterAndRadius(
-					new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude), 
+					new Xamarin.Forms.Maps.Position(posse.Latitude, posse.Longitude), 
 					Distance.FromMiles(20)).WithZoom(10));
+
+				//var pin = new Pin()
+				//{
+				//	Position = position,
+				//	Type = PinType.SavedPin,
+				//	Label = "Cargo"
+				//};
+				//mapView.Pins.Add(pin);
 
 				return;
 			}
@@ -141,31 +149,12 @@ namespace Trak.Client.UI
 
 		void initRoutes(RouteItem[] routeItems)
 		{
-			List<RouteItem> items = new List<RouteItem>(routeItems);
-			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
-
-			listView.ItemsSource = items;
-			listView.ItemSelected += OnItemSelectedListener;
+			if (routeItems != null)
+			{
+				List<RouteItem> items = new List<RouteItem>(routeItems);
+				listView.ItemsSource = items;
+				listView.ItemSelected += OnItemSelectedListener;
+			}
 		}
 
 		void OnItemSelectedListener(object sender, SelectedItemChangedEventArgs e)
