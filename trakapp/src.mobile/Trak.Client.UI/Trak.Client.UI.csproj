@@ -39,12 +39,12 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Styles.cs" />
-    <Compile Include="Views\TaskCell.xaml.cs">
+    <Compile Include="Cells\TaskCell.xaml.cs">
       <DependentUpon>TaskCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\PantoneColors.cs" />
     <Compile Include="Utils\BooleanNegationConverter.cs" />
-    <Compile Include="Views\SearchCell.xaml.cs">
+    <Compile Include="Cells\SearchCell.xaml.cs">
       <DependentUpon>SearchCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\StatsPage.xaml.cs">
@@ -93,10 +93,10 @@
     <EmbeddedResource Include="App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\TaskCell.xaml">
+    <EmbeddedResource Include="Cells\TaskCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SearchCell.xaml">
+    <EmbeddedResource Include="Cells\SearchCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\StatsPage.xaml">
@@ -116,7 +116,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
+    <Folder Include="Cells\" />
     <Folder Include="Utils\" />
     <Folder Include="Pages\Tasks\" />
   </ItemGroup>
