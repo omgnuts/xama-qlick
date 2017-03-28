@@ -30,6 +30,14 @@ namespace Trak.Client.UI
 			if (BindingContext != null && Self != null)
 			{
 				lblTitle.Text = Self.Title;
+				lblDepartDT.Text = Self.DepartDT;
+				lblArriveDT.Text = Self.ArriveDT;
+
+				if (Self.BlockChain != 0)
+				{
+					imgLock.Source = (Self.BlockChain > 0) ? "lock-secure.png" : "lock-broke.png";
+				}
+
 			}
 		}
 
