@@ -38,23 +38,8 @@ namespace Trak.Client.Portable
 		[JsonProperty("joIndex")]
 		public int JoIndex { get; set; }
 
-		//public TaskItem(string id, string title, string description, string systId, string userId,
-		//                DateTime createdDT, DateTime dueDT, Priority priority, string details, 
-		//                int joSize, int joIndex)
-		//{
-		//	Id = id; 
-		//	Title = title;
-		//	Description = description;
-		//	SystId = systId;
-		//	UserId = userId;
-		//	CreatedDT = createdDT.AddHours(-8);
-		//	DueDT = dueDT;
-		//	Priority = priority;
-		//	Details = details;
-
-		//	JoSize = joSize;
-		//	JoIndex = joIndex;
-		//}
+		[JsonProperty("routeItems")]
+		public RouteItem[] RouteItems { get; set; }
 
 		
 	}

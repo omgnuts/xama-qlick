@@ -31,7 +31,7 @@ namespace Trak.Client.UI
 			BackgroundColor = Color.White;
 			BindingContext = task;
 
-			initRoutes();
+			//initRoutes();
 
 		}
 		bool started = false;
@@ -74,8 +74,9 @@ namespace Trak.Client.UI
 				lblDescription.Text = Context.Description;
 				//lblSystId.Text = Context.SystId;
 				//lblDueDT.Text = "Delivery is due " + Context.DueDT.Humanize();
-
 				//attachmentStack.IsVisible = true; //Context.SystId.Equals("Prism");
+
+				initRoutes(Context.RouteItems);
 
 				ParseDetails(Context.Details);
 
@@ -138,33 +139,32 @@ namespace Trak.Client.UI
 			}
 		}
 
-		public List<RouteItem> items = new List<RouteItem>();
-		void initRoutes()
+		void initRoutes(RouteItem[] routeItems)
 		{
-			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			items.Add(new RouteItem("#To:Canada (last 90 days)"));
-			items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
-			items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
-			items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			List<RouteItem> items = new List<RouteItem>(routeItems);
+			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
+			//items.Add(new RouteItem("#Ayoh Shipping Ltd (last 90 days)"));
+			//items.Add(new RouteItem("#Electronic Cargo (last 90 days)"));
+			//items.Add(new RouteItem("#To:Canada (last 90 days)"));
 
 			listView.ItemsSource = items;
-
 			listView.ItemSelected += OnItemSelectedListener;
 		}
 

@@ -1,17 +1,23 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace Trak.Client.Portable
 {
 	public class RouteItem
 	{
+		[JsonProperty("title")]
 		public string Title { get; set; }
 
-		public string StartDT { get; set; }
+		[JsonProperty("departDT")]
+		public string DepartDT { get; set; }
 
-		public string EndDT { get; set; }
+		[JsonProperty("arriveDT")]
+		public string ArriveDT { get; set; }
 
+		[JsonProperty("status")]
 		public int Status { get; set; }
 
+		[JsonProperty("blockchain")]
 		public int BlockChain { get; set; }
 
 		public RouteItem(string title)
