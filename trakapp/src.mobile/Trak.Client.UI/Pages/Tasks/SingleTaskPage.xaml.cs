@@ -152,6 +152,7 @@ namespace Trak.Client.UI
 			if (routeItems != null)
 			{
 				List<RouteItem> items = new List<RouteItem>(routeItems);
+				items.Sort((x, y) => y.Order.CompareTo(x.Order));
 				listView.ItemsSource = items;
 				listView.ItemSelected += OnItemSelectedListener;
 			}

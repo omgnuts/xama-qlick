@@ -5,25 +5,22 @@ namespace Trak.Client.Portable
 {
 	public class TaskItem
 	{
-		[JsonProperty("id")]
+		[JsonProperty("nuance_id")]
 		public string Id { get; set; }
 
 		[JsonProperty("title")]
 		public string Title { get; set; }
 
-		[JsonProperty("description")]
+		[JsonProperty("descr")]
 		public string Description { get; set; }
 
-		[JsonProperty("tptId")]
+		[JsonProperty("shipper_name")]
 		public string UserId { get; set; }
 
-		[JsonProperty("createdDt")]
+		[JsonProperty("created_dt")]
 		public DateTime CreatedDT { get; set; }
 
-		[JsonProperty("systId")]
-		public string SystId { get; set; }
-
-		[JsonProperty("dueDt")]
+		[JsonProperty("due_dt")]
 		public DateTime DueDT { get; set; }
 
 		[JsonProperty("priority")]
@@ -32,13 +29,13 @@ namespace Trak.Client.Portable
 		[JsonProperty("details")]
 		public string Details { get; set; } 
 
-		[JsonProperty("joSize")]
+		[JsonProperty("jo_size")]
 		public int JoSize { get; set; }
 
-		[JsonProperty("joIndex")]
+		[JsonProperty("jo_index")]
 		public int JoIndex { get; set; }
 
-		[JsonProperty("routeItems")]
+		[JsonProperty("waypoints")]
 		public RouteItem[] RouteItems { get; set; }
 
 		

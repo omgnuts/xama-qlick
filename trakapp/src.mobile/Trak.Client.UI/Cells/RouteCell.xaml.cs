@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Trak.Client.Portable;
-
 using Xamarin.Forms;
 
 namespace Trak.Client.UI
@@ -30,8 +29,8 @@ namespace Trak.Client.UI
 			if (BindingContext != null && Self != null)
 			{
 				lblTitle.Text = Self.Title;
-				lblDepartDT.Text = Self.DepartDT;
-				lblArriveDT.Text = Self.ArriveDT;
+				lblDepartDT.Text = formatDate(Self.DepartDT);
+				lblArriveDT.Text = formatDate(Self.ArriveDT);
 
 				if (Self.BlockChain != 0)
 				{
@@ -44,6 +43,12 @@ namespace Trak.Client.UI
 					Point = Self.Point
 				};
 			}
+		}
+
+		string formatDate(DateTime? dt)
+		{
+			if (!dt.HasValue) return "";
+			return dt.Value.ToString("HH:mm") + " Hrs on " + dt.Value.ToString("d MMM yyyy");
 		}
 
 	}

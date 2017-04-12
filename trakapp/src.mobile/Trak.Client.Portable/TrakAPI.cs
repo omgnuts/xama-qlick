@@ -23,8 +23,9 @@ namespace Trak.Client.Portable
 			}
 		}
 
-		static string Q_BASE = "http://go.munchpress.com";
-		static string Q_ALLTASKS_GET = "trak.json"; 
+		static string Q_BASE = "http://128.199.90.93:8000";
+		static string Q_ALLTASKS_GET = "api/v1/nuances"; 
+
 		static string Q_ACTION = "api/MiWork/PerformAction";
 
 		//PJAY PC

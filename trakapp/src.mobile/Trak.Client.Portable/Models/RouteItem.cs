@@ -8,17 +8,20 @@ namespace Trak.Client.Portable
 		[JsonProperty("title")]
 		public string Title { get; set; }
 
-		[JsonProperty("departDT")]
-		public string DepartDT { get; set; }
+		[JsonProperty("depart_dt")]
+		public DateTime? DepartDT { get; set; }
 
-		[JsonProperty("arriveDT")]
-		public string ArriveDT { get; set; }
+		[JsonProperty("arrive_dt")]
+		public DateTime? ArriveDT { get; set; }
 
 		[JsonProperty("status")]
 		public int Status { get; set; }
 
-		[JsonProperty("point")]
+		[JsonProperty("path")]
 		public int Point { get; set; }
+
+		[JsonProperty("order")]
+		public int Order { get; set; }
 
 		[JsonProperty("blockchain")]
 		public int BlockChain { get; set; }
