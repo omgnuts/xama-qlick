@@ -26,7 +26,9 @@ namespace Trak.Client.Portable
 		static string Q_BASE = "http://128.199.90.93:8000";
 		static string Q_ALLTASKS_GET = "api/v1/nuances"; 
 
-		static string Q_ACTION = "api/MiWork/PerformAction";
+		static string Q_RESET = "api/v1/demo/reset";
+		static string Q_ADDSHIPMENT = "api/v1/demo/add-shipment";
+		static string Q_TRIGGERBC = "api/v1/demo/trigger-blockchain";
 
 		//PJAY PC
 		//static string Q_BASE = "http://192.168.100.214:4000";
@@ -83,18 +85,20 @@ namespace Trak.Client.Portable
 			return null;
 		}
 
-		public async Task<int> PerformActionAsync(
-			string id, string act, string userId, string comments)
+		public async Task<int> PerformActionAsync(string act)
 		{
-			string action = Q_ACTION + "?"
-				+ "qlickid=" + id
-				+ "&act=" + act
-				+ "&userid=" + userId
-				+ "&comments=" + comments;
+			string action = Q_RESET;
+			switch (act)
+			{
+				case "RESET_DATABASE": action = Q_RESET;
+					break;
+				case "ADD_SHIPMENT": action = Q_ADDSHIPMENT;
+					break;
+				case "TRIGGER_BLOCKCHAIN": action = Q_TRIGGERBC;
+					break;
+			}
 
-			System.Diagnostics.Debug.WriteLine(action);
-
-			HttpResponseMessage resp = await CreateHttpClient().GetAsync(action);
+			await CreateHttpClient().GetAsync(action);
 
 			return 1;
 		}
