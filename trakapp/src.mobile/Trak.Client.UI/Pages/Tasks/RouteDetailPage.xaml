@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Trak.Client.UI.RouteDetailPage"
+	xmlns:qrr="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+	<Grid RowSpacing="0" BackgroundColor="White">
+        <Grid.RowDefinitions>
+          	<RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+	      	<ColumnDefinition Width="*" />
+	    </Grid.ColumnDefinitions>
+		
+		<Frame VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" Margin="30" Padding="50" MinimumWidthRequest="250" OutlineColor="Silver" >
+			<qrr:ZXingBarcodeImageView x:Name="barcode" HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" VerticalOptions="Center" />
+		</Frame>
+	
+		<StackLayout x:Name="detailStack" Padding="20,10,20,20" Grid.Row="1" Grid.Column="0" Orientation="Vertical"/>
+	</Grid>
+</ContentPage>

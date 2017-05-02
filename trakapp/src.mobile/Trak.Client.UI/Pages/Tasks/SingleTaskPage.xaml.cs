@@ -42,6 +42,7 @@ namespace Trak.Client.UI
 
 		protected override void OnAppearing()
 		{
+			App.NavPage.BarTextColor = Color.White;
 			base.OnAppearing();
 			if (!started)
 			{
@@ -165,11 +166,17 @@ namespace Trak.Client.UI
 			listView.SelectedItem = null;
 		}
 
-
 		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
 		{
-			//System.Diagnostics.Debug.WriteLine(sender);
-			Navigation.PushAsync(new ContentPage());
+			RouteItem route = (RouteItem)e.Item;
+			if (route.BlockChain != 0)
+			{
+				Navigation.PushAsync(new RouteDetailPage(route));
+			}
+			else
+			{
+                DisplayAlert("No Blockchain Information", "There are no blockchain details for this waypoint, as the cargo has not yet reached this location.", "OK");
+			}
 		}
 	}
 

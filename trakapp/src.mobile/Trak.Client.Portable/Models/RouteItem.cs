@@ -30,5 +30,11 @@ namespace Trak.Client.Portable
 		{
 			Title = title;
 		}
+
+		public string Hash()
+		{
+			return Title + Status + Order + BlockChain + DepartDT?.ToString() + ArriveDT?.ToString();
+		}
+
 	}
 }

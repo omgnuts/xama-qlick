@@ -29,8 +29,8 @@ namespace Trak.Client.UI
 			if (BindingContext != null && Self != null)
 			{
 				lblTitle.Text = Self.Title;
-				lblDepartDT.Text = formatDate(Self.DepartDT);
-				lblArriveDT.Text = formatDate(Self.ArriveDT);
+				lblDepartDT.Text = DateDisplay.FormatDate(Self.DepartDT);
+				lblArriveDT.Text = DateDisplay.FormatDate(Self.ArriveDT);
 
 				if (Self.BlockChain != 0)
 				{
@@ -45,11 +45,11 @@ namespace Trak.Client.UI
 			}
 		}
 
-		string formatDate(DateTime? dt)
-		{
-			if (!dt.HasValue) return "";
-			return dt.Value.ToString("HH:mm") + " Hrs on " + dt.Value.ToString("d MMM yyyy");
-		}
+		//string formatDate(DateTime? dt)
+		//{
+		//	if (!dt.HasValue) return "";
+		//	return dt.Value.ToString("HH:mm") + " Hrs on " + dt.Value.ToString("d MMM yyyy");
+		//}
 
 	}
 }
