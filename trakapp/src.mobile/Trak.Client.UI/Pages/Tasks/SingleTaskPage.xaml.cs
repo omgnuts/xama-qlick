@@ -155,6 +155,8 @@ namespace Trak.Client.UI
 				items.Sort((x, y) => y.Order.CompareTo(x.Order));
 				listView.ItemsSource = items;
 				listView.ItemSelected += OnItemSelectedListener;
+				listView.ItemTapped += OnItemTappedListener;
+				
 			}
 		}
 
@@ -164,5 +166,11 @@ namespace Trak.Client.UI
 		}
 
 
+		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
+		{
+			//System.Diagnostics.Debug.WriteLine(sender);
+			Navigation.PushAsync(new ContentPage());
+		}
 	}
+
 }
