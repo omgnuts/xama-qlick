@@ -9,7 +9,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>9.3</string>
+	<string>10.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -31,8 +31,6 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.munchpress.ios.Trak</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIStatusBarStyle</key>
@@ -74,5 +72,7 @@
 	<string>While Using the App</string>
 	<key>CFBundleName</key>
 	<string>1Citadel</string>
+	<key>CFBundleIdentifier</key>
+	<string>sg.com.gic.tdre.Qlick.uat</string>
 </dict>
 </plist>
