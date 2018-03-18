@@ -38,7 +38,7 @@ namespace api.Models
         [JsonProperty("priority")]
         public Priority Priority { get; set; }
 
-        [Required]
+        //[Required]
         [JsonProperty("details")]
         public string Details { get; set; }
 

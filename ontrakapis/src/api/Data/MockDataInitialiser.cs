@@ -18,31 +18,31 @@ namespace api.Data
                 return;   // DB has been seeded
             }
 
-            // Add platforms
-            {
-                var platforms = new Waypoint[]
-                {
-                    new Waypoint { WaypointID = 1000, Title = "E-Leave" },
-                    new Waypoint { WaypointID = 2000, Title = "E-Tender" }
-                };
+            //// Add platforms
+            //{
+            //    var platforms = new Waypoint[]
+            //    {
+            //        new Waypoint { WaypointID = 1000, Title = "E-Leave" },
+            //        new Waypoint { WaypointID = 2000, Title = "E-Tender" }
+            //    };
 
-                foreach (Waypoint p in platforms)
-                {
-                    context.Waypoints.Add(p);
-                }
-                context.SaveChanges();
-            }
+            //    foreach (Waypoint p in platforms)
+            //    {
+            //        context.Waypoints.Add(p);
+            //    }
+            //    context.SaveChanges();
+            //}
 
-            // Add tasks
-            {
-                Random rand = new Random();
-                for (int c = 0; c < 5; c++)
-                {
-                    Nuance n = MockTaskFactory.Generate(c, rand.Next(1, 3) * 1000);
-                    context.Nuances.Add(n);
-                }
-                context.SaveChanges();
-            }
+            //// Add tasks
+            //{
+            //    Random rand = new Random();
+            //    for (int c = 0; c < 5; c++)
+            //    {
+            //        Nuance n = MockTaskFactory.Generate(c, rand.Next(1, 3) * 1000);
+            //        context.Nuances.Add(n);
+            //    }
+            //    context.SaveChanges();
+            //}
 
         }
 

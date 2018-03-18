@@ -121,7 +121,7 @@ namespace Trak.Client.UI
 				var locator = CrossGeolocator.Current;
 				locator.DesiredAccuracy = 200;
 
-				Plugin.Geolocator.Abstractions.Position posse = await locator.GetPositionAsync(timeoutMilliseconds: 20000);
+				Plugin.Geolocator.Abstractions.Position posse = await locator.GetPositionAsync(TimeSpan.FromMilliseconds(20000));
 				if (posse == null)
 					return;
 

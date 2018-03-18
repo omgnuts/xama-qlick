@@ -27,8 +27,8 @@ namespace Trak.Client.UI
 		void OnStart()
 		{
 			started = true;
-			segmentControl.SetTintColor(Styles.ThemeColor);
-			segmentControl.SelectTab(1);
+			segmentControl.TintColor = Styles.ThemeColor;
+			segmentControl.SelectedSegment = 1;
 
 			ViewModel.RefreshCommand.Execute(null);
 		}
