@@ -70,6 +70,12 @@
       <DependentUpon>RouteDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\DateDisplay.cs" />
+    <Compile Include="Authority\AuthorityManager.cs" />
+    <Compile Include="Authority\IAuthentication.cs" />
+    <Compile Include="Pages\LoginPage.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\TintedImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SettingsPage.xaml">
@@ -108,12 +114,16 @@
     <EmbeddedResource Include="Pages\Tasks\RouteDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cells\" />
     <Folder Include="Utils\" />
     <Folder Include="Pages\Tasks\" />
     <Folder Include="Views\" />
+    <Folder Include="Authority\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trak.Client.Portable\Trak.Client.Portable.csproj">

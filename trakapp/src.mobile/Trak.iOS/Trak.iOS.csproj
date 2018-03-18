@@ -68,7 +68,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: javantan@gmail.com (SESJB33664)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
@@ -79,7 +79,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>iOS Team Provisioning Profile: com.munchpress.ios.Trak</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: sg.com.gic.tdre.Qlick.dev</CodesignProvision>
 <AssemblyName>Trak.iOS</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
@@ -188,6 +188,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Contracts\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -203,6 +204,8 @@
     <Compile Include="Theme.cs" />
     <Compile Include="Renderers\JourneyViewRenderer.cs" />
     <Compile Include="Renderers\RouteViewRenderer.cs" />
+    <Compile Include="Contracts\Authentication_IOS.cs" />
+    <Compile Include="Renderers\TintedImageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\tab-clarify.png" />
@@ -235,6 +238,8 @@
     <BundleResource Include="Resources\lock-broke.png" />
     <BundleResource Include="Resources\lock-secure.png" />
     <BundleResource Include="Resources\right-arrow.png" />
+    <BundleResource Include="Resources\icon-password%403x.png" />
+    <BundleResource Include="Resources\icon-username%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trak.Client.Portable\Trak.Client.Portable.csproj">

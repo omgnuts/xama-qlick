@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:Trak.Client.UI" 
+	x:Class="Trak.Client.UI.LoginPage">
+	<StackLayout Padding="0,0,0,0">
+
+		<StackLayout WidthRequest="500"  VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Margin="30,50,30,30">
+
+
+			<Label Text="Citadel Login" FontSize="32" TextColor="{Binding ThemeColor}" FontAttributes="Bold"/>
+			
+			<StackLayout Spacing="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="0">
+		        <StackLayout Spacing="15">
+		          	<StackLayout Orientation="Horizontal" Padding="0" Spacing="5" HorizontalOptions="FillAndExpand" >
+		            	<local:TintedImage Source="icon-username.png" TintColor="{Binding ThemeColor}" WidthRequest="30"/>
+		            	<Entry x:Name="usernameEntry" 
+							Placeholder="Your Username" 
+							TextColor="{x:Static local:Styles.ThemeColor}"
+							FontSize="Large"
+							HorizontalOptions="FillAndExpand" 
+							HeightRequest="50"/>
+		          	</StackLayout>
+
+		          	<StackLayout Orientation="Horizontal" Padding="0" Spacing="5" HorizontalOptions="FillAndExpand">
+		          		<local:TintedImage Source="icon-password.png" TintColor="{Binding ThemeColor}" WidthRequest="30"/>
+		          		<Entry x:Name="passwordEntry" 
+							Placeholder="Your password" 
+							IsPassword="True" 
+		                    TextColor="{x:Static local:Styles.ThemeColor}"
+							FontSize="Large"
+							HorizontalOptions="FillAndExpand" 
+							HeightRequest="50"
+						/>
+		          	</StackLayout>
+
+					<Button Text="Login" Clicked="OnLoginClick" 
+						TextColor="White" 
+							HeightRequest="50"
+							FontSize="Large"
+							BackgroundColor="{Binding ThemeColor}" 
+					/>
+
+				</StackLayout>
+			</StackLayout>
+
+			
+		</StackLayout>
+
+	</StackLayout>
+</ContentPage>

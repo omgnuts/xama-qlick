@@ -40,9 +40,11 @@
     <Compile Include="Xama\SimpleObservableList.cs" />
     <Compile Include="Models\SearchItem.cs" />
     <Compile Include="Models\RouteItem.cs" />
+    <Compile Include="Auth\CredentialToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Xama\" />
+    <Folder Include="Auth\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">

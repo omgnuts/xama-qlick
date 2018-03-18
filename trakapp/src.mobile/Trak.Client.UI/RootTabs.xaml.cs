@@ -20,6 +20,7 @@ namespace Trak.Client.UI
 			Children.Add(new WatchedPage { Title = "Incidents", Icon = "tab-watched.png" });
 			Children.Add(new StatsPage { Title = "Statistics", Icon = "tab-statistics.png" });
 			Children.Add(new SettingsPage { Title = "Settings", Icon = "tab-settings.png" });
+
 		}
 	}
 }
