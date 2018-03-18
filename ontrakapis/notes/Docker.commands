@@ -1,0 +1,23 @@
+https://hub.docker.com/r/microsoft/aspnetcore-build/
+Building a docker image
+
+
+1. Login to docker from command line
+
+docker login
+
+2. Build the image 
+
+docker build -t build-image -f Dockerfile .
+
+
+3. Create a container from the image
+
+docker create --name build-container build-image
+docker cp build-container:/out ./bin/Release/PublishOutput
+
+
+
+docker run -it --rm -v $(pwd):/app microsoft/aspnetcore-build:latest
+
+docker run -it -v $(PWD):/app --workdir /app microsoft/aspnetcore-build bash -c dotnet restore && dotnet publish -c Release -o ./bin/Release/PublishOutput

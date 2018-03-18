@@ -1,0 +1,13 @@
+How to communicate between ng2 modules
+
+
+
+MVC Routes
+
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing
+
+
+https://stormpath.com/blog/routing-in-asp-net-core
+
+
+http://www.strathweb.com/2016/06/global-route-prefix-with-asp-net-core-mvc-revisited/

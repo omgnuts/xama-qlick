@@ -1,0 +1,11 @@
+FROM microsoft/aspnetcore-build:latest
+
+WORKDIR /app
+COPY . . 
+
+RUN dotnet restore
+RUN dotnet publish -c release -o /dist/release/runtime
+
+# Copy the docker runtime configs
+RUN cp configs/docker/* /dist/release/
+

@@ -1,0 +1,13 @@
+FROM microsoft/aspnetcore:latest
+WORKDIR /app
+COPY . .
+
+WORKDIR /app/runtime
+
+ENV ASPNETCORE_URLS http://+:9000
+ENV ASPNETCORE_ENVIRONMENT Production
+
+EXPOSE 9000
+
+ENTRYPOINT ["dotnet", "api.dll"]
+

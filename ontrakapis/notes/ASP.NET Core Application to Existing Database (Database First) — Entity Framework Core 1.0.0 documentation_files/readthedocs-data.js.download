@@ -1,0 +1,14 @@
+  var READTHEDOCS_DATA = {
+    project: "aspnet-ef",
+    version: "latest",
+    language: "en",
+    subprojects: {},
+    canonical_url: "https://docs.efproject.net/en/latest/",
+    theme: "sphinx_rtd_theme",
+    builder: "sphinx",
+    docroot: "/docs/",
+    source_suffix: ".rst",
+    api_host: "https://readthedocs.com",
+    commit: "2dc36cc6"
+  };
+  

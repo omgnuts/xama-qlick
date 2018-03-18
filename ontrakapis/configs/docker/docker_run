@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Purge old images
+docker rmi web:runtime
+
+docker build -t web:runtime -f Dockerfile.runtime .
+docker run -it -d -p 8000:9000 web:runtime

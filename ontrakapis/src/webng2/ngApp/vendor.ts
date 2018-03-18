@@ -1,0 +1,1 @@
+import "jquery/src/jquery";

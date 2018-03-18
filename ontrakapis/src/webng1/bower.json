@@ -1,0 +1,24 @@
+{
+  "name": "omgnuts",
+  "homepage": "https://github.com/omgnuts",
+  "authors": [
+    "omgnuts <nil>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "wwwroot/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "^0.3.1",
+    "ngstorage": "^0.3.11"
+  }
+}

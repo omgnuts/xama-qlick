@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="https://docs.efproject.net/en/latest/_static/favicon.ico">
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+
+  
+    <link rel="stylesheet" href="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/sphinx_rtd_theme.css" type="text/css">
+  
+    <link rel="stylesheet" href="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/custom.css" type="text/css">
+  
+
+  
+    <link rel="top" title="Entity Framework Core 1.0.0 documentation" href="https://docs.efproject.net/en/latest/index.html">
+        <link rel="up" title="Getting Started on ASP.NET Core" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/index.html">
+        <link rel="next" title="Getting Started on Universal Windows Platform (UWP)" href="https://docs.efproject.net/en/latest/platforms/uwp/index.html">
+        <link rel="prev" title="ASP.NET Core Application to New Database" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/new-db.html"> 
+
+  
+  <script type="text/javascript" async="" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/ga.js.download"></script><script src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/modernizr.min.js.download"></script>
+
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html">
+
+<link rel="stylesheet" href="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/readthedocs-data.js.download"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'platforms/aspnetcore/existing-db' 		
+READTHEDOCS_DATA['source_suffix'] = '.rst'
+</script>
+
+<script type="text/javascript" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/readthedocs-dynamic-include.js.download"></script>
+
+<!-- end RTD <extrahead> --></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="https://docs.efproject.net/en/latest/index.html" class="icon icon-home"> Entity Framework Core
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://docs.efproject.net/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="https://docs.efproject.net/en/latest/intro.html">Entity Framework Core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/index.html"><span class="toctree-expand"></span>Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/full-dotnet/index.html">Getting Started on Full .NET (Console, WinForms, WPF, etc.)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/netcore/index.html">Getting Started on .NET Core (Windows, OSX, Linux, etc.)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/index.html"><span class="toctree-expand"></span>Getting Started on ASP.NET Core</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/new-db.html">ASP.NET Core Application to New Database</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#">ASP.NET Core Application to Existing Database (Database First)</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/uwp/index.html">Getting Started on Universal Windows Platform (UWP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.efproject.net/en/latest/modeling/index.html">Creating a Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.efproject.net/en/latest/querying/index.html">Querying Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.efproject.net/en/latest/saving/index.html">Saving Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.efproject.net/en/latest/efcore-vs-ef6/index.html">EF Core vs. EF6.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.efproject.net/en/latest/providers/index.html">Database Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.efproject.net/en/latest/miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="https://docs.efproject.net/en/latest/index.html">Entity Framework Core</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="https://docs.efproject.net/en/latest/index.html">Docs</a> »</li>
+      
+          <li><a href="https://docs.efproject.net/en/latest/platforms/index.html">Getting Started</a> »</li>
+      
+          <li><a href="https://docs.efproject.net/en/latest/platforms/aspnetcore/index.html">Getting Started on ASP.NET Core</a> »</li>
+      
+    <li>ASP.NET Core Application to Existing Database (Database First)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/aspnet/EntityFramework.Docs/blob/master/docs/platforms/aspnetcore/existing-db.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">This documentation is for EF Core. For EF6.x and earlier release see <a class="reference external" href="http://msdn.com/data/ef">http://msdn.com/data/ef</a>.</p>
+</div>
+<div class="section" id="asp-net-core-application-to-existing-database-database-first">
+<h1>ASP.NET Core Application to Existing Database (Database First)<a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#asp-net-core-application-to-existing-database-database-first" title="Permalink to this headline">¶</a></h1>
+<p>In this walkthrough, you will build an ASP.NET Core MVC application that performs basic data access using Entity Framework.  You will use reverse engineering to create an Entity Framework model based on an existing database.</p>
+<div class="contents local topic" id="in-this-article">
+<p class="topic-title first"><cite>In this article:</cite></p>
+<ul class="simple">
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#prerequisites" id="id1">Prerequisites</a><ul>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#blogging-database" id="id2">Blogging database</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#create-a-new-project" id="id3">Create a new project</a></li>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#install-entity-framework" id="id4">Install Entity Framework</a></li>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#reverse-engineer-your-model" id="id5">Reverse engineer your model</a></li>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#register-your-context-with-dependency-injection" id="id6">Register your context with dependency injection</a><ul>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#remove-inline-context-configuration" id="id7">Remove inline context configuration</a></li>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#register-and-configure-your-context-in-startup-cs" id="id8">Register and configure your context in Startup.cs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#create-a-controller" id="id9">Create a controller</a></li>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#create-views" id="id10">Create views</a></li>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#run-the-application" id="id11">Run the application</a></li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can view this article’s <a class="reference external" href="https://github.com/aspnet/EntityFramework.Docs/tree/master/samples/Platforms/AspNetCore/AspNetCore.ExistingDb">sample</a> on GitHub.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id1">Prerequisites</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>The following prerequisites are needed to complete this walkthrough:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://go.microsoft.com/fwlink/?LinkId=691129">Visual Studio 2015 Update 3</a></li>
+<li><a class="reference external" href="https://go.microsoft.com/fwlink/?LinkId=817245">.NET Core for Visual Studio</a></li>
+<li><a class="reference internal" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#blogging-database">Blogging database</a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="blogging-database">
+<h3><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id2">Blogging database</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#blogging-database" title="Permalink to this headline">¶</a></h3>
+<p>This tutorial uses a <strong>Blogging</strong> database on your LocalDb instance as the existing database.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have already created the <strong>Blogging</strong> database as part of another tutorial, you can skip these steps.</p>
+</div>
+<ul class="simple">
+<li>Open Visual Studio</li>
+<li><span class="menuselection">Tools ‣ Connect to Database...</span></li>
+<li>Select <strong>Microsoft SQL Server</strong> and click <strong>Continue</strong></li>
+<li>Enter <strong>(localdb)\mssqllocaldb</strong> as the <strong>Server Name</strong></li>
+<li>Enter <strong>master</strong> as the <strong>Database Name</strong> and click <strong>OK</strong></li>
+<li>The master database is now displayed under <strong>Data Connections</strong> in <strong>Server Explorer</strong></li>
+<li>Right-click on the database in <strong>Server Explorer</strong> and select <strong>New Query</strong></li>
+<li>Copy the script, listed below, into the query editor</li>
+<li>Right-click on the query editor and select <strong>Execute</strong></li>
+</ul>
+<div class="highlight-sql"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="p">[</span><span class="n">Blogging</span><span class="p">]</span>
+<span class="k">GO</span>
+
+<span class="n">USE</span> <span class="p">[</span><span class="n">Blogging</span><span class="p">]</span>
+<span class="k">GO</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="p">[</span><span class="n">Blog</span><span class="p">]</span> <span class="p">(</span>
+    <span class="p">[</span><span class="n">BlogId</span><span class="p">]</span> <span class="nb">int</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">IDENTITY</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">Url</span><span class="p">]</span> <span class="n">nvarchar</span><span class="p">(</span><span class="k">max</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">CONSTRAINT</span> <span class="p">[</span><span class="n">PK_Blog</span><span class="p">]</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">([</span><span class="n">BlogId</span><span class="p">])</span>
+<span class="p">);</span>
+<span class="k">GO</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="p">[</span><span class="n">Post</span><span class="p">]</span> <span class="p">(</span>
+    <span class="p">[</span><span class="n">PostId</span><span class="p">]</span> <span class="nb">int</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">IDENTITY</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">BlogId</span><span class="p">]</span> <span class="nb">int</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">Content</span><span class="p">]</span> <span class="n">nvarchar</span><span class="p">(</span><span class="k">max</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">Title</span><span class="p">]</span> <span class="n">nvarchar</span><span class="p">(</span><span class="k">max</span><span class="p">),</span>
+    <span class="k">CONSTRAINT</span> <span class="p">[</span><span class="n">PK_Post</span><span class="p">]</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">([</span><span class="n">PostId</span><span class="p">]),</span>
+    <span class="k">CONSTRAINT</span> <span class="p">[</span><span class="n">FK_Post_Blog_BlogId</span><span class="p">]</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">([</span><span class="n">BlogId</span><span class="p">])</span> <span class="k">REFERENCES</span> <span class="p">[</span><span class="n">Blog</span><span class="p">]</span> <span class="p">([</span><span class="n">BlogId</span><span class="p">])</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
+<span class="p">);</span>
+<span class="k">GO</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="n">Blog</span><span class="p">]</span> <span class="p">(</span><span class="n">Url</span><span class="p">)</span> <span class="k">VALUES</span> 
+<span class="p">(</span><span class="s1">'http://blogs.msdn.com/dotnet'</span><span class="p">),</span> 
+<span class="p">(</span><span class="s1">'http://blogs.msdn.com/webdev'</span><span class="p">),</span> 
+<span class="p">(</span><span class="s1">'http://blogs.msdn.com/visualstudio'</span><span class="p">)</span>
+<span class="k">GO</span>
+</pre></div>
+</td></tr></tbody></table></div>
+</div>
+</div>
+<div class="section" id="create-a-new-project">
+<h2><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id3">Create a new project</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#create-a-new-project" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Open Visual Studio 2015</li>
+<li><span class="menuselection">File ‣ New ‣ Project...</span></li>
+<li>From the left menu select <span class="menuselection">Templates ‣ Visual C# ‣ Web</span></li>
+<li>Select the <strong>ASP.NET Core Web Application (.NET Core)</strong> project template</li>
+<li>Enter <strong>EFGetStarted.AspNetCore.ExistingDb</strong> as the name and click <strong>OK</strong></li>
+<li>Wait for the <strong>New ASP.NET Core Web Application</strong> dialog to appear</li>
+<li>Select the <strong>Web Application</strong> template and ensure that <strong>Authentication</strong> is set to <strong>No Authentication</strong></li>
+<li>Click <strong>OK</strong></li>
+</ul>
+</div>
+<div class="section" id="install-entity-framework">
+<h2><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id4">Install Entity Framework</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#install-entity-framework" title="Permalink to this headline">¶</a></h2>
+<p>To use EF Core, install the package for the database provider(s) you want to target. This walkthrough uses SQL Server. For a list of available providers see <a class="reference internal" href="https://docs.efproject.net/en/latest/providers/index.html"><span class="doc">Database Providers</span></a>.</p>
+<ul class="simple">
+<li><span class="menuselection">Tools ‣ NuGet Package Manager ‣ Package Manager Console</span></li>
+<li>Run <code class="docutils literal"><span class="pre">Install-Package</span> <span class="pre">Microsoft.EntityFrameworkCore.SqlServer</span></code></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In ASP.NET Core projects the <code class="docutils literal"><span class="pre">Install-Package</span></code> will complete quickly and the package installation will occur in the background. You will see <strong>(Restoring...)</strong> appear next to <strong>References</strong> in <strong>Solution Explorer</strong> while the install occurs.</p>
+</div>
+<p>To enable reverse engineering from an existing database we need to install a couple of other packages too.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Run <code class="docutils literal"><span class="pre">Install-Package</span> <span class="pre">Microsoft.EntityFrameworkCore.Tools</span> <span class="pre">–Pre</span></code></li>
+<li>Run <code class="docutils literal"><span class="pre">Install-Package</span> <span class="pre">Microsoft.EntityFrameworkCore.SqlServer.Design</span></code></li>
+<li>Open <strong>project.json</strong></li>
+<li>Locate the <code class="docutils literal"><span class="pre">tools</span></code> section and add the highlighted lines as shown below</li>
+</ul>
+<div class="highlight-default"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="s2">"tools"</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">    <span class="s2">"Microsoft.EntityFrameworkCore.Tools"</span><span class="p">:</span> <span class="s2">"1.0.0-preview2-final"</span><span class="p">,</span>
+</span>    <span class="s2">"Microsoft.AspNetCore.Razor.Tools"</span><span class="p">:</span> <span class="s2">"1.0.0-preview2-final"</span><span class="p">,</span>
+    <span class="s2">"Microsoft.AspNetCore.Server.IISIntegration.Tools"</span><span class="p">:</span> <span class="s2">"1.0.0-preview2-final"</span>
+  <span class="p">},</span>
+</pre></div>
+</td></tr></tbody></table></div>
+</div></blockquote>
+</div>
+<div class="section" id="reverse-engineer-your-model">
+<h2><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id5">Reverse engineer your model</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#reverse-engineer-your-model" title="Permalink to this headline">¶</a></h2>
+<p>Now it’s time to create the EF model based on your existing database.</p>
+<ul class="simple">
+<li><span class="menuselection">Tools –&gt; NuGet Package Manager –&gt; Package Manager Console</span></li>
+<li>Run the following command to create a model from the existing database. If you receive an error stating the term ‘Scaffold-DbContext’ is not recognized as the name of a cmdlet, then close and reopen Visual Studio.</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+</pre></div>
+</div>
+<p>The reverse engineer process created entity classes and a derived context based on the schema of the existing database. The entity classes are simple C# objects that represent the data you will be querying and saving.</p>
+<div class="highlight-c#"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">EFGetStarted.AspNetCore.ExistingDb.Models</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Blog</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="nf">Blog</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Post</span> <span class="p">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;();</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">BlogId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Url</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">virtual</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;</span> <span class="n">Post</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table></div>
+<p>The context represents a session with the database and allows you to query and save instances of the entity classes.</p>
+<div class="highlight-c#"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore.Metadata</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">EFGetStarted.AspNetCore.ExistingDb.Models</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">BloggingContext</span> <span class="p">:</span> <span class="n">DbContext</span>
+    <span class="p">{</span>
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnConfiguring</span><span class="p">(</span><span class="n">DbContextOptionsBuilder</span> <span class="n">optionsBuilder</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="cp">#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.</span>
+            <span class="n">optionsBuilder</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">(</span><span class="s">@"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnModelCreating</span><span class="p">(</span><span class="n">ModelBuilder</span> <span class="n">modelBuilder</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="p">&lt;</span><span class="n">Blog</span><span class="p">&gt;(</span><span class="n">entity</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">entity</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">e</span><span class="p">.</span><span class="n">Url</span><span class="p">).</span><span class="n">IsRequired</span><span class="p">();</span>
+            <span class="p">});</span>
+
+            <span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;(</span><span class="n">entity</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">entity</span><span class="p">.</span><span class="n">HasOne</span><span class="p">(</span><span class="n">d</span> <span class="p">=&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">Blog</span><span class="p">)</span>
+                    <span class="p">.</span><span class="n">WithMany</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Post</span><span class="p">)</span>
+                    <span class="p">.</span><span class="n">HasForeignKey</span><span class="p">(</span><span class="n">d</span> <span class="p">=&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">BlogId</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">virtual</span> <span class="n">DbSet</span><span class="p">&lt;</span><span class="n">Blog</span><span class="p">&gt;</span> <span class="n">Blog</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">public</span> <span class="k">virtual</span> <span class="n">DbSet</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;</span> <span class="n">Post</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table></div>
+</div>
+<div class="section" id="register-your-context-with-dependency-injection">
+<h2><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id6">Register your context with dependency injection</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#register-your-context-with-dependency-injection" title="Permalink to this headline">¶</a></h2>
+<p>The concept of dependency injection is central to ASP.NET Core. Services (such as <code class="docutils literal"><span class="pre">BloggingContext</span></code>) are registered with dependency injection during application startup. Components that require these services (such as your MVC controllers) are then provided these services via constructor parameters or properties. For more information on dependency injection see the <a class="reference external" href="http://docs.asp.net/en/latest/fundamentals/dependency-injection.html">Dependency Injection</a> article on the ASP.NET site.</p>
+<div class="section" id="remove-inline-context-configuration">
+<h3><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id7">Remove inline context configuration</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#remove-inline-context-configuration" title="Permalink to this headline">¶</a></h3>
+<p>In ASP.NET Core, configuration is generally performed in <strong>Startup.cs</strong>. To conform to this pattern, we will move configuration of the database provider to <strong>Startup.cs</strong>.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Open <strong>Models\BloggingContext.cs</strong></li>
+<li>Delete the lines of code highlighted below</li>
+</ul>
+</div></blockquote>
+<div class="highlight-c#"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">BloggingContext</span> <span class="p">:</span> <span class="n">DbContext</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnConfiguring</span><span class="p">(</span><span class="n">DbContextOptionsBuilder</span> <span class="n">optionsBuilder</span><span class="p">)</span>
+</span><span class="hll">        <span class="p">{</span>
+</span><span class="hll">            <span class="cp">#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.</span>
+</span><span class="hll">            <span class="n">optionsBuilder</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">(</span><span class="s">@"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;"</span><span class="p">);</span>
+</span><span class="hll">        <span class="p">}</span>
+</span></pre></div>
+</td></tr></tbody></table></div>
+<ul class="simple">
+<li>Add the lines of code highlighted below</li>
+</ul>
+<div class="highlight-c#"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">BloggingContext</span> <span class="p">:</span> <span class="n">DbContext</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="k">public</span> <span class="nf">BloggingContext</span><span class="p">(</span><span class="n">DbContextOptions</span><span class="p">&lt;</span><span class="n">BloggingContext</span><span class="p">&gt;</span> <span class="n">options</span><span class="p">)</span>
+</span><span class="hll">            <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+</span><span class="hll">        <span class="p">{</span> <span class="p">}</span>
+</span></pre></div>
+</td></tr></tbody></table></div>
+</div>
+<div class="section" id="register-and-configure-your-context-in-startup-cs">
+<h3><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id8">Register and configure your context in Startup.cs</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#register-and-configure-your-context-in-startup-cs" title="Permalink to this headline">¶</a></h3>
+<p>In order for our MVC controllers to make use of <code class="docutils literal"><span class="pre">BloggingContext</span></code> we are going to register it as a service.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Open <strong>Startup.cs</strong></li>
+<li>Add the following <code class="docutils literal"><span class="pre">using</span></code> statements at the start of the file</li>
+</ul>
+</div></blockquote>
+<div class="highlight-c#"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">EFGetStarted.AspNetCore.ExistingDb.Models</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
+</pre></div>
+</td></tr></tbody></table></div>
+<p>Now we can use the <code class="docutils literal"><span class="pre">AddDbContext</span></code> method to register it as a service.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Locate the <code class="docutils literal"><span class="pre">ConfigureServices</span></code> method</li>
+<li>Add the lines that are highlighted in the following code</li>
+</ul>
+</div></blockquote>
+<div class="highlight-c#"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+        <span class="p">{</span>
+<span class="hll">            <span class="kt">var</span> <span class="n">connection</span> <span class="p">=</span> <span class="s">@"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;"</span><span class="p">;</span>
+</span><span class="hll">            <span class="n">services</span><span class="p">.</span><span class="n">AddDbContext</span><span class="p">&lt;</span><span class="n">BloggingContext</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span> <span class="n">options</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">(</span><span class="n">connection</span><span class="p">));</span>
+</span></pre></div>
+</td></tr></tbody></table></div>
+</div>
+</div>
+<div class="section" id="create-a-controller">
+<h2><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id9">Create a controller</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#create-a-controller" title="Permalink to this headline">¶</a></h2>
+<p>Next, we’ll add an MVC controller that will use EF to query and save data.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Right-click on the <strong>Controllers</strong> folder in <strong>Solution Explorer</strong> and select <span class="menuselection">Add ‣ New Item...</span></li>
+<li>From the left menu select <span class="menuselection">Installed ‣ Code</span></li>
+<li>Select the <strong>Class</strong> item template</li>
+<li>Enter <strong>BlogsController.cs</strong> as the name and click <strong>OK</strong></li>
+<li>Replace the contents of the file with the following code</li>
+</ul>
+</div></blockquote>
+<div class="highlight-c#"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">EFGetStarted.AspNetCore.ExistingDb.Models</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNetCore.Mvc</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">EFGetStarted.AspNetCore.ExistingDb.Controllers</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">BlogsController</span> <span class="p">:</span> <span class="n">Controller</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="n">BloggingContext</span> <span class="n">_context</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">BlogsController</span><span class="p">(</span><span class="n">BloggingContext</span> <span class="n">context</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">_context</span> <span class="p">=</span> <span class="n">context</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Index</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">View</span><span class="p">(</span><span class="n">_context</span><span class="p">.</span><span class="n">Blog</span><span class="p">.</span><span class="n">ToList</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Create</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">View</span><span class="p">();</span>
+        <span class="p">}</span>
+
+<span class="na">        [HttpPost]</span>
+<span class="na">        [ValidateAntiForgeryToken]</span>
+        <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Create</span><span class="p">(</span><span class="n">Blog</span> <span class="n">blog</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">ModelState</span><span class="p">.</span><span class="n">IsValid</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">_context</span><span class="p">.</span><span class="n">Blog</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">blog</span><span class="p">);</span>
+                <span class="n">_context</span><span class="p">.</span><span class="n">SaveChanges</span><span class="p">();</span>
+                <span class="k">return</span> <span class="nf">RedirectToAction</span><span class="p">(</span><span class="s">"Index"</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="nf">View</span><span class="p">(</span><span class="n">blog</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table></div>
+<p>You’ll notice that the controller takes a <code class="docutils literal"><span class="pre">BloggingContext</span></code> as a constructor parameter. ASP.NET dependency injection will take care of passing an instance of <code class="docutils literal"><span class="pre">BloggingContext</span></code> into your controller.</p>
+<p>The controller contains an <code class="docutils literal"><span class="pre">Index</span></code> action, which displays all blogs in the database, and a <code class="docutils literal"><span class="pre">Create</span></code> action, which inserts a new blogs into the database.</p>
+</div>
+<div class="section" id="create-views">
+<h2><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id10">Create views</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#create-views" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have a controller it’s time to add the views that will make up the user interface.</p>
+<p>We’ll start with the view for our <code class="docutils literal"><span class="pre">Index</span></code> action, that displays all blogs.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Right-click on the <strong>Views</strong> folder in <strong>Solution Explorer</strong> and select <span class="menuselection">Add ‣ New Folder</span></li>
+<li>Enter <strong>Blogs</strong> as the name of the folder</li>
+<li>Right-click on the <strong>Blogs</strong> folder and select <span class="menuselection">Add ‣ New Item...</span></li>
+<li>From the left menu select <span class="menuselection">Installed ‣ ASP.NET</span></li>
+<li>Select the <strong>MVC View Page</strong> item template</li>
+<li>Enter <strong>Index.cshtml</strong> as the name and click <strong>Add</strong></li>
+<li>Replace the contents of the file with the following code</li>
+</ul>
+</div></blockquote>
+<div class="highlight-default"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@model</span> <span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">EFGetStarted</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">ExistingDb</span><span class="o">.</span><span class="n">Models</span><span class="o">.</span><span class="n">Blog</span><span class="o">&gt;</span>
+
+<span class="o">@</span><span class="p">{</span>
+    <span class="n">ViewBag</span><span class="o">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s2">"Blogs"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Blogs</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">asp</span><span class="o">-</span><span class="n">controller</span><span class="o">=</span><span class="s2">"Blogs"</span> <span class="n">asp</span><span class="o">-</span><span class="n">action</span><span class="o">=</span><span class="s2">"Create"</span><span class="o">&gt;</span><span class="n">Create</span> <span class="n">New</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">table</span> <span class="n">class</span><span class="o">=</span><span class="s2">"table"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">th</span><span class="o">&gt;</span><span class="n">Id</span><span class="o">&lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">th</span><span class="o">&gt;</span><span class="n">Url</span><span class="o">&lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+
+    <span class="nd">@foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">Model</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span>
+                <span class="nd">@Html</span><span class="o">.</span><span class="n">DisplayFor</span><span class="p">(</span><span class="n">modelItem</span> <span class="o">=&gt;</span> <span class="n">item</span><span class="o">.</span><span class="n">BlogId</span><span class="p">)</span>
+            <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span>
+                <span class="nd">@Html</span><span class="o">.</span><span class="n">DisplayFor</span><span class="p">(</span><span class="n">modelItem</span> <span class="o">=&gt;</span> <span class="n">item</span><span class="o">.</span><span class="n">Url</span><span class="p">)</span>
+            <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+    <span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">table</span><span class="o">&gt;</span>
+</pre></div>
+</td></tr></tbody></table></div>
+<p>We’ll also add a view for the <code class="docutils literal"><span class="pre">Create</span></code> action, which allows the user to enter details for a new blog.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Right-click on the <strong>Blogs</strong> folder and select <span class="menuselection">Add ‣ New Item...</span></li>
+<li>From the left menu select <span class="menuselection">Installed ‣ ASP.NET</span></li>
+<li>Select the <strong>MVC View Page</strong> item template</li>
+<li>Enter <strong>Create.cshtml</strong> as the name and click <strong>Add</strong></li>
+<li>Replace the contents of the file with the following code</li>
+</ul>
+</div></blockquote>
+<div class="highlight-default"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@model</span> <span class="n">EFGetStarted</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">ExistingDb</span><span class="o">.</span><span class="n">Models</span><span class="o">.</span><span class="n">Blog</span>
+
+<span class="o">@</span><span class="p">{</span>
+    <span class="n">ViewBag</span><span class="o">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s2">"New Blog"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="nd">@ViewData</span><span class="p">[</span><span class="s2">"Title"</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">asp</span><span class="o">-</span><span class="n">controller</span><span class="o">=</span><span class="s2">"Blogs"</span> <span class="n">asp</span><span class="o">-</span><span class="n">action</span><span class="o">=</span><span class="s2">"Create"</span> <span class="n">method</span><span class="o">=</span><span class="s2">"post"</span> <span class="n">class</span><span class="o">=</span><span class="s2">"form-horizontal"</span> <span class="n">role</span><span class="o">=</span><span class="s2">"form"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"form-horizontal"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">asp</span><span class="o">-</span><span class="n">validation</span><span class="o">-</span><span class="n">summary</span><span class="o">=</span><span class="s2">"All"</span> <span class="n">class</span><span class="o">=</span><span class="s2">"text-danger"</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"form-group"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">label</span> <span class="n">asp</span><span class="o">-</span><span class="k">for</span><span class="o">=</span><span class="s2">"Url"</span> <span class="n">class</span><span class="o">=</span><span class="s2">"col-md-2 control-label"</span><span class="o">&gt;&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"col-md-10"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nb">input</span> <span class="n">asp</span><span class="o">-</span><span class="k">for</span><span class="o">=</span><span class="s2">"Url"</span> <span class="n">class</span><span class="o">=</span><span class="s2">"form-control"</span> <span class="o">/&gt;</span>
+                <span class="o">&lt;</span><span class="n">span</span> <span class="n">asp</span><span class="o">-</span><span class="n">validation</span><span class="o">-</span><span class="k">for</span><span class="o">=</span><span class="s2">"Url"</span> <span class="n">class</span><span class="o">=</span><span class="s2">"text-danger"</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"form-group"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"col-md-offset-2 col-md-10"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"submit"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"Create"</span> <span class="n">class</span><span class="o">=</span><span class="s2">"btn btn-default"</span> <span class="o">/&gt;</span>
+            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</pre></div>
+</td></tr></tbody></table></div>
+</div>
+<div class="section" id="run-the-application">
+<h2><a class="toc-backref" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#id11">Run the application</a><a class="headerlink" href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html#run-the-application" title="Permalink to this headline">¶</a></h2>
+<p>You can now run the application to see it in action.</p>
+<blockquote>
+<div><ul class="simple">
+<li><span class="menuselection">Debug ‣ Start Without Debugging</span></li>
+<li>The application will build and open in a web browser</li>
+<li>Navigate to <strong>/Blogs</strong></li>
+<li>Click <strong>Create New</strong></li>
+<li>Enter a <strong>Url</strong> for the new blog and click <strong>Create</strong></li>
+</ul>
+</div></blockquote>
+<img alt="../../_images/create.png" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/create.png">
+<img alt="../../_images/index-existing-db.png" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/index-existing-db.png">
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="https://docs.efproject.net/en/latest/platforms/uwp/index.html" class="btn btn-neutral float-right" title="Getting Started on Universal Windows Platform (UWP)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="https://docs.efproject.net/en/latest/platforms/aspnetcore/new-db.html" class="btn btn-neutral" title="ASP.NET Core Application to New Database" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2016 Microsoft.
+      
+        <span class="commit">
+          Revision <code>2dc36cc6</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>.
+  Documentation licensed under <a href="https://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0</a>.
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://docs.efproject.net/en/latest/platforms/aspnetcore/existing-db.html">latest</a></dd>
+         </strong> 
+        
+        
+        <dd><a href="https://docs.efproject.net/en/staging/platforms/aspnetcore/existing-db.html">staging</a></dd>
+        
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="https://readthedocs.com/projects/aspnet-ef/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="https://readthedocs.com/projects/aspnet-ef/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="https://readthedocs.com/projects/aspnet-ef/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+
+
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/aspnet/EntityFramework.Docs/blob/master/docs/platforms/aspnetcore/existing-db.rst">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/aspnet/EntityFramework.Docs/edit/master/docs/platforms/aspnetcore/existing-db.rst">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+
+
+
+      <hr>
+      
+Documentation hosted by <a href="https://readthedocs.com/">Read the Docs</a>.
+
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/jquery-2.0.3.min.js.download"></script>
+      <script type="text/javascript" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/jquery-migrate-1.2.1.min.js.download"></script>
+      <script type="text/javascript" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/underscore.js.download"></script>
+      <script type="text/javascript" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/doctools.js.download"></script>
+      <script type="text/javascript" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/wedc.js.download"></script>
+      <script type="text/javascript" src="./ASP.NET Core Application to Existing Database (Database First) — Entity Framework Core 1.0.0 documentation_files/readthedocs-doc-embed.js.download"></script>
+
+  
+
+  
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+
+</body></html>

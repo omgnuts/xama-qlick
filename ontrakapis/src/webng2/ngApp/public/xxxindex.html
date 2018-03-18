@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javan</title>
+
+    <script type="text/javascript">
+        var site = site || {};
+    </script>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- endinject -->
+</head>
+<body ng-app="app">
+
+    <div ui-view="login"></div>
+    <div ui-view="main"></div>
+
+    <!-- bower:js -->
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/vendor/ngstorage/ngStorage.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/app/index.module.js"></script>
+    <script src="/app/services/auth.service.js"></script>
+    <script src="/app/main/main.controller.js"></script>
+    <script src="/app/login/login.controller.js"></script>
+    <script src="/app/components/worker/worker.controller.js"></script>
+    <script src="/app/components/student/student.controller.js"></script>
+    <script src="/app/index.route.js"></script>
+    <script src="/app/main/main.route.js"></script>
+    <script src="/app/login/login.route.js"></script>
+    <script src="/app/components/worker/worker.route.js"></script>
+    <script src="/app/components/student/student.route.js"></script>
+    <!-- endinject -->
+</body>
+</html>
