@@ -10,5 +10,6 @@ namespace Trak.Client.UI
 		public static Color ColorGreen = Color.FromHex("7ed321");
 		public static Color ColorGray = Color.FromHex("ababab");
 		public static Color ColorRed = Color.FromHex("e6112c");
+		public static Color ColorWhite = Color.FromHex("ffffff");
 	}
 }

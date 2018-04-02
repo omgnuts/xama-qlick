@@ -1,0 +1,72 @@
+#!/bin/bash
+
+DOCKER_IMAGE=microsoft/mssql-server-linux:2017-latest
+DOCKER_NAME=mssqldb
+PORT=1433
+STORE=~/docker/mssqldata
+STORE_CONTAINER=mssqldata
+MOUNT_PATH=/var/opt/mssql/data
+
+fn_create_docker_database()
+{		
+if $MACOSX; then
+	# Unable to mount only ext4 for docker. So cannot mount MacOSX directory directly
+	# Instead, create an empty docker container called mssqldata & then mount the volume
+	# there for persistency
+	# https://github.com/Microsoft/mssql-docker/issues/7#issuecomment-270840760
+	docker create -v /var/opt/$STORE_CONTAINER --name $STORE_CONTAINER $DOCKER_IMAGE
+
+	docker run -d \
+	 --volumes-from $STORE_CONTAINER \
+	 --env ACCEPT_EULA=Y \
+	 --env MSSQL_PID=Express \
+	 --env SA_PASSWORD=$PASSWORD \
+	 --publish $VMHOST_IP:$PORT \
+	 --name $DOCKER_NAME \
+	 $DOCKER_IMAGE 
+else
+
+	docker run -d \
+	 --volume $STORE:$MOUNT_PATH \
+	 --env ACCEPT_EULA=Y \
+	 --env MSSQL_PID=Express \
+	 --env SA_PASSWORD=$PASSWORD \
+	 --publish $VMHOST_IP:$PORT \
+	 --name $DOCKER_NAME \
+	 $DOCKER_IMAGE 
+fi  
+}
+
+fn_execute_sql_init() 
+{
+
+SQL_INIT="
+IF NOT EXISTS (SELECT 1 FROM sys.databases WHERE name = N'$DATABASE_NAME')
+CREATE DATABASE [$DATABASE_NAME];
+GO 
+
+USE [$DATABASE_NAME];
+GO
+
+CREATE LOGIN [$USERID] WITH PASSWORD = '$PASSWORD';
+CREATE USER [$USERID] FOR LOGIN [$USERID];
+GO 
+
+EXEC sp_addrolemember 'db_owner', '$USERID';  
+
+-- CREATE ROLE [dbrole] AUTHORIZATION [sa];
+-- ALTER ROLE [dbrole] ADD MEMBER [$USERID];
+-- GRANT EXECUTE TO [dbrole];
+
+"
+
+docker exec -i $NEW_CONTAINER bash <<EOF
+
+echo "$SQL_INIT" > ./init.sql
+
+/opt/mssql-tools/bin/sqlcmd -U SA -P $PASSWORD -i ./init.sql
+
+exit
+EOF
+
+}
