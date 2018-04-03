@@ -24,5 +24,20 @@
 		Broken = -1,
 		Open = 0,
 		Locked = 1
+
 	}
+
+	public static class EnumConvert
+	{
+		public static string BlockChainCode(BlockChained value)
+		{
+			switch (value)
+			{
+				case BlockChained.Locked: return "Secure";
+				case BlockChained.Broken: return "Broken";
+				default: return "-";
+			}
+		}
+	}
+
 }

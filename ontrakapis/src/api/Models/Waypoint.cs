@@ -21,7 +21,7 @@ namespace api.Models
         [JsonProperty("depart_dt")]
         public DateTime? DepartDT { get; set; }
 
-        [JsonProperty("arrive_dt")]
+        [JsonProperty("arrive_dt")] 
         public DateTime? ArriveDT { get; set; }
 
         [Required]

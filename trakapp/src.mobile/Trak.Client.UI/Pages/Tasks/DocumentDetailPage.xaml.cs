@@ -6,18 +6,18 @@ using Trak.Client.Portable;
 
 namespace Trak.Client.UI
 {
-	public partial class RouteDetailPage : ContentPage
+	public partial class DocumentDetailPage : ContentPage
 	{
-		public RouteItem Context
+		public Document Context
 		{
-			get { return BindingContext as RouteItem; }
+			get { return BindingContext as Document; }
 		}
 
-		public RouteDetailPage(RouteItem route)
+		public DocumentDetailPage(Document document)
 		{
             InitializeComponent();
 
-			BindingContext = route;
+			BindingContext = document;
 		}
 
 		protected override void OnAppearing()
@@ -38,12 +38,11 @@ namespace Trak.Client.UI
 
 			if (BindingContext != null)
 			{
-				//GenerateQrCode(Context.Hash());
+				GenerateQrCode(Context.Hash());
 
-				//AddDetail("Waypoint", Context.Title);
-				//if (Context.ArriveDT != null) AddDetail("Arrived", DateDisplay.FormatDate(Context.ArriveDT));
-				//if (Context.DepartDT != null) AddDetail("Departed", DateDisplay.FormatDate(Context.DepartDT));
-				//AddDetail("Blockchain", BlockChainCode(Context.BlockChain));
+				AddDetail("Document", Context.Title);
+				if (Context.Description != null) AddDetail("Description", Context.Description);
+				AddDetail("Blockchain", EnumConvert.BlockChainCode(Context.BlockChain));
 			}
 		}
 
@@ -55,16 +54,6 @@ namespace Trak.Client.UI
 			barcode.BarcodeOptions.Margin = 0;
 
 			barcode.BarcodeValue = "[Todo] Provide blockchain resource id / api for resource: " + value ;
-		}
-
-		string BlockChainCode(int value)
-		{
-			switch (value)
-			{
-				case 1: return "Secure";
-				case -1: return "Broken";
-				default: return "-";
-			}
 		}
 
 		static double lblFontSizeMedium = Device.GetNamedSize(NamedSize.Medium, typeof(Label));

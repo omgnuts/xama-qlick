@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Trak.Client.Portable;
+﻿using Trak.Client.Portable;
 using Xamarin.Forms;
 
 namespace Trak.Client.UI
@@ -68,15 +66,14 @@ namespace Trak.Client.UI
 		{
 			Document doc = (Document)e.Item;
 
-			//Navigation.PushAsync(new DocumentListPage(route));
-
-			//if (route.BlockChain != 0)
-			//{
-			//	Navigation.PushAsync(new RouteDetailPage(route));
-			//}
-			//else
-			//{
-			//             DisplayAlert("No Blockchain Information", "There are no blockchain details for this waypoint, as the cargo has not yet reached this location.", "OK");
+			if (doc.BlockChain != BlockChained.Open)
+			{
+				Navigation.PushAsync(new DocumentDetailPage(doc));
+			}
+			else
+			{
+				DisplayAlert("No Blockchain Information", "There is no blockchain details for this document, as the document has not been secure.", "OK");
+			}
 
 		}
 

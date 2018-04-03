@@ -66,8 +66,8 @@
       <DependentUpon>RouteCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RouteView.cs" />
-    <Compile Include="Pages\Tasks\RouteDetailPage.xaml.cs">
-      <DependentUpon>RouteDetailPage.xaml</DependentUpon>
+    <Compile Include="Pages\Tasks\DocumentDetailPage.xaml.cs">
+      <DependentUpon>DocumentDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\DateDisplay.cs" />
     <Compile Include="Authority\AuthorityManager.cs" />
@@ -117,7 +117,7 @@
     <EmbeddedResource Include="Cells\RouteCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Tasks\RouteDetailPage.xaml">
+    <EmbeddedResource Include="Pages\Tasks\DocumentDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\LoginPage.xaml">
