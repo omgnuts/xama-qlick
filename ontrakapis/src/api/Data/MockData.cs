@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Globalization;
 
 using api.Models;
@@ -34,6 +32,25 @@ namespace api.Data
             return Make4();
         }
 
+        public static List<Document> GenerateDocument(BlockChained bc = BlockChained.Locked, int count = 1, string prefix = "Document ") {
+
+            List<Document> docs = new List<Document>();
+
+            for (int c = 0; c < count; c++) {
+
+                Document doc = new Document
+                {
+                    Title = $"{prefix} - {c + 1}",
+                    Description = $"Description - eg. bill of lading for transport, customs, etc",
+                    BlockChain = bc
+                };
+
+                docs.Add(doc);
+            }
+
+            return docs;
+        }
+
         static Nuance Make3()
         {
             Nuance nuance = new Nuance
@@ -42,8 +59,8 @@ namespace api.Data
                 Description = "Shipment country, address, asset description, etc. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
                 Details = "Origin:Toronto Canada;Origin Date:28 March 2017;Destination:Singapore;Destination Date:5 April 2017",
                 ShipperName = "Ayoh Shipping Ltd",
-                CreatedDT = ParseDT("2017-03-28T09:52"),
-                DueDT = ParseDT("2017-04-05T08:30"),
+                CreatedDT = ParseDT("2018-03-28T09:52"),
+                DueDT = ParseDT("2018-04-05T08:30"),
                 Priority = Priority.Normal
             };
 
@@ -52,67 +69,66 @@ namespace api.Data
             {
                 Title = "ON, Canada",
                 ArriveDT = null,
-                DepartDT = ParseDT("2017-03-28T22:03"),
-                Status = WaypointStatus.Previous,
+                DepartDT = ParseDT("2018-03-28T22:03"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.AtStart,
                 Order = 0,
-                BlockChain = 1,
-
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "NY, USA",
-                ArriveDT = ParseDT("2017-03-29T12:57"),
-                DepartDT = ParseDT("2017-03-31T15:40"),
-                Status = WaypointStatus.Previous,
+                ArriveDT = ParseDT("2018-03-29T12:57"),
+                DepartDT = ParseDT("2018-03-31T15:40"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.Middle,
                 Order = 1,
-                BlockChain = 1
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "ZN, Africa",
-                ArriveDT = ParseDT("2017-04-01T19:33"),
-                DepartDT = ParseDT("2017-04-02T16:44"),
-                Status = WaypointStatus.Previous,
+                ArriveDT = ParseDT("2018-04-01T19:33"),
+                DepartDT = ParseDT("2018-04-02T16:44"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.Middle,
                 Order = 2,
-                BlockChain = -1
+                Documents = GenerateDocument(BlockChained.Broken),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "BOM, India",
-                ArriveDT = ParseDT("2017-04-04T18:57"),
-                DepartDT = ParseDT("2017-04-04T22:00"),
+                ArriveDT = ParseDT("2018-04-04T18:57"),
+                DepartDT = ParseDT("2018-04-04T22:00"),
                 Status = WaypointStatus.Current,
                 Path = WaypointPath.Middle,
                 Order = 3,
-                BlockChain = 1
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "KL, Malaysia",
-                ArriveDT = ParseDT("2017-04-05T14:30"),
-                DepartDT = ParseDT("2017-04-05T15:00"),
-                Status = WaypointStatus.Next,
+                ArriveDT = ParseDT("2018-04-05T14:30"),
+                DepartDT = ParseDT("2018-04-05T15:00"),
+                Status = WaypointStatus.Uncompleted,
                 Path = WaypointPath.Middle,
                 Order = 4,
-                BlockChain = 0
+                Documents = GenerateDocument(BlockChained.Open),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "SG, Singapore",
-                ArriveDT = ParseDT("2017-04-05T19:00"),
+                ArriveDT = ParseDT("2018-04-05T19:00"),
                 DepartDT = null,
-                Status = WaypointStatus.Next,
+                Status = WaypointStatus.Uncompleted,
                 Path = WaypointPath.AtEnd,
                 Order = 5,
-                BlockChain = 0
+                Documents = GenerateDocument(BlockChained.Open),
             });
 
             return nuance;
@@ -126,8 +142,8 @@ namespace api.Data
                 Description = "Shipment country, address, asset description, etc. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
                 Details = "Origin:London, UK;Origin Date:25 March 2017;Destination:Indonesia;Destination Date:4 April 2017",
                 ShipperName = "Alamak Shipping Pty Ltd",
-                CreatedDT = ParseDT("2017-03-25T19:45"),
-                DueDT = ParseDT("2017-04-04T11:00"),
+                CreatedDT = ParseDT("2018-03-25T19:45"),
+                DueDT = ParseDT("2018-04-04T11:00"),
                 Priority = Priority.High
             };
 
@@ -136,56 +152,55 @@ namespace api.Data
             {
                 Title = "ON, Canada",
                 ArriveDT = null,
-                DepartDT = ParseDT("2017-03-28T22:03"),
-                Status = WaypointStatus.Previous,
+                DepartDT = ParseDT("2018-03-28T22:03"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.AtStart,
                 Order = 0,
-                BlockChain = 1,
-
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "NY, USA",
-                ArriveDT = ParseDT("2017-03-29T12:57"),
-                DepartDT = ParseDT("2017-03-31T15:40"),
-                Status = WaypointStatus.Previous,
+                ArriveDT = ParseDT("2018-03-29T12:57"),
+                DepartDT = ParseDT("2018-03-31T15:40"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.Middle,
                 Order = 1,
-                BlockChain = 1
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "ZN, Africa",
-                ArriveDT = ParseDT("2017-04-01T19:33"),
-                DepartDT = ParseDT("2017-04-02T16:44"),
-                Status = WaypointStatus.Previous,
+                ArriveDT = ParseDT("2018-04-01T19:33"),
+                DepartDT = ParseDT("2018-04-02T16:44"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.Middle,
                 Order = 2,
-                BlockChain = -1
+                Documents = GenerateDocument(BlockChained.Broken),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "BOM, India",
-                ArriveDT = ParseDT("2017-04-04T18:57"),
-                DepartDT = ParseDT("2017-04-04T22:00"),
+                ArriveDT = ParseDT("2018-04-04T18:57"),
+                DepartDT = ParseDT("2018-04-04T22:00"),
                 Status = WaypointStatus.Current,
                 Path = WaypointPath.Middle,
                 Order = 3,
-                BlockChain = 1
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "SG, Singapore",
-                ArriveDT = ParseDT("2017-04-05T19:00"),
+                ArriveDT = ParseDT("2018-04-05T19:00"),
                 DepartDT = null,
-                Status = WaypointStatus.Next,
+                Status = WaypointStatus.Uncompleted,
                 Path = WaypointPath.AtEnd,
                 Order = 4,
-                BlockChain = 0
+                Documents = GenerateDocument(BlockChained.Open),
             });
 
             return nuance;
@@ -199,8 +214,8 @@ namespace api.Data
                 Description = "Shipment country, address, asset description, etc. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
                 Details = "Origin:Shenzhen, China;Origin Date:20 March 2017;Destination:New York, USA;Destination Date:30 March 2017",
                 ShipperName = "Super Transport Ltd",
-                CreatedDT = ParseDT("2017-03-20T19:45"),
-                DueDT = ParseDT("2017-03-30T19:00"),
+                CreatedDT = ParseDT("2018-03-20T19:45"),
+                DueDT = ParseDT("2018-03-30T19:00"),
                 Priority = Priority.Normal
             };
 
@@ -209,79 +224,78 @@ namespace api.Data
             {
                 Title = "ON, Canada",
                 ArriveDT = null,
-                DepartDT = ParseDT("2017-03-28T22:03"),
-                Status = WaypointStatus.Previous,
+                DepartDT = ParseDT("2018-03-28T22:03"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.AtStart,
                 Order = 0,
-                BlockChain = 1,
-
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "NY, USA",
-                ArriveDT = ParseDT("2017-03-29T12:57"),
-                DepartDT = ParseDT("2017-03-31T15:40"),
-                Status = WaypointStatus.Previous,
+                ArriveDT = ParseDT("2018-03-29T12:57"),
+                DepartDT = ParseDT("2018-03-31T15:40"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.Middle,
                 Order = 1,
-                BlockChain = 1
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "ZN, Africa",
-                ArriveDT = ParseDT("2017-04-01T19:33"),
-                DepartDT = ParseDT("2017-04-02T16:44"),
-                Status = WaypointStatus.Previous,
+                ArriveDT = ParseDT("2018-04-01T19:33"),
+                DepartDT = ParseDT("2018-04-02T16:44"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.Middle,
                 Order = 2,
-                BlockChain = -1
+                Documents = GenerateDocument(BlockChained.Broken),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "BOM, India",
-                ArriveDT = ParseDT("2017-04-04T18:57"),
-                DepartDT = ParseDT("2017-04-04T22:00"),
+                ArriveDT = ParseDT("2018-04-04T18:57"),
+                DepartDT = ParseDT("2018-04-04T22:00"),
                 Status = WaypointStatus.Current,
                 Path = WaypointPath.Middle,
                 Order = 3,
-                BlockChain = 1
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "KL, Malaysia",
-                ArriveDT = ParseDT("2017-04-05T14:30"),
-                DepartDT = ParseDT("2017-04-05T15:00"),
-                Status = WaypointStatus.Next,
+                ArriveDT = ParseDT("2018-04-05T14:30"),
+                DepartDT = ParseDT("2018-04-05T15:00"),
+                Status = WaypointStatus.Uncompleted,
                 Path = WaypointPath.Middle,
                 Order = 4,
-                BlockChain = 0
+                Documents = GenerateDocument(BlockChained.Open),
             });
 
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "IN, Indonesia",
-                ArriveDT = ParseDT("2017-04-07T11:30"),
-                DepartDT = ParseDT("2017-04-08T12:00"),
-                Status = WaypointStatus.Next,
+                ArriveDT = ParseDT("2018-04-07T11:30"),
+                DepartDT = ParseDT("2018-04-08T12:00"),
+                Status = WaypointStatus.Uncompleted,
                 Path = WaypointPath.Middle,
                 Order = 5,
-                BlockChain = 0
+                Documents = GenerateDocument(BlockChained.Open),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "NY, USA",
-                ArriveDT = ParseDT("2017-04-09T19:00"),
+                ArriveDT = ParseDT("2018-04-09T19:00"),
                 DepartDT = null,
-                Status = WaypointStatus.Next,
+                Status = WaypointStatus.Uncompleted,
                 Path = WaypointPath.AtEnd,
                 Order = 6,
-                BlockChain = 0
+                Documents = GenerateDocument(BlockChained.Open),
             });
 
             return nuance;
@@ -295,8 +309,8 @@ namespace api.Data
                 Description = "(New) Shipment country, address, asset description, etc. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
                 Details = "Origin:Shenzhen, China;Origin Date:20 March 2017;Destination:New York, USA;Destination Date:30 March 2017",
                 ShipperName = "SuperX Transport Ltd",
-                CreatedDT = ParseDT("2017-03-20T19:45"),
-                DueDT = ParseDT("2017-03-30T19:00"),
+                CreatedDT = ParseDT("2018-03-20T19:45"),
+                DueDT = ParseDT("2018-03-30T19:00"),
                 Priority = Priority.Normal
             };
 
@@ -305,79 +319,78 @@ namespace api.Data
             {
                 Title = "ON, Canada",
                 ArriveDT = null,
-                DepartDT = ParseDT("2017-03-28T22:03"),
-                Status = WaypointStatus.Previous,
+                DepartDT = ParseDT("2018-03-28T22:03"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.AtStart,
                 Order = 0,
-                BlockChain = 1,
-
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "NY, USA",
-                ArriveDT = ParseDT("2017-03-29T12:57"),
-                DepartDT = ParseDT("2017-03-31T15:40"),
-                Status = WaypointStatus.Previous,
+                ArriveDT = ParseDT("2018-03-29T12:57"),
+                DepartDT = ParseDT("2018-03-31T15:40"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.Middle,
                 Order = 1,
-                BlockChain = 1
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "ZN, Africa",
-                ArriveDT = ParseDT("2017-04-01T19:33"),
-                DepartDT = ParseDT("2017-04-02T16:44"),
-                Status = WaypointStatus.Previous,
+                ArriveDT = ParseDT("2018-04-01T19:33"),
+                DepartDT = ParseDT("2018-04-02T16:44"),
+                Status = WaypointStatus.Completed,
                 Path = WaypointPath.Middle,
                 Order = 2,
-                BlockChain = -1
+                Documents = GenerateDocument(BlockChained.Broken),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "BOM, India",
-                ArriveDT = ParseDT("2017-04-04T18:57"),
-                DepartDT = ParseDT("2017-04-04T22:00"),
+                ArriveDT = ParseDT("2018-04-04T18:57"),
+                DepartDT = ParseDT("2018-04-04T22:00"),
                 Status = WaypointStatus.Current,
                 Path = WaypointPath.Middle,
                 Order = 3,
-                BlockChain = 1
+                Documents = GenerateDocument(),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "KL, Malaysia",
-                ArriveDT = ParseDT("2017-04-05T14:30"),
-                DepartDT = ParseDT("2017-04-05T15:00"),
-                Status = WaypointStatus.Next,
+                ArriveDT = ParseDT("2018-04-05T14:30"),
+                DepartDT = ParseDT("2018-04-05T15:00"),
+                Status = WaypointStatus.Uncompleted,
                 Path = WaypointPath.Middle,
                 Order = 4,
-                BlockChain = 0
+                Documents = GenerateDocument(BlockChained.Open),
             });
 
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "IN, Indonesia",
-                ArriveDT = ParseDT("2017-04-07T11:30"),
-                DepartDT = ParseDT("2017-04-08T12:00"),
-                Status = WaypointStatus.Next,
+                ArriveDT = ParseDT("2018-04-07T11:30"),
+                DepartDT = ParseDT("2018-04-08T12:00"),
+                Status = WaypointStatus.Uncompleted,
                 Path = WaypointPath.Middle,
                 Order = 5,
-                BlockChain = 0
+                Documents = GenerateDocument(BlockChained.Open),
             });
 
             nuance.Waypoints.Add(new Waypoint
             {
                 Title = "NY, USA",
-                ArriveDT = ParseDT("2017-04-09T19:00"),
+                ArriveDT = ParseDT("2018-04-09T19:00"),
                 DepartDT = null,
-                Status = WaypointStatus.Next,
+                Status = WaypointStatus.Uncompleted,
                 Path = WaypointPath.AtEnd,
                 Order = 6,
-                BlockChain = 0
+                Documents = GenerateDocument(BlockChained.Open),
             });
 
             return nuance;

@@ -153,7 +153,7 @@ namespace Trak.Client.UI
 			if (routeItems != null)
 			{
 				List<RouteItem> items = new List<RouteItem>(routeItems);
-				items.Sort((x, y) => y.Order.CompareTo(x.Order));
+				items.Sort((x, y) => x.Order.CompareTo(y.Order));
 				listView.ItemsSource = items;
 				listView.ItemSelected += OnItemSelectedListener;
 				listView.ItemTapped += OnItemTappedListener;
@@ -169,14 +169,17 @@ namespace Trak.Client.UI
 		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
 		{
 			RouteItem route = (RouteItem)e.Item;
-			if (route.BlockChain != 0)
-			{
-				Navigation.PushAsync(new RouteDetailPage(route));
-			}
-			else
-			{
-                DisplayAlert("No Blockchain Information", "There are no blockchain details for this waypoint, as the cargo has not yet reached this location.", "OK");
-			}
+
+			//Navigation.PushAsync(new RouteDetailPage(route));
+
+			//if (route.BlockChain != 0)
+			//{
+			//	Navigation.PushAsync(new RouteDetailPage(route));
+			//}
+			//else
+			//{
+   //             DisplayAlert("No Blockchain Information", "There are no blockchain details for this waypoint, as the cargo has not yet reached this location.", "OK");
+			//}
 		}
 	}
 

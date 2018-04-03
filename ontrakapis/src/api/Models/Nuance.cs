@@ -19,7 +19,7 @@ namespace api.Models
         public string Title { get; set; }
 
         [Required]
-        [JsonProperty("descr")]
+        [JsonProperty("description")]
         public string Description { get; set; }
 
         [Required]

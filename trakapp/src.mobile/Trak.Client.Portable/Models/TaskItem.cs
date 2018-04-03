@@ -11,7 +11,7 @@ namespace Trak.Client.Portable
 		[JsonProperty("title")]
 		public string Title { get; set; }
 
-		[JsonProperty("descr")]
+		[JsonProperty("description")]
 		public string Description { get; set; }
 
 		[JsonProperty("shipper_name")]

@@ -73,7 +73,7 @@ namespace Trak.iOS.Renderers
 			{
 				nfloat left = (Bounds.Width - barWidth) * 0.5f;
 				nfloat height = (Rvalues.Point == 0) ? Bounds.Height : Bounds.Height * 0.5f;
-				nfloat top = (Rvalues.Point <= 0) ? 0 : Bounds.Height * 0.5f;
+				nfloat top = (Rvalues.Point >= 0) ? 0 : Bounds.Height * 0.5f;
 
 				nfloat circle = (Rvalues.Point == 0) ? circleSmall : circleLarge;
 				nfloat cLeft = (Bounds.Width - circle) * 0.5f;

@@ -6,6 +6,7 @@ using api.Controllers.Common;
 using Newtonsoft.Json;
 using api.Data;
 using System;
+using api.Models.Definitions;
 
 namespace api.Controllers
 {
@@ -59,12 +60,12 @@ namespace api.Controllers
 
                 if (wp.Status == 0 && c < nuance.Waypoints.Count - 1)
                 {
-                    wp.Status = Models.Definitions.WaypointStatus.Previous;
+                    wp.Status = WaypointStatus.Completed;
                     if (c < nuance.Waypoints.Count - 1)
                     {
                         Waypoint next = nuance.Waypoints[c + 1];
-                        next.Status = Models.Definitions.WaypointStatus.Current;
-                        next.BlockChain = 1;
+                        next.Status = WaypointStatus.Current;
+                        //next.BlockChain = BlockChained.Locked;
                     }
 
                     return nuance;

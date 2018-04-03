@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Newtonsoft.Json;
@@ -23,17 +24,21 @@ namespace api.Models
         [JsonProperty("arrive_dt")]
         public DateTime? ArriveDT { get; set; }
 
+        [Required]
         [JsonProperty("order")]
         public int Order { get; set; }
 
+        [Required]
         [JsonProperty("status")]
         public WaypointStatus Status { get; set; }
 
+        [Required]
         [JsonProperty("path")]
         public WaypointPath Path { get; set; }
 
-        [JsonProperty("blockchain")]
-        public int BlockChain { get; set; }
+        [Required]
+        [JsonProperty("documents")]
+        public IList<Document> Documents { get; set; }
         
     }
 }

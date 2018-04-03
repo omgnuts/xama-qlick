@@ -38,12 +38,12 @@ namespace Trak.Client.UI
 
 			if (BindingContext != null)
 			{
-				GenerateQrCode(Context.Hash());
+				//GenerateQrCode(Context.Hash());
 
-				AddDetail("Waypoint", Context.Title);
-				if (Context.ArriveDT != null) AddDetail("Arrived", DateDisplay.FormatDate(Context.ArriveDT));
-				if (Context.DepartDT != null) AddDetail("Departed", DateDisplay.FormatDate(Context.DepartDT));
-				AddDetail("Blockchain", BlockChainCode(Context.BlockChain));
+				//AddDetail("Waypoint", Context.Title);
+				//if (Context.ArriveDT != null) AddDetail("Arrived", DateDisplay.FormatDate(Context.ArriveDT));
+				//if (Context.DepartDT != null) AddDetail("Departed", DateDisplay.FormatDate(Context.DepartDT));
+				//AddDetail("Blockchain", BlockChainCode(Context.BlockChain));
 			}
 		}
 

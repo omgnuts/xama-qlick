@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace api.Models.Definitions
+﻿namespace api.Models.Definitions
 {
     public enum Priority
     {
@@ -12,9 +7,9 @@ namespace api.Models.Definitions
 
     public enum WaypointStatus
     {
-        Previous = -1,
+        Completed = -1,
         Current = 0,
-        Next = 1
+        Uncompleted = 1
     }
 
     public enum WaypointPath
@@ -22,6 +17,13 @@ namespace api.Models.Definitions
         AtStart = -1,
         Middle = 0,
         AtEnd = 1
+    }
+
+    public enum BlockChained
+    {
+        Broken = -1,
+        Open = 0,
+        Locked = 1
     }
 
 }

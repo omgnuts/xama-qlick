@@ -1,5 +1,6 @@
 ﻿using System;
 
+using Trak.Client.Portable;
 using Xamarin.Forms;
 
 namespace Trak.Client.UI.Views
@@ -18,8 +19,8 @@ namespace Trak.Client.UI.Views
 
 		public class RouteValues
 		{
-			public int Status; // current path
-			public int Point;
+			public WaypointStatus Status; // current path
+			public WaypointPath Point;
 
 			public bool IsEqual(RouteValues rv)
 			{

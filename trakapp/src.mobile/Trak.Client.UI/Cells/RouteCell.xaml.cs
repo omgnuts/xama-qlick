@@ -29,13 +29,18 @@ namespace Trak.Client.UI
 			if (BindingContext != null && Self != null)
 			{
 				lblTitle.Text = Self.Title;
-				lblDepartDT.Text = DateDisplay.FormatDate(Self.DepartDT);
-				lblArriveDT.Text = DateDisplay.FormatDate(Self.ArriveDT);
 
-				if (Self.BlockChain != 0)
-				{
-					imgLock.Source = (Self.BlockChain > 0) ? "lock-secure.png" : "lock-broke.png";
-				}
+				string depart = DateDisplay.FormatDate(Self.DepartDT);
+				string arrive = DateDisplay.FormatDate(Self.ArriveDT);
+
+				lblDepartDT.Text = (string.IsNullOrEmpty(depart)) ? "Destination" : "D: " + depart;
+				lblArriveDT.Text = (string.IsNullOrEmpty(arrive)) ? "Origin" : "A: " + arrive;
+
+
+				//if (Self.BlockChain != 0)
+				//{
+				//	imgLock.Source = (Self.BlockChain > 0) ? "lock-secure.png" : "lock-broke.png";
+				//}
 
 				roView.Route = new Views.RouteView.RouteValues
 				{
@@ -44,12 +49,6 @@ namespace Trak.Client.UI
 				};
 			}
 		}
-
-		//string formatDate(DateTime? dt)
-		//{
-		//	if (!dt.HasValue) return "";
-		//	return dt.Value.ToString("HH:mm") + " Hrs on " + dt.Value.ToString("d MMM yyyy");
-		//}
 
 	}
 }

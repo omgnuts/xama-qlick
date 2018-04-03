@@ -21,6 +21,7 @@ namespace api.Resources
             return await context.Nuances.AsNoTracking()
                 .OrderByDescending(n => n.NuanceID)
                 .Include(n => n.Waypoints)
+                    .ThenInclude(ww => ww.Documents)
                 .ToListAsync();
 
             //IEnumerable<Nuance> nuances = await context.Nuances.AsNoTracking()
@@ -38,6 +39,7 @@ namespace api.Resources
         {
             Nuance nuance = await context.Nuances
                 .Include(n => n.Waypoints)
+                   .ThenInclude(ww => ww.Documents)
                 .OrderByDescending(n => n.NuanceID)
                 .Take(1)
                 .SingleOrDefaultAsync();
