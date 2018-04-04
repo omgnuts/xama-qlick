@@ -32,7 +32,7 @@ namespace api.Data
             return Make4();
         }
 
-        public static List<Document> GenerateDocument(BlockChained bc = BlockChained.Locked, string prefix = "Document ", int count = 5)
+        public static List<Document> GenerateDocument(BlockChained bc = BlockChained.Locked, string prefix = "Bill of Lading", int count = 4)
         {
 
             List<Document> docs = new List<Document>();
@@ -307,7 +307,7 @@ namespace api.Data
         {
             Nuance nuance = new Nuance
             {
-                Title = "#62004143230670",
+                Title = "#demo3",
                 Description = "(New) Shipment country, address, asset description, etc. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
                 Details = "Origin:Shenzhen, China;Origin Date:20 March 2018;Destination:New York, USA;Destination Date:30 March 2018",
                 ShipperName = "SuperX Transport Ltd",
@@ -319,7 +319,7 @@ namespace api.Data
             nuance.Waypoints = new List<Waypoint>();
             nuance.Waypoints.Add(new Waypoint
             {
-                Title = "ON, Canada",
+                Title = "A.Shipping",
                 ArriveDT = null,
                 DepartDT = ParseDT("2018-03-28T22:03"),
                 Status = WaypointStatus.Completed,
@@ -330,7 +330,7 @@ namespace api.Data
 
             nuance.Waypoints.Add(new Waypoint
             {
-                Title = "NY, USA",
+                Title = "B.Cargo Transport",
                 ArriveDT = ParseDT("2018-03-29T12:57"),
                 DepartDT = ParseDT("2018-03-31T15:40"),
                 Status = WaypointStatus.Completed,
@@ -341,7 +341,7 @@ namespace api.Data
 
             nuance.Waypoints.Add(new Waypoint
             {
-                Title = "ZN, Africa",
+                Title = "C.Warehouse Storage",
                 ArriveDT = ParseDT("2018-04-01T19:33"),
                 DepartDT = ParseDT("2018-04-02T16:44"),
                 Status = WaypointStatus.Completed,
@@ -352,7 +352,7 @@ namespace api.Data
 
             nuance.Waypoints.Add(new Waypoint
             {
-                Title = "BOM, India",
+                Title = "Buyer Claims Cargo",
                 ArriveDT = ParseDT("2018-04-04T18:57"),
                 DepartDT = ParseDT("2018-04-04T22:00"),
                 Status = WaypointStatus.Current,
@@ -361,39 +361,6 @@ namespace api.Data
                 Documents = GenerateDocument(),
             });
 
-            nuance.Waypoints.Add(new Waypoint
-            {
-                Title = "KL, Malaysia",
-                ArriveDT = ParseDT("2018-04-05T14:30"),
-                DepartDT = ParseDT("2018-04-05T15:00"),
-                Status = WaypointStatus.Uncompleted,
-                Path = WaypointPath.Middle,
-                Order = 4,
-                Documents = GenerateDocument(BlockChained.Open),
-            });
-
-
-            nuance.Waypoints.Add(new Waypoint
-            {
-                Title = "IN, Indonesia",
-                ArriveDT = ParseDT("2018-04-07T11:30"),
-                DepartDT = ParseDT("2018-04-08T12:00"),
-                Status = WaypointStatus.Uncompleted,
-                Path = WaypointPath.Middle,
-                Order = 5,
-                Documents = GenerateDocument(BlockChained.Open),
-            });
-
-            nuance.Waypoints.Add(new Waypoint
-            {
-                Title = "NY, USA",
-                ArriveDT = ParseDT("2018-04-09T19:00"),
-                DepartDT = null,
-                Status = WaypointStatus.Uncompleted,
-                Path = WaypointPath.AtEnd,
-                Order = 6,
-                Documents = GenerateDocument(BlockChained.Open),
-            });
 
             return nuance;
         }
