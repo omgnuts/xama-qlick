@@ -73,6 +73,6 @@
 	<key>CFBundleName</key>
 	<string>1Citadel</string>
 	<key>CFBundleIdentifier</key>
-	<string>sg.com.gic.tdre.Qlick.dev</string>
+	<string>sg.com.gic.tdre.Qlick.uat</string>
 </dict>
 </plist>

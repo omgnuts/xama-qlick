@@ -25,6 +25,7 @@
 							FontSize="Large"
 							HorizontalOptions="FillAndExpand" 
 							HorizontalTextAlignment="Center"
+							Text="demo"
 							HeightRequest="50"/>
 		          	</StackLayout>
 
@@ -37,6 +38,7 @@
 							FontSize="Large"
 							HorizontalOptions="FillAndExpand" 
 							HorizontalTextAlignment="Center"
+							Text="demo"
 							HeightRequest="50"
 						/>
 		          	</StackLayout>

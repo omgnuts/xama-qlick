@@ -23,8 +23,8 @@ namespace Trak.Client.Portable
 			}
 		}
 
-		const string Q_BASE = "http://localhost:5000";
-		//static string Q_BASE = "http://rebot.chat:8000";
+		//const string Q_BASE = "http://loca/lhost:5000";
+		const string Q_BASE = "http://rebot.chat:8000";
 		const string Q_ALLTASKS_GET = "api/v1/nuances"; 
 		const string Q_RESET = "api/v1/demo/reset";
 		const string Q_ADDSHIPMENT = "api/v1/demo/add-shipment";
