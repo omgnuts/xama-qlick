@@ -1,0 +1,14 @@
+#!/bin/bash
+
+basefile=$1
+mkdir -p $basefile.iconset
+
+sizes=( 1024 512 256 180 167 152 144 128 120 114 100 87 80 76 72 64 58 57 50 40 32 29 16 )
+
+for size in "${sizes[@]}"
+do
+	cp $basefile $basefile.iconset/$size.png
+	sips --resampleHeightWidth $size $size $basefile.iconset/$size.png &>/dev/null
+done
+
+open .

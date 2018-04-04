@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Trak.Client.UI.TasksPage"
+		xmlns:local ="clr-namespace:Trak.Client.UI" 
+		xmlns:controls="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions">
+	<StackLayout x:Name="container" Padding="0,20,0,0">
+
+		<controls:SegmentedControl x:Name="segmentControl" Margin="10,10,10,10" IsEnabled="true" ValueChanged="OnSegmentControlSelected">
+           <controls:SegmentedControl.Children>
+               <controls:SegmentedControlOption Text="Priority" />
+               <controls:SegmentedControlOption Text="In Transit" />
+				<controls:SegmentedControlOption Text="Done (1 week ago)" />
+           </controls:SegmentedControl.Children>
+        </controls:SegmentedControl>
+
+		<ListView x:Name="listView" 
+				IsPullToRefreshEnabled="True"
+				ItemsSource="{Binding Items}"
+           		RefreshCommand="{Binding RefreshCommand}"
+           		IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
+				HasUnevenRows="true" SeparatorVisibility="{Binding HasSeparator, Mode=OneWay}" SeparatorColor="Silver">
+		    <ListView.ItemTemplate>
+		        <DataTemplate>
+		            <local:TaskCell Self="{Binding .}" />
+		        </DataTemplate>
+		    </ListView.ItemTemplate>
+		</ListView>
+		
+	</StackLayout>
+
+
+</ContentPage>
