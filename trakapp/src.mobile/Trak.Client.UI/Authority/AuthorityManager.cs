@@ -1,4 +1,5 @@
-﻿using Trak.Client.Portable;
+﻿using System.Threading.Tasks;
+using Trak.Client.Portable;
 using Xamarin.Forms;
 
 namespace Trak.Client.UI
@@ -64,7 +65,17 @@ namespace Trak.Client.UI
 			return null;
 		}
 
-		public static bool Save(CredentialToken token)
+		public async Task<bool> RequestAuthenticationToken(CredentialRequest request)
+		{
+			CredentialToken token = await TrakAPI.Instance.GetAuthenticationTokenAsync(request);
+			if (token != null)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		public bool Save(CredentialToken token)
 		{
 			bool success = false;
 

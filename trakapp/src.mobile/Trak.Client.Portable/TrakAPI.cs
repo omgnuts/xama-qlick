@@ -4,7 +4,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
-
+using System.Text;
 
 namespace Trak.Client.Portable
 {
@@ -23,13 +23,16 @@ namespace Trak.Client.Portable
 			}
 		}
 
-		static string Q_BASE = "http://localhost:5000";
+		const string Q_BASE = "http://localhost:5000";
 		//static string Q_BASE = "http://rebot.chat:8000";
-		static string Q_ALLTASKS_GET = "api/v1/nuances"; 
+		const string Q_ALLTASKS_GET = "api/v1/nuances"; 
+		const string Q_RESET = "api/v1/demo/reset";
+		const string Q_ADDSHIPMENT = "api/v1/demo/add-shipment";
+		const string Q_TRIGGERBC = "api/v1/demo/trigger-blockchain";
 
-		static string Q_RESET = "api/v1/demo/reset";
-		static string Q_ADDSHIPMENT = "api/v1/demo/add-shipment";
-		static string Q_TRIGGERBC = "api/v1/demo/trigger-blockchain";
+
+		const string BC_BASE = "https://1citadelidms-dev.azurewebsites.net";
+		const string BC_TOKEN = "Authentication/RequestImpersonatedToken";
 
 		//PJAY PC
 		//static string Q_BASE = "http://192.168.100.214:4000";
@@ -67,10 +70,11 @@ namespace Trak.Client.Portable
 		//	return null;
 		//}
 
-		HttpClient CreateHttpClient()
+		HttpClient CreateHttpClient(string uri = Q_BASE)
 		{
 			HttpClient client = new HttpClient();
-			client.BaseAddress = new Uri(Q_BASE);
+			client.BaseAddress = new Uri(uri);
+			//client.DefaultRequestHeaders.Add("Content-Type", "application/json; charset=utf-8");
 			return client;
 		}
 
@@ -103,5 +107,24 @@ namespace Trak.Client.Portable
 
 			return 1;
 		}
+
+
+		public async Task<CredentialToken> GetAuthenticationTokenAsync(CredentialRequest request)
+		{
+			var data = JsonConvert.SerializeObject(request);
+			var rqContent = new StringContent(data, Encoding.UTF8, "application/json");
+
+			HttpResponseMessage resp = await CreateHttpClient(BC_BASE).PostAsync(BC_TOKEN, rqContent);
+
+			if (resp.IsSuccessStatusCode)
+			{
+				var content = await resp.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<CredentialToken>(content);
+			}
+
+			return null;
+		}
+
+
 	}
 }

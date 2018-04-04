@@ -42,6 +42,7 @@
     <Compile Include="Auth\CredentialToken.cs" />
     <Compile Include="Models\Definitions.cs" />
     <Compile Include="Models\Document.cs" />
+    <Compile Include="Auth\CredentialRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Xama\" />

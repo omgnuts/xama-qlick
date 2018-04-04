@@ -1,5 +1,6 @@
 ﻿
 using System;
+using Trak.Client.Portable;
 using Xamarin.Forms;
 
 namespace Trak.Client.UI
@@ -27,14 +28,18 @@ namespace Trak.Client.UI
 
 		async void OnLoginClick(object sender, EventArgs e)
 		{
-			await Navigation.PopModalAsync();
-			//if (usernameEntry.Text != null && passwordEntry.Text != null)
-			//{
-			//	var user = new NTUser(usernameEntry.Text.Trim(), passwordEntry.Text.Trim());
-			//	var validateUser = validate(user.UserId, user.Password);
+			CredentialRequest request = new CredentialRequest
+			{
+				ImpersonateUsername = "javantan",
+				Username = "javantan",
+				Password = "p75xe80wh$URdD*ClS16",
+			};
 
-			//	await Navigation.PopModalAsync();
-			//}
+			if (await AuthorityManager.Instance.RequestAuthenticationToken(request))
+			{
+				await Navigation.PopModalAsync();
+			}
+
 		}
 
 		//private bool validate(string username, string password)
