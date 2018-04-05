@@ -1,0 +1,19 @@
+/Core/List/demo1/demo3/stage
+
+
+GET /Core/List/{database}/{schema}/{table}
+/Core/List/demo1/master/shipment
++ simulate status 
+
+Shipment ref no. 
+Created on 
+Created by 
+Simulate - Status / total 
+
+
+GET /Core/Get/{database}/{schema}/{table}/Info (no need for now)
+
+GET /Core/Get/{database}/{schema}/{table}/TotalWorkflow — Total workflow items that will be required (to hardcode for now)
+
+GET /Core/Get/{database}/{schema}/{table}/Stage — StageItems that have been completed
+

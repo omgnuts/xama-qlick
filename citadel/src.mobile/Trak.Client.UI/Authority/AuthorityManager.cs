@@ -81,7 +81,7 @@ namespace Trak.Client.UI
 
 			if (token != null)
 			{
-				success = DependencyService.Get<IAuthentication>().StoreInKeychain("credentials", token.Dehydrate);
+                success = DependencyService.Get<IAuthentication>().StoreInKeychain("credentials", token.Dehydrate);
 			}
 			else
 			{

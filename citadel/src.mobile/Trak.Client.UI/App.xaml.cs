@@ -17,7 +17,6 @@ namespace Trak.Client.UI
 			{
 				BarTextColor = Color.Black
 			};
-			//_navigationPage.SetValue(NavigationPage.BarTextColorProperty, Color.White);
 		}
 
 		protected override void OnStart()
@@ -25,7 +24,7 @@ namespace Trak.Client.UI
 			// Handle when your app starts
             Subscribe();
 
-			AuthorityManager.Instance.IsValidCredentials();
+            AuthorityManager.Instance.InvalidateCredentials();
 
 		}
 

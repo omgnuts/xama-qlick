@@ -1,11 +1,10 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Trak.Client.Portable.Common;
 using Xamarin.Forms;
-             
+
 namespace Trak.Client.Portable
 {
     public class TaskItemViewModel : INotifyPropertyChanged
@@ -66,6 +65,7 @@ namespace Trak.Client.Portable
 		{
 			if (Items.Contains(item))
 			{
+                // perform an await action on server
 				Items.Remove(item);
 			}
 		}
