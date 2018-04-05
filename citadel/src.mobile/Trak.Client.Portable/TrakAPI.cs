@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Text;
+using Trak.Client.Portable.Models;
 
 namespace Trak.Client.Portable
 {
@@ -126,6 +127,20 @@ namespace Trak.Client.Portable
 
 			return null;
 		}
+
+
+        public async Task<List<Shipment>> GetShipmentsAsync() {
+            
+        }
+
+        HttpClient CreateAuthHttpClient()
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(BC_BASE);
+
+            client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token.AccessToken);
+            return client;
+        }
 
 		public async Task<bool> CoreCreate(BlockSchema schema, CredentialToken token)
 		{

@@ -1,23 +1,36 @@
 ﻿<Properties StartupConfiguration="{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.Client.UI/Pages/LoginPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.Client.UI/Authority/AuthorityManager.cs">
     <Files>
-      <File FileName="Trak.Client.Portable/TrakAPI.cs" Line="114" Column="38" />
-      <File FileName="Trak.Client.Portable/Models/Definitions.cs" Line="14" Column="5" />
-      <File FileName="Trak.Client.Portable/Models/SearchItem.cs" Line="16" Column="3" />
-      <File FileName="Trak.Client.Portable/Models/TaskItemViewModel.cs" Line="57" Column="18" />
-      <File FileName="Trak.Client.Portable/Models/TaskItem.cs" Line="32" Column="14" />
-      <File FileName="Trak.Client.Portable/Common/SimpleObservableList.cs" Line="6" Column="38" />
-      <File FileName="Trak.iOS/Info.plist" />
-      <File FileName="Trak.Client.UI/Pages/LoginPage.cs" Line="31" Column="27" />
-      <File FileName="Trak.Client.UI/Authority/AuthorityManager.cs" Line="75" Column="17" />
-      <File FileName="Trak.Client.UI/App.xaml.cs" Line="10" Column="28" />
-      <File FileName="Trak.iOS/Contracts/Authentication_IOS.cs" Line="12" Column="30" />
-      <File FileName="Trak.iOS/Entitlements.plist" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/TasksPage.xaml" Line="34" Column="1" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/TasksPage.xaml.cs" Line="9" Column="46" />
-      <File FileName="packages/Xamarin.Forms.2.5.1.444934/build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.targets" Line="104" Column="17" />
-      <File FileName="Trak.Client.UI/Pages/LoginPage.xaml" Line="22" Column="44" />
+      <File FileName="Trak.Client.Portable/Models/Shipment.cs" Line="34" Column="17" />
+      <File FileName="Trak.Client.Portable/Models/MockFactory.cs" Line="1" Column="1" />
+      <File FileName="Trak.Client.Portable/Models/Document.cs" Line="8" Column="38" />
+      <File FileName="Trak.Client.Portable/Models/SearchItem.cs" Line="12" Column="4" />
+      <File FileName="Trak.Client.Portable/Models/TaskItem.cs" Line="21" Column="28" />
+      <File FileName="Trak.Client.Portable/Models/TaskItemViewModel.cs" Line="53" Column="42" />
+      <File FileName="Trak.Client.Portable/TrakAPI.cs" Line="9" Column="1" />
+      <File FileName="Trak.Client.UI/Styles.cs" Line="3" Column="25" />
+      <File FileName="Trak.Client.UI/Authority/AuthorityManager.cs" Line="17" Column="21" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Trak" expanded="True">
+            <Node name="Shared" expanded="True">
+              <Node name="Trak.Client.Portable" expanded="True">
+                <Node name="Models" expanded="True" />
+              </Node>
+              <Node name="Trak.Client.UI" expanded="True">
+                <Node name="References" expanded="True" />
+                <Node name="Authority" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Targets" expanded="True">
+              <Node name="Trak.iOS" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
