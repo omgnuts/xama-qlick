@@ -9,6 +9,10 @@ namespace Trak.Client.Portable.Models
         public string Id { get; set; }
         // c46185221cf4c1679c736250a95503f1980df42ee3a3b70b3b7c32849165da37
 
+        [JsonProperty("timestamp")]
+        public DateTime? TxnDT { get; set; }
+        // 2018-04-04T11:38:14+00:00
+
         [JsonProperty("key")]
         public string Key { get; set; }
         // demo3
@@ -25,13 +29,9 @@ namespace Trak.Client.Portable.Models
         public string CreatorId { get; set; }
         // "yeosk@1citadel.com"
 
-        [JsonProperty("timestamp")]
-        public DateTime Timestamp { get; set; }
-        // 2018-04-04T11:38:14+00:00
-
-        [JsonProperty("pending")]
-        public bool Pending { get; set; }
-        // false
+        //[JsonProperty("pending")]
+        //public bool Pending { get; set; }
+        //// false
 
         public int CurrentStage {
             get {

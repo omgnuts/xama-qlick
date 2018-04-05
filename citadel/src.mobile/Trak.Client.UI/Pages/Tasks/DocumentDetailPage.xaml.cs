@@ -8,12 +8,12 @@ namespace Trak.Client.UI
 {
 	public partial class DocumentDetailPage : ContentPage
 	{
-		public Document Context
+		public BlockDocument Context
 		{
-			get { return BindingContext as Document; }
+			get { return BindingContext as BlockDocument; }
 		}
 
-		public DocumentDetailPage(Document document)
+		public DocumentDetailPage(BlockDocument document)
 		{
             InitializeComponent();
 

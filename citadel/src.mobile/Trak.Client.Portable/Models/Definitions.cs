@@ -1,5 +1,21 @@
 ﻿namespace Trak.Client.Portable
 {
+    public enum StagePosition
+    {
+        Start = -1,
+        Middle = 0,
+        End = 1
+    }
+
+    public enum StageStatus
+    {
+        Completed = -1,
+        Current = 0,
+        Uncompleted = 1
+    }
+
+
+
 	public enum Priority
 	{
 		Normal, High

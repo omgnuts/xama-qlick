@@ -35,7 +35,7 @@
     <Compile Include="Models\RouteItem.cs" />
     <Compile Include="Auth\CredentialToken.cs" />
     <Compile Include="Models\Definitions.cs" />
-    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\BlockDocument.cs" />
     <Compile Include="Auth\CredentialRequest.cs" />
     <Compile Include="Block\BlockSchema.cs" />
     <Compile Include="Block\BlockResponse.cs" />
@@ -45,6 +45,10 @@
     <Compile Include="TrakAPI.cs" />
     <Compile Include="Auth\AuthorityManager.cs" />
     <Compile Include="Auth\IAuthentication.cs" />
+    <Compile Include="Models\Stage.cs" />
+    <Compile Include="Models\StageItem.cs" />
+    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\StageItemTxn.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Auth\" />

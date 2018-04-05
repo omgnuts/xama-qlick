@@ -46,7 +46,7 @@ namespace Trak.Client.UI
 		}
 
 
-		void initDocuments(Document[] documents)
+		void initDocuments(BlockDocument[] documents)
 		{
 			if (documents != null)
 			{
@@ -64,7 +64,7 @@ namespace Trak.Client.UI
 
 		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
 		{
-			Document doc = (Document)e.Item;
+			BlockDocument doc = (BlockDocument)e.Item;
 
 			if (doc.BlockChain != BlockChained.Open)
 			{

@@ -86,6 +86,9 @@
     <Compile Include="Cells\ShipmentCell.xaml.cs">
       <DependentUpon>ShipmentCell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Tasks\ShipmentPage.xaml.cs">
+      <DependentUpon>ShipmentPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SettingsPage.xaml">
@@ -140,6 +143,10 @@
     <EmbeddedResource Include="Cells\ShipmentCell.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Tasks\ShipmentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

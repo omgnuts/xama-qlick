@@ -50,8 +50,6 @@ namespace Trak.Client.Portable
 
 			IsBusy = true;
 
-			//List<TaskItem> items = await MockFactory.GenerateMockTasks();
-
 			List<TaskItem> items = await TrakAPI.Instance.GetAllTasksObservableAsync();
 
 			Items.Clear();

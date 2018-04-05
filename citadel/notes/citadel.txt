@@ -1,4 +1,4 @@
-/Core/List/demo1/demo3/stage
+/Core/Get/demo1/demo3/stage/Stage
 
 
 GET /Core/List/{database}/{schema}/{table}
@@ -17,3 +17,22 @@ GET /Core/Get/{database}/{schema}/{table}/TotalWorkflow — Total workflow items
 
 GET /Core/Get/{database}/{schema}/{table}/Stage — StageItems that have been completed
 
+
+
+
+GET /Core/List/{database}/{schema}/{table}
+/Core/List/demo1/master/shipment
+
+database = demo1
+schema = master
+table = shipment
+
+GET /Core/Get/{database}/{schema}/{table}/{key}
+/Core/Get/demo1/demo3/stage/Stage
+
+database = demo1
+schema = demo3
+table = stage
+key = Stage 
+
+But

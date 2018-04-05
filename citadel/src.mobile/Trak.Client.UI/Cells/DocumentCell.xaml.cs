@@ -7,11 +7,11 @@ namespace Trak.Client.UI
 	public partial class DocumentCell : ViewCell
 	{
 		public static readonly BindableProperty SelfProperty =
-			BindableProperty.Create("Self", typeof(Document), typeof(DocumentCell), null);
+			BindableProperty.Create("Self", typeof(BlockDocument), typeof(DocumentCell), null);
 
-		public Document Self
+		public BlockDocument Self
 		{
-			get { return (Document)GetValue(SelfProperty); }
+			get { return (BlockDocument)GetValue(SelfProperty); }
 			set { SetValue(SelfProperty, value); }
 		}
 

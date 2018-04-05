@@ -47,8 +47,7 @@ namespace Trak.Client.UI.Pages.Tasks
 
         void OnItemTappedListener(object sender, ItemTappedEventArgs e)
         {
-            //System.Diagnostics.Debug.WriteLine(sender);
-            //Navigation.PushAsync(new SingleTaskPage(ViewModel, (TaskItem)e.Item));
+            Navigation.PushAsync(new ShipmentPage((Shipment)e.Item));
         }
 
         void OnSegmentControlSelected(object o, EventArgs e)

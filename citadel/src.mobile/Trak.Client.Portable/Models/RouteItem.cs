@@ -27,7 +27,7 @@ namespace Trak.Client.Portable
 		public int Order { get; set; }
 
 		[JsonProperty("documents")]
-		public Document[] Documents { get; set; }
+		public BlockDocument[] Documents { get; set; }
 
 		public RouteItem(string title)
 		{

@@ -1,21 +1,33 @@
 ﻿<Properties StartupConfiguration="{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.Client.Portable/Auth/AuthorityManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.Client.Portable/Models/SubStageTxn.cs">
     <Files>
-      <File FileName="Trak.Client.Portable/Models/TaskItemViewModel.cs" Line="71" Column="4" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml.cs" Line="11" Column="49" />
-      <File FileName="Trak.Client.Portable/Models/ShipmentViewModel.cs" Line="62" Column="21" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml" Line="36" Column="40" />
-      <File FileName="Trak.Client.UI/Cells/TaskCell.xaml" Line="7" Column="30" />
+      <File FileName="Trak.Client.Portable/Models/TaskItemViewModel.cs" Line="10" Column="18" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml.cs" Line="41" Column="10" />
+      <File FileName="Trak.Client.Portable/Models/ShipmentViewModel.cs" Line="56" Column="26" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml" Line="4" Column="20" />
+      <File FileName="Trak.Client.UI/Cells/TaskCell.xaml" Line="10" Column="28" />
       <File FileName="Trak.Client.UI/Cells/TaskCell.xaml.cs" Line="35" Column="84" />
-      <File FileName="Trak.Client.UI/Cells/ShipmentCell.xaml" Line="38" Column="9" />
-      <File FileName="Trak.Client.UI/Cells/ShipmentCell.xaml.cs" Line="15" Column="29" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/TasksPage.xaml" Line="34" Column="1" />
-      <File FileName="Trak.Client.Portable/Models/Shipment.cs" Line="39" Column="14" />
+      <File FileName="Trak.Client.UI/Cells/ShipmentCell.xaml" Line="22" Column="43" />
+      <File FileName="Trak.Client.UI/Cells/ShipmentCell.xaml.cs" Line="30" Column="1" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/TasksPage.xaml" Line="20" Column="44" />
+      <File FileName="Trak.Client.Portable/Models/Shipment.cs" Line="22" Column="17" />
       <File FileName="Trak.Client.UI/RootTabs.xaml.cs" Line="15" Column="13" />
       <File FileName="Trak.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Trak.Client.Portable/TrakAPI.cs" Line="154" Column="65" />
+      <File FileName="Trak.Client.Portable/TrakAPI.cs" Line="160" Column="17" />
       <File FileName="Trak.Client.UI/App.xaml.cs" Line="24" Column="9" />
-      <File FileName="Trak.Client.Portable/Auth/AuthorityManager.cs" Line="41" Column="39" />
+      <File FileName="Trak.Client.Portable/Auth/AuthorityManager.cs" Line="22" Column="26" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/TasksPage.xaml.cs" Line="11" Column="25" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml" Line="24" Column="47" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml.cs" Line="32" Column="10" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/SingleTaskPage.xaml" Line="78" Column="1" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/SingleTaskPage.xaml.cs" Line="22" Column="19" />
+      <File FileName="Trak.Client.Portable/Models/Stage.cs" Line="26" Column="77" />
+      <File FileName="Trak.Client.Portable/Models/RouteItem.cs" Line="28" Column="9" />
+      <File FileName="Trak.Client.Portable/Models/Definitions.cs" Line="14" Column="1" />
+      <File FileName="Trak.Client.Portable/Models/SubStage.cs" Line="15" Column="9" />
+      <File FileName="Trak.Client.Portable/Models/BlockDocument.cs" Line="5" Column="25" />
+      <File FileName="Trak.Client.Portable/Models/File.cs" Line="33" Column="26" />
+      <File FileName="Trak.Client.Portable/Models/SubStageTxn.cs" Line="11" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,20 +35,19 @@
           <Node name="Trak" expanded="True">
             <Node name="Shared" expanded="True">
               <Node name="Trak.Client.Portable" expanded="True">
-                <Node name="Auth" expanded="True">
-                  <Node name="AuthorityManager.cs" selected="True" />
+                <Node name="Auth" expanded="True" />
+                <Node name="Models" expanded="True">
+                  <Node name="SubStageTxn.cs" selected="True" />
                 </Node>
-                <Node name="Models" expanded="True" />
               </Node>
               <Node name="Trak.Client.UI" expanded="True">
                 <Node name="References" expanded="True" />
-                <Node name="Cells" expanded="True">
-                  <Node name="ShipmentCell.xaml" expanded="True" />
-                  <Node name="TaskCell.xaml" expanded="True" />
-                </Node>
+                <Node name="Cells" expanded="True" />
                 <Node name="Pages" expanded="True">
                   <Node name="Tasks" expanded="True">
                     <Node name="ShipmentList.xaml" expanded="True" />
+                    <Node name="ShipmentPage.xaml" expanded="True" />
+                    <Node name="SingleTaskPage.xaml" expanded="True" />
                     <Node name="TasksPage.xaml" expanded="True" />
                   </Node>
                 </Node>
@@ -57,9 +68,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/jave/work/xama-qlick/citadel/src.mobile/Trak.Client.Portable/TrakAPI.cs" relfile="Trak.Client.Portable/TrakAPI.cs" line="135" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Targets.Trak.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F64E4FF3-A432-489C-A237-D019B58EC769" automaticSigning="False" />
