@@ -27,15 +27,14 @@ namespace Trak.Client.UI.Cells
 
             if (BindingContext != null && Self != null)
             {
-                lblDueDTTime.TextColor = Styles.ColorGreen;
-                lblDueDT.BackgroundColor = Styles.ColorGreen;
-
                 lblTitle.Text = Self.Title;
-                //lblDescription.Text = Self.Description;
                 lblUserCreated.Text = "@" + Self.CreatorId + " • " + Self.CreatedDT.Humanize();
+                //lblDescription.Text = Self.Description;
 
-                lblDueDT.Text = Self.CreatedDT.ToString("dd MMM").ToLower();
-                lblDueDTTime.Text = Self.CreatedDT.ToString("HH:mm");
+                //lblDueDTTime.TextColor = Styles.ColorGreen;
+                //lblDueDT.BackgroundColor = Styles.ColorGreen;
+                //lblDueDT.Text = Self.CreatedDT.ToString("dd MMM").ToLower();
+                //lblDueDTTime.Text = Self.CreatedDT.ToString("HH:mm");
 
                 joView.Journey = new JourneyView.JourneyValues
                 {
