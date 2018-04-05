@@ -5,6 +5,7 @@ using Humanizer;
 using Plugin.Geolocator;
 using Trak.Client.Portable;
 using Trak.Client.Portable.Models;
+using Trak.Client.UI.Theme;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -27,9 +28,8 @@ namespace Trak.Client.UI.Pages.Tasks
             BackgroundColor = Color.White;
             BindingContext = shipment;
 
-            //initRoutes();
-
         }
+
         bool started = false;
         void OnStart()
         {
@@ -64,12 +64,14 @@ namespace Trak.Client.UI.Pages.Tasks
                 lblUserCreated.Text = "@" + Context.CreatorId + " • " + Context.CreatedDT.Humanize();
                 //lblDescription.Text = Context.Description;
 
-                //initRoutes(Context.RouteItems);
+
+                List<Stage> stages = StageFactory.GenerateDefaults();
+                initStages(stages);
 
                 //ParseDetails(Context.Details);
                 detailStack.IsVisible = false;
 
-                await MoveToUserLocation();
+                //await MoveToUserLocation();
             }
         }
 
@@ -141,18 +143,15 @@ namespace Trak.Client.UI.Pages.Tasks
             }
         }
 
-        //void initRoutes(RouteItem[] routeItems)
-        //{
-        //    if (routeItems != null)
-        //    {
-        //        List<RouteItem> items = new List<RouteItem>(routeItems);
-        //        items.Sort((x, y) => x.Order.CompareTo(y.Order));
-        //        listView.ItemsSource = items;
-        //        listView.ItemSelected += OnItemSelectedListener;
-        //        listView.ItemTapped += OnItemTappedListener;
-
-        //    }
-        //}
+        void initStages(List<Stage> stages)
+        {
+            if (stages != null)
+            {
+                listView.ItemsSource = stages;
+                listView.ItemSelected += OnItemSelectedListener;
+                listView.ItemTapped += OnItemTappedListener;
+            }
+        }
 
         void OnItemSelectedListener(object sender, SelectedItemChangedEventArgs e)
         {
@@ -161,9 +160,9 @@ namespace Trak.Client.UI.Pages.Tasks
 
         void OnItemTappedListener(object sender, ItemTappedEventArgs e)
         {
-            RouteItem route = (RouteItem)e.Item;
+            Stage stage = (Stage)e.Item;
 
-            Navigation.PushAsync(new DocumentListPage(route));
+            //Navigation.PushAsync(new DocumentListPage(stage));
 
             //if (route.BlockChain != 0)
             //{

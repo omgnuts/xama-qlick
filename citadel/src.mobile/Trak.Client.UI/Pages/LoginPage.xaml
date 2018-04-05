@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	xmlns:local="clr-namespace:Trak.Client.UI" 
+    xmlns:theme="clr-namespace:Trak.Client.UI.Theme;assembly=Trak.Client.UI" 
 	x:Class="Trak.Client.UI.LoginPage">
     
 	<StackLayout 
         Padding="0,0,0,0" 
-        BackgroundColor="{x:Static local:Styles.ThemeColor}">
+        BackgroundColor="{x:Static theme:Styles.ThemeColor}">
 		
 		<StackLayout 
             WidthRequest="500"  
@@ -26,7 +26,7 @@
 					<Label  
                         Text="Login to Citadel" 
 						FontSize="32"                   
-                        TextColor="{x:Static local:Styles.ColorWhite}" 
+                        TextColor="{x:Static theme:Styles.ColorWhite}" 
 						HorizontalOptions="CenterAndExpand" 
 						FontAttributes="Bold"
 					/>
@@ -40,7 +40,7 @@
                         <Entry 
                             x:Name="usernameEntry" 
 							Placeholder="Your Username" 
-							TextColor="{x:Static local:Styles.ThemeColor}"
+							TextColor="{x:Static theme:Styles.ThemeColor}"
 							FontSize="Large"
 							HorizontalOptions="FillAndExpand" 
 							HorizontalTextAlignment="Center"
@@ -59,7 +59,7 @@
                             x:Name="passwordEntry" 
 							Placeholder="Your Password" 
 							IsPassword="True" 
-		                    TextColor="{x:Static local:Styles.ThemeColor}"
+		                    TextColor="{x:Static theme:Styles.ThemeColor}"
 							FontSize="Large"
 							HorizontalOptions="FillAndExpand" 
 							HorizontalTextAlignment="Center"
@@ -71,10 +71,10 @@
 					<Button 
                         Text="Login" 
                         Clicked="OnLoginClick" 
-                        TextColor="{x:Static local:Styles.ThemeColor}" 
+                        TextColor="{x:Static theme:Styles.ThemeColor}" 
 						HeightRequest="50"
 						FontSize="Large"
-						BackgroundColor="{x:Static local:Styles.ColorWhite}" 						
+						BackgroundColor="{x:Static theme:Styles.ColorWhite}" 						
 					/>
 
 				</StackLayout>

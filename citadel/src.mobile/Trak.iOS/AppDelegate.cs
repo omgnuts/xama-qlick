@@ -1,4 +1,4 @@
-﻿using Foundation;
+﻿    using Foundation;
 using UIKit;
 using SegmentedControl.FormsPlugin.iOS;
 using CoreLocation;
@@ -8,13 +8,14 @@ namespace Trak.iOS
 	[Register("AppDelegate")]
 	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 	{
+        CLLocationManager locationManager = new CLLocationManager();
+
 		public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
 		{
 			global::Xamarin.Forms.Forms.Init();
 			global::Xamarin.FormsMaps.Init();
 			global::ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-			             
-			CLLocationManager locationManager = new CLLocationManager();
+			
 			locationManager.RequestWhenInUseAuthorization();
 
 			SegmentedControlRenderer.Init();

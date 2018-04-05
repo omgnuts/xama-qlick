@@ -7,6 +7,7 @@ using Trak.Client.Portable;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms;
 using Plugin.Geolocator;
+using Trak.Client.UI.Theme;
 
 namespace Trak.Client.UI
 {

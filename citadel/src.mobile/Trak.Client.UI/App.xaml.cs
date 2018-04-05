@@ -21,6 +21,8 @@ namespace Trak.Client.UI
 		{
 			// Handle when your app starts
             Subscribe();
+
+            //AuthorityManager.Instance.InvalidateCredentials();
         }
 
 		protected override void OnSleep()

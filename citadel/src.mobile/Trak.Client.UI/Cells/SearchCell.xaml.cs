@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Trak.Client.Portable;
-
+using Trak.Client.UI.Theme;
 using Xamarin.Forms;
 
 namespace Trak.Client.UI

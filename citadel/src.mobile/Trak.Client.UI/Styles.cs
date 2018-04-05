@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace Trak.Client.UI
+namespace Trak.Client.UI.Theme
 {
 	public static class Styles
 	{

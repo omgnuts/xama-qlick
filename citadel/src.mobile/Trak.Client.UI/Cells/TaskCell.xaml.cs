@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Trak.Client.Portable;
 using Trak.Client.UI.Views;
 using Humanizer;
+using Trak.Client.UI.Theme;
 
 namespace Trak.Client.UI
 {

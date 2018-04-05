@@ -1,13 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
-using Trak.Client.UI;
+using CoreGraphics;
+using Trak.Client.UI.Theme;
 using Trak.Client.UI.Views;
 using Trak.iOS.Renderers;
-using CoreGraphics;
 using UIKit;
-using Foundation;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(JourneyView), typeof(JourneyViewRenderer))]
 

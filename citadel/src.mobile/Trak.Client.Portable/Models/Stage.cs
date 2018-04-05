@@ -7,6 +7,7 @@ namespace Trak.Client.Portable.Models
         public string Title { get; set; }
 
         public string SubTitle { get; set; }
+
         public int Order { get; set; }
 
         public StagePosition Position(int total) {

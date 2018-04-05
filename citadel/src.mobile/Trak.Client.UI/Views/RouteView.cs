@@ -19,8 +19,8 @@ namespace Trak.Client.UI.Views
 
 		public class RouteValues
 		{
-			public WaypointStatus Status; // current path
-			public WaypointPath Point;
+            public StageStatus Status; // current path
+            public StagePosition Point;
 
 			public bool IsEqual(RouteValues rv)
 			{

@@ -49,6 +49,7 @@
     <Compile Include="Models\StageItem.cs" />
     <Compile Include="Models\Document.cs" />
     <Compile Include="Models\StageItemTxn.cs" />
+    <Compile Include="Models\StageFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Auth\" />

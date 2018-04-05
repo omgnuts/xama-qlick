@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 
 using Trak.Client.Portable;
+using Trak.Client.UI.Theme;
 
 namespace Trak.Client.UI
 {

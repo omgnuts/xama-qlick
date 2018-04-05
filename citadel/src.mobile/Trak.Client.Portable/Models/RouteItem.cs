@@ -18,10 +18,10 @@ namespace Trak.Client.Portable
 		public DateTime? ArriveDT { get; set; }
 
 		[JsonProperty("status")]
-		public WaypointStatus Status { get; set; }
+        public StageStatus Status { get; set; }
 
 		[JsonProperty("path")]
-		public WaypointPath Point { get; set; }
+        public StagePosition Point { get; set; }
 
 		[JsonProperty("order")]
 		public int Order { get; set; }
