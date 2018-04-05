@@ -3,17 +3,18 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Trak.Client.Portable.Common;
+using Trak.Client.Portable.Models;
 using Xamarin.Forms;
 
-namespace Trak.Client.Portable
+namespace Trak.Client.Portable.Models
 {
-    public class TaskItemViewModel : INotifyPropertyChanged
+    public class ShipmentViewModel : INotifyPropertyChanged
 	{
-		public SimpleObservableCollection<TaskItem> Items { get; }
+		public SimpleObservableCollection<Shipment> Items { get; }
 
-		public TaskItemViewModel()
+        public ShipmentViewModel()
 		{
-			Items = new SimpleObservableCollection<TaskItem>();
+            Items = new SimpleObservableCollection<Shipment>();
 		}
 
 		bool isBusy;
@@ -45,14 +46,11 @@ namespace Trak.Client.Portable
 
 		async Task ExecuteRefreshCommand()
 		{
-			if (IsBusy)
-				return;
+			if (IsBusy)	return;
 
 			IsBusy = true;
 
-			//List<TaskItem> items = await MockFactory.GenerateMockTasks();
-
-			List<TaskItem> items = await TrakAPI.Instance.GetAllTasksObservableAsync();
+            List<Shipment> items = await TrakAPI.Instance.GetShipmentsAsync();
 
 			Items.Clear();
 			Items.AddRange(items);
@@ -61,7 +59,7 @@ namespace Trak.Client.Portable
 			HasSeparator = SeparatorVisibility.Default;
 		}
 
-		public async Task DeleteCommand(TaskItem item)
+		public async Task DeleteCommand(Shipment item)
 		{
 			if (Items.Contains(item))
 			{

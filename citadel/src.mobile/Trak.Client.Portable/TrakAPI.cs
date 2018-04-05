@@ -36,6 +36,7 @@ namespace Trak.Client.Portable
 		const string BC_TOKEN = "Authentication/RequestImpersonatedToken";
 		const string BC_CORECREATE = "Core/Create";
 
+        const string BC_MASTERLIST = "Core/List/demo1/master/shipment?page=0&pageSize=0&sortDescendingOrder=true&raw=true";
 
 		//PJAY PC
 		//static string Q_BASE = "http://192.168.100.214:4000";
@@ -130,7 +131,23 @@ namespace Trak.Client.Portable
 
 
         public async Task<List<Shipment>> GetShipmentsAsync() {
-            
+
+            List<Shipment> shipments = new List<Shipment>();
+
+            HttpClient authClient = CreateAuthHttpClient();
+            if (authClient == null) {
+                return shipments;
+            }
+
+            HttpResponseMessage resp = await authClient.GetAsync(BC_MASTERLIST);
+
+            if (resp.IsSuccessStatusCode)
+            {
+                var content = await resp.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<Shipment>>(content);
+            }
+
+            return shipments;
         }
 
         HttpClient CreateAuthHttpClient()
@@ -138,7 +155,14 @@ namespace Trak.Client.Portable
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(BC_BASE);
 
-            client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token.AccessToken);
+            if (AuthorityManager.Instance.Token == null) {
+                AuthorityManager.Instance.RequireNewCredentials();
+                return null;
+            }
+
+            string accessToken = AuthorityManager.Instance.Token.AccessToken;
+            client.DefaultRequestHeaders.Add("Authorization", "Bearer " + accessToken);
+            //client.DefaultRequestHeaders.Add("Content-Type", "application/json");
             return client;
         }
 

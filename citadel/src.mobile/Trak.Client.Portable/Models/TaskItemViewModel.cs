@@ -3,18 +3,17 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Trak.Client.Portable.Common;
-using Trak.Client.Portable.Models;
 using Xamarin.Forms;
 
 namespace Trak.Client.Portable
 {
-    public class ShipmentViewModel : INotifyPropertyChanged
+    public class TaskItemViewModel : INotifyPropertyChanged
 	{
-		public SimpleObservableCollection<Shipment> Items { get; }
+		public SimpleObservableCollection<TaskItem> Items { get; }
 
-        public ShipmentViewModel()
+        public TaskItemViewModel()
 		{
-            Items = new SimpleObservableCollection<Shipment>();
+			Items = new SimpleObservableCollection<TaskItem>();
 		}
 
 		bool isBusy;
@@ -46,11 +45,14 @@ namespace Trak.Client.Portable
 
 		async Task ExecuteRefreshCommand()
 		{
-			if (IsBusy)	return;
+			if (IsBusy)
+				return;
 
 			IsBusy = true;
 
-            List<Shipment> items = await TrakAPI.Instance.GetAllTasksObservableAsync();
+			//List<TaskItem> items = await MockFactory.GenerateMockTasks();
+
+			List<TaskItem> items = await TrakAPI.Instance.GetAllTasksObservableAsync();
 
 			Items.Clear();
 			Items.AddRange(items);

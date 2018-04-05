@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Trak.Client.Portable;
 using Xamarin.Forms;
 
 namespace Trak.Client.UI
@@ -23,10 +21,7 @@ namespace Trak.Client.UI
 		{
 			// Handle when your app starts
             Subscribe();
-
-            AuthorityManager.Instance.InvalidateCredentials();
-
-		}
+        }
 
 		protected override void OnSleep()
 		{

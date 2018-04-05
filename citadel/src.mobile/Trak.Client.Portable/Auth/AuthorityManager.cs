@@ -1,8 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Trak.Client.Portable;
 using Xamarin.Forms;
 
-namespace Trak.Client.UI
+namespace Trak.Client.Portable
 {
 	public class AuthorityManager
 	{
@@ -39,7 +38,7 @@ namespace Trak.Client.UI
 			MessagingCenter.Send(this, ON_REQUIRE_CREDENTIALS, false);
 		}
 
-		public void RequestUpdateCredentials()
+		public void RequireNewCredentials()
 		{
 			MessagingCenter.Send(this, ON_REQUIRE_CREDENTIALS, true);
 		}

@@ -70,8 +70,6 @@
       <DependentUpon>DocumentDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\DateDisplay.cs" />
-    <Compile Include="Authority\AuthorityManager.cs" />
-    <Compile Include="Authority\IAuthentication.cs" />
     <Compile Include="Pages\LoginPage.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -81,6 +79,12 @@
     </Compile>
     <Compile Include="Cells\DocumentCell.xaml.cs">
       <DependentUpon>DocumentCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tasks\ShipmentList.xaml.cs">
+      <DependentUpon>ShipmentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\ShipmentCell.xaml.cs">
+      <DependentUpon>ShipmentCell.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -129,13 +133,20 @@
     <EmbeddedResource Include="Cells\DocumentCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Tasks\ShipmentList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cells\ShipmentCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cells\" />
     <Folder Include="Utils\" />
     <Folder Include="Pages\Tasks\" />
     <Folder Include="Views\" />
-    <Folder Include="Authority\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trak.Client.Portable\Trak.Client.Portable.csproj">

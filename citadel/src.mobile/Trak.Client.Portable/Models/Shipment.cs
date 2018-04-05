@@ -32,5 +32,20 @@ namespace Trak.Client.Portable.Models
         [JsonProperty("pending")]
         public bool Pending { get; set; }
         // false
+
+        public int CurrentStage {
+            get {
+                return 3;
+            }
+        }
+
+        public int TotalStages {
+            get {
+                return 5;
+            }
+
+        }
+
+
     }
 }
