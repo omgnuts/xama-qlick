@@ -45,7 +45,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>RETeam Qlick UAT Profile</CodesignProvision>
+    <CodesignProvision>RETeam Qlick DEV Profile</CodesignProvision>
 <AssemblyName>Trak.iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -80,7 +80,6 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>iOS Team Provisioning Profile: sg.com.gic.tdre.Qlick.dev</CodesignProvision>
 <AssemblyName>Trak.iOS</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
@@ -207,6 +206,8 @@
     <Compile Include="Renderers\RouteViewRenderer.cs" />
     <Compile Include="Contracts\Authentication_IOS.cs" />
     <Compile Include="Renderers\TintedImageRenderer.cs" />
+    <Compile Include="Contracts\SaveAndLoad_IOS.cs" />
+    <Compile Include="Contracts\QLPreviewer_IOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\tab-clarify.png" />

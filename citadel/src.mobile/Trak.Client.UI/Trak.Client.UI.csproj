@@ -92,6 +92,13 @@
     <Compile Include="Cells\StageCell.xaml.cs">
       <DependentUpon>StageCell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\FileSaver.cs" />
+    <Compile Include="Utils\FileConfig.cs" />
+    <Compile Include="PDFViewer\PDFWebView.cs" />
+    <Compile Include="PDFViewer\PDFPageViewer.xaml.cs">
+      <DependentUpon>PDFPageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PDFViewer\WebViewPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SettingsPage.xaml">
@@ -155,12 +162,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="PDFViewer\PDFPageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cells\" />
     <Folder Include="Utils\" />
     <Folder Include="Pages\Tasks\" />
     <Folder Include="Views\" />
+    <Folder Include="PDFViewer\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trak.Client.Portable\Trak.Client.Portable.csproj">

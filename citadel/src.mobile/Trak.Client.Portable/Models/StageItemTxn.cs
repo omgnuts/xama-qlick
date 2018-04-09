@@ -20,6 +20,12 @@ namespace Trak.Client.Portable.Models
         [JsonProperty("StageItemNumber")]
         public int SubStageId { get; set; }
         //"StageItemNumber": 1,
+
+        [JsonIgnore]
+        public string Key
+        {
+            get => $"{StageId}-{SubStageId}";
+        }
     }
 }
 

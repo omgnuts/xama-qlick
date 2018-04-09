@@ -1,7 +1,8 @@
-﻿    using Foundation;
+﻿using Foundation;
 using UIKit;
 using SegmentedControl.FormsPlugin.iOS;
 using CoreLocation;
+using Trak.Client.UI.Utils;
 
 namespace Trak.iOS
 {
@@ -15,7 +16,9 @@ namespace Trak.iOS
 			global::Xamarin.Forms.Forms.Init();
 			global::Xamarin.FormsMaps.Init();
 			global::ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-			
+		
+            FileConfig.PathApp = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+
 			locationManager.RequestWhenInUseAuthorization();
 
 			SegmentedControlRenderer.Init();

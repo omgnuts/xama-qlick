@@ -1,33 +1,34 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Trak.Client.Portable.Common;
 
 namespace Trak.Client.Portable.Models
 {
     public class Document
     {
-        [JsonProperty("FileId")]
-        public string FileId { get; set; }
-        //"FileId": "d294384f-c6fa-40c5-9192-fd99598ad92f",
-    
         [JsonProperty("FileType")]
         public string FileType { get; set; }
         //"FileType": "bitmap",
+
+        [JsonProperty("Filename")]
+        public string Filename { get; set; }
+        //"DocumentName": "Bill of Lading - 2nd Tier Shipping Line.jpg",
 
         [JsonProperty("FileHash")]
         public string FileHash { get; set; }
         //"FileHash": "b614d7274d793bb90df36131e2853a85e0a1fbf6dda56cc8b1bc4c3d369cd1aa",
 
-        [JsonProperty("DocumentName")]
-        public string DocumentName { get; set; }
-        //"DocumentName": "Bill of Lading - 2nd Tier Shipping Line.jpg",
+        [JsonProperty("User")]
+        public string User { get; set; }
+        //"FileId": "yeosk@1citadel.com",
 
-        [JsonProperty("UploadedBy")]
-        public string UploaderId { get; set; }
-        //"UploadedBy": "yeosk@1citadel.com",
+        [JsonProperty("FileUploaded")]
+        public DateTime FileUploaded { get; set; }
+        //"FileId": "0001-01-01T00:00:00",
 
-        [JsonProperty("UploadedOn")]
-        public DateTime UploadedDT { get; set; }
-        // "UploadedOn": "2018-04-04T11:38:28.0140511Z",
+        [JsonProperty("FileData")]
+        [JsonConverter(typeof(CustomBase64Converter))]
+        public byte[] FileData { get; set; }
 
         [JsonProperty("id")]
         public string TxnId { get; set; }
@@ -37,21 +38,6 @@ namespace Trak.Client.Portable.Models
         public DateTime? TxnDT { get; set; }
         //"timestamp": "2018-04-04T11:39:33+00:00",
 
-        [JsonProperty("StageNumber")]
-        public int StageId { get; set; }
-        //"StageNumber": 1,
-
-        [JsonProperty("StageItemNumber")]
-        public int StageItemId { get; set; }
-        //"StageItemNumber": 1,
-
-        [JsonIgnore]
-        public string RequestKey {
-            get
-            {
-                return $"{StageId}-{StageItemId}";
-            }
-        }
     }
 }
 

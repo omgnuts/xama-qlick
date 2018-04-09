@@ -50,11 +50,15 @@
     <Compile Include="Models\Document.cs" />
     <Compile Include="Models\StageItemTxn.cs" />
     <Compile Include="Models\StageFactory.cs" />
+    <Compile Include="Common\CustomBase64Converter.cs" />
+    <Compile Include="Utils\ISaveAndLoad.cs" />
+    <Compile Include="Utils\IQLPreviewer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Auth\" />
     <Folder Include="Block\" />
     <Folder Include="Common\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">

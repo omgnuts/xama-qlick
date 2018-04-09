@@ -40,6 +40,7 @@ namespace Trak.Client.Portable
 
         const string BC_MASTERLIST = "Core/List/{0}/master/shipment?page=0&pageSize=0&sortDescendingOrder=true&raw=true";
         const string BC_GETSTAGES = "Core/Get/{0}/{1}/stage/Stage?page=0&pageSize=0&sortDescendingOrder=true&raw=true";
+        const string BC_GETDOCUMENT = "Core/Get/{0}/{1}/document/{2}?page=0&pageSize=0&sortDescendingOrder=true&raw=true";
 
 		//PJAY PC
 		//static string Q_BASE = "http://192.168.100.214:4000";
@@ -196,6 +197,26 @@ namespace Trak.Client.Portable
 
         }
 
+        public async Task<Document[]> GetDocumentAsync(string shipmentKey, string docKey) 
+        {
+            HttpClient authClient = CreateAuthHttpClient();
+            if (authClient == null)
+            {
+                return null;
+            }
+
+            string uri = string.Format(BC_GETDOCUMENT, DATABASE, shipmentKey, docKey);
+
+            HttpResponseMessage resp = await authClient.GetAsync(uri);
+
+            if (resp.IsSuccessStatusCode)
+            {
+                var content = await resp.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<Document[]>(content);
+            }
+
+            return null;
+        }
 
         HttpClient CreateAuthHttpClient()
         {

@@ -10,7 +10,6 @@ namespace Trak.Client.Portable.Models
 
         public StageItemTxn StageItemTxn { get; set; }
 
-        public List<Document> Documents { get; set; } = new List<Document>();
     }
 
 }
