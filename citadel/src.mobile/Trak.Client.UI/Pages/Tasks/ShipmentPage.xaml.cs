@@ -65,7 +65,7 @@ namespace Trak.Client.UI.Pages.Tasks
                 //lblDescription.Text = Context.Description;
 
 
-                List<Stage> stages = StageFactory.GenerateDefaults();
+                List<Stage> stages = await TrakAPI.Instance.GetStagesAsync(Context.Key);
                 initStages(stages);
 
                 //ParseDetails(Context.Details);

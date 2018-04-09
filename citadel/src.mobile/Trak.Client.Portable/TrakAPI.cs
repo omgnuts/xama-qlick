@@ -36,7 +36,10 @@ namespace Trak.Client.Portable
 		const string BC_TOKEN = "Authentication/RequestImpersonatedToken";
 		const string BC_CORECREATE = "Core/Create";
 
-        const string BC_MASTERLIST = "Core/List/demo1/master/shipment?page=0&pageSize=0&sortDescendingOrder=true&raw=true";
+        const string DATABASE = "demo1";
+
+        const string BC_MASTERLIST = "Core/List/{0}/master/shipment?page=0&pageSize=0&sortDescendingOrder=true&raw=true";
+        const string BC_GETSTAGES = "Core/Get/{0}/{1}/stage/Stage?page=0&pageSize=0&sortDescendingOrder=true&raw=true";
 
 		//PJAY PC
 		//static string Q_BASE = "http://192.168.100.214:4000";
@@ -139,7 +142,9 @@ namespace Trak.Client.Portable
                 return shipments;
             }
 
-            HttpResponseMessage resp = await authClient.GetAsync(BC_MASTERLIST);
+            string uri = string.Format(BC_MASTERLIST, DATABASE);
+
+            HttpResponseMessage resp = await authClient.GetAsync(uri);
 
             if (resp.IsSuccessStatusCode)
             {
@@ -149,6 +154,48 @@ namespace Trak.Client.Portable
 
             return shipments;
         }
+
+        public async Task<List<Stage>> GetStagesAsync(string key) {
+            
+            List<Stage> stages = StageFactory.GenerateDefaults();
+
+            HttpClient authClient = CreateAuthHttpClient();
+            if (authClient == null)
+            {
+                return stages;
+            }
+
+            string uri = string.Format(BC_GETSTAGES, DATABASE, key);
+
+            HttpResponseMessage resp = await authClient.GetAsync(uri);
+
+            if (resp.IsSuccessStatusCode)
+            {
+                var content = await resp.Content.ReadAsStringAsync();
+                List<StageItemTxn> sits =  JsonConvert.DeserializeObject<List<StageItemTxn>>(content);
+
+                int cc = 1; 
+
+                foreach (Stage ss in stages) {
+                    foreach (StageItem si in ss.StageItems) {
+                        if (cc > sits.Count)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            si.StageItemTxn = sits[cc - 1];
+                            cc++;
+                        }
+                    }
+                }
+
+            }
+
+            return stages;
+
+        }
+
 
         HttpClient CreateAuthHttpClient()
         {

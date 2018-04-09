@@ -1,74 +1,30 @@
 ﻿<Properties StartupConfiguration="{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.Client.Portable/Models/Stage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml.cs">
     <Files>
-      <File FileName="Trak.Client.UI/Pages/Tasks/SingleTaskPage.xaml" Line="78" Column="1" />
-      <File FileName="Trak.iOS/Theme.cs" Line="6" Column="2" />
-      <File FileName="Trak.iOS/Renderers/RouteViewRenderer.cs" Line="80" Column="17" />
-      <File FileName="Trak.iOS/Entitlements.plist" />
-      <File FileName="Trak.Client.UI/App.xaml.cs" Line="25" Column="47" />
-      <File FileName="Trak.iOS/AppDelegate.cs" Line="24" Column="76" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml.cs" Line="72" Column="47" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml.cs" Line="50" Column="10" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml" Line="5" Column="54" />
-      <File FileName="Trak.Client.UI/Cells/StageCell.xaml" Line="15" Column="44" />
-      <File FileName="Trak.Client.UI/Cells/StageCell.xaml.cs" Line="34" Column="39" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/SingleTaskPage.xaml.cs" Line="32" Column="34" />
-      <File FileName="Trak.Client.UI/Cells/ShipmentCell.xaml.cs" Line="8" Column="49" />
-      <File FileName="Trak.Client.UI/Cells/ShipmentCell.xaml" Line="25" Column="82" />
-      <File FileName="Trak.Client.UI/Cells/RouteCell.xaml" Line="34" Column="1" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml.cs" Line="29" Column="39" />
+      <File FileName="Trak.Client.Portable/Models/ShipmentViewModel.cs" Line="13" Column="45" />
+      <File FileName="Trak.Client.Portable/Models/Shipment.cs" Line="1" Column="1" />
+      <File FileName="Trak.Client.Portable/Models/StageItem.cs" Line="17" Column="1" />
+      <File FileName="Trak.Client.Portable/Models/Stage.cs" Line="19" Column="59" />
+      <File FileName="Trak.Client.Portable/Models/StageFactory.cs" Line="24" Column="27" />
+      <File FileName="Trak.iOS/Renderers/RouteViewRenderer.cs" Line="88" Column="9" />
+      <File FileName="Trak.Client.UI/Views/RouteView.cs" Line="20" Column="16" />
+      <File FileName="Trak.Client.Portable/Models/StageItemTxn.cs" Line="22" Column="32" />
+      <File FileName="Trak.Client.UI/Cells/ShipmentCell.xaml.cs" Line="29" Column="14" />
+      <File FileName="Trak.Client.UI/Cells/StageCell.xaml.cs" Line="28" Column="38" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml.cs" Line="25" Column="22" />
       <File FileName="Trak.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml" Line="45" Column="1" />
-      <File FileName="Trak.Client.UI/Pages/LoginPage.xaml" Line="4" Column="76" />
-      <File FileName="Trak.Client.Portable/Models/ShipmentViewModel.cs" Line="62" Column="21" />
-      <File FileName="Trak.Client.Portable/Models/TaskItemViewModel.cs" Line="62" Column="21" />
-      <File FileName="Trak.Client.UI/Views/RouteView.cs" Line="25" Column="39" />
-      <File FileName="Trak.Client.Portable/Models/Stage.cs" Line="16" Column="9" />
+      <File FileName="Trak.iOS/AppDelegate.cs" Line="24" Column="76" />
+      <File FileName="Trak.Client.UI/App.xaml.cs" Line="27" Column="9" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/SingleTaskPage.xaml.cs" Line="25" Column="26" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/DocumentListPage.xaml.cs" Line="64" Column="4" />
+      <File FileName="Trak.Client.Portable/Auth/AuthorityManager.cs" Line="1" Column="1" />
+      <File FileName="Trak.Client.UI/Pages/LoginPage.xaml" Line="88" Column="1" />
+      <File FileName="Trak.Client.UI/Pages/LoginPage.cs" Line="26" Column="37" />
+      <File FileName="Trak.Client.Portable/TrakAPI.cs" Line="192" Column="14" />
+      <File FileName="Trak.Client.UI/Cells/StageCell.xaml" Line="22" Column="26" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml" Line="121" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Trak" expanded="True">
-            <Node name="Shared" expanded="True">
-              <Node name="Trak.Client.Portable" expanded="True">
-                <Node name="Auth" expanded="True" />
-                <Node name="Common" expanded="True" />
-                <Node name="Models" expanded="True">
-                  <Node name="Stage.cs" selected="True" />
-                </Node>
-              </Node>
-              <Node name="Trak.Client.UI" expanded="True">
-                <Node name="References" expanded="True" />
-                <Node name="Cells" expanded="True">
-                  <Node name="DocumentCell.xaml" expanded="True" />
-                  <Node name="RouteCell.xaml" expanded="True" />
-                  <Node name="SearchCell.xaml" expanded="True" />
-                  <Node name="ShipmentCell.xaml" expanded="True" />
-                  <Node name="StageCell.xaml" expanded="True" />
-                  <Node name="TaskCell.xaml" expanded="True" />
-                </Node>
-                <Node name="Pages" expanded="True">
-                  <Node name="Tasks" expanded="True">
-                    <Node name="DocumentListPage.xaml" expanded="True" />
-                    <Node name="ShipmentList.xaml" expanded="True" />
-                    <Node name="ShipmentPage.xaml" expanded="True" />
-                    <Node name="SingleTaskPage.xaml" expanded="True" />
-                    <Node name="TasksPage.xaml" expanded="True" />
-                  </Node>
-                </Node>
-                <Node name="Views" expanded="True" />
-                <Node name="App.xaml" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Targets" expanded="True">
-              <Node name="Trak.iOS" expanded="True">
-                <Node name="Contracts" expanded="True" />
-                <Node name="Renderers" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
