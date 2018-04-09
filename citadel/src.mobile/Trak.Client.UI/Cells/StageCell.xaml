@@ -8,7 +8,7 @@
 
     <Grid Padding="10,0,15,0">
         <Grid.RowDefinitions>
-          <RowDefinition Height="80" />
+          <RowDefinition Height="90" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -26,7 +26,7 @@
             <ui:RouteView 
                 x:Name="roView" 
                 WidthRequest="70" 
-                HeightRequest="80"
+                HeightRequest="90"
             />
 
         </StackLayout>

@@ -171,7 +171,7 @@ namespace Trak.Client.UI
 		{
 			RouteItem route = (RouteItem)e.Item;
 
-			Navigation.PushAsync(new DocumentListPage(route));
+			//Navigation.PushAsync(new DocumentListPage(route));
 
 			//if (route.BlockChain != 0)
 			//{

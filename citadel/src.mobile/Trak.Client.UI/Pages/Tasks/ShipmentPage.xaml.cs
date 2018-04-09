@@ -162,7 +162,7 @@ namespace Trak.Client.UI.Pages.Tasks
         {
             Stage stage = (Stage)e.Item;
 
-            //Navigation.PushAsync(new DocumentListPage(stage));
+            Navigation.PushAsync(new DocumentListPage(stage));
 
             //if (route.BlockChain != 0)
             //{

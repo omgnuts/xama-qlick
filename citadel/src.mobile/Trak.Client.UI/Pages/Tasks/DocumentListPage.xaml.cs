@@ -1,4 +1,5 @@
-﻿using Trak.Client.Portable;
+﻿using System.Collections.Generic;
+using Trak.Client.Portable.Models;
 using Trak.Client.UI.Theme;
 using Xamarin.Forms;
 
@@ -6,15 +7,15 @@ namespace Trak.Client.UI
 {
 	public partial class DocumentListPage : ContentPage
 	{
-		public RouteItem Context
+        public Stage Context
 		{
-			get { return BindingContext as RouteItem; }
+            get { return BindingContext as Stage; }
 		}
 
-		public DocumentListPage(RouteItem route)
+		public DocumentListPage(Stage stage)
 		{
             InitializeComponent();
-			BindingContext = route;
+            BindingContext = stage;
 
 			App.NavPage.BarBackgroundColor = Styles.ColorBlue;
 			App.NavPage.BarTextColor = Color.White;
@@ -42,16 +43,16 @@ namespace Trak.Client.UI
 			if (BindingContext != null)
 			{
 				Title = Context.Title;
-				initDocuments(Context.Documents);
+                initCells(Context.StageItems);
 			}
 		}
 
 
-		void initDocuments(BlockDocument[] documents)
+        void initCells(List<StageItem> stageItems)
 		{
-			if (documents != null)
+            if (stageItems != null)
 			{
-				listView.ItemsSource = documents;
+                listView.ItemsSource = stageItems;
 				listView.ItemSelected += OnItemSelectedListener;
 				listView.ItemTapped += OnItemTappedListener;
 
@@ -65,11 +66,11 @@ namespace Trak.Client.UI
 
 		void OnItemTappedListener(object sender, ItemTappedEventArgs e)
 		{
-			BlockDocument doc = (BlockDocument)e.Item;
+            StageItem item = (StageItem)e.Item;
 
-			if (doc.BlockChain != BlockChained.Open)
+            if (item.StageItemTxn != null)
 			{
-				Navigation.PushAsync(new DocumentDetailPage(doc));
+				//Navigation.PushAsync(new DocumentDetailPage(doc));
 			}
 			else
 			{

@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.Client.UI/Cells/ShipmentCell.xaml.cs">
     <Files>
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml.cs" Line="29" Column="39" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml.cs" Line="165" Column="60" />
       <File FileName="Trak.Client.Portable/Models/ShipmentViewModel.cs" Line="13" Column="45" />
       <File FileName="Trak.Client.Portable/Models/Shipment.cs" Line="1" Column="1" />
       <File FileName="Trak.Client.Portable/Models/StageItem.cs" Line="17" Column="1" />
@@ -16,14 +16,20 @@
       <File FileName="Trak.iOS/Main.cs" Line="17" Column="1" />
       <File FileName="Trak.iOS/AppDelegate.cs" Line="24" Column="76" />
       <File FileName="Trak.Client.UI/App.xaml.cs" Line="27" Column="9" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/SingleTaskPage.xaml.cs" Line="25" Column="26" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/DocumentListPage.xaml.cs" Line="64" Column="4" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/SingleTaskPage.xaml.cs" Line="174" Column="33" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/DocumentListPage.xaml.cs" Line="11" Column="4" />
       <File FileName="Trak.Client.Portable/Auth/AuthorityManager.cs" Line="1" Column="1" />
       <File FileName="Trak.Client.UI/Pages/LoginPage.xaml" Line="88" Column="1" />
       <File FileName="Trak.Client.UI/Pages/LoginPage.cs" Line="26" Column="37" />
-      <File FileName="Trak.Client.Portable/TrakAPI.cs" Line="192" Column="14" />
+      <File FileName="Trak.Client.Portable/TrakAPI.cs" Line="191" Column="18" />
       <File FileName="Trak.Client.UI/Cells/StageCell.xaml" Line="22" Column="26" />
       <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml" Line="121" Column="1" />
+      <File FileName="Trak.Client.UI/obj/Debug/Trak.Client.UI.Pages.Tasks.DocumentListPage.xaml.g.cs" Line="1" Column="1" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/DocumentListPage.xaml" Line="7" Column="29" />
+      <File FileName="Trak.Client.UI/Cells/DocumentCell.xaml.cs" Line="15" Column="62" />
+      <File FileName="Trak.Client.UI/Cells/DocumentCell.xaml" Line="7" Column="56" />
+      <File FileName="Trak.Client.UI/Cells/RouteCell.xaml" Line="34" Column="1" />
+      <File FileName="Trak.Client.UI/Cells/SearchCell.xaml.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />

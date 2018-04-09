@@ -1,4 +1,5 @@
 ﻿using Trak.Client.Portable;
+using Trak.Client.Portable.Models;
 using Trak.Client.UI.Theme;
 using Xamarin.Forms;
 
@@ -7,11 +8,11 @@ namespace Trak.Client.UI
 	public partial class DocumentCell : ViewCell
 	{
 		public static readonly BindableProperty SelfProperty =
-			BindableProperty.Create("Self", typeof(BlockDocument), typeof(DocumentCell), null);
+			BindableProperty.Create("Self", typeof(StageItem), typeof(DocumentCell), null);
 
-		public BlockDocument Self
+        public StageItem Self
 		{
-			get { return (BlockDocument)GetValue(SelfProperty); }
+            get { return (StageItem)GetValue(SelfProperty); }
 			set { SetValue(SelfProperty, value); }
 		}
 
@@ -28,9 +29,12 @@ namespace Trak.Client.UI
 			if (BindingContext != null && Self != null)
 			{
 				lblTitle.Text = Self.Title;
-				lblDescription.Text = Self.Description;
+                lblDescription.Text = Self.StageItemTxn != null ? 
+                    Self.StageItemTxn.TxnDT.ToString() : instruction;
 			}
 
 		}
+
+        const string instruction = "Awaiting approval/document upload";
 	}
 }
