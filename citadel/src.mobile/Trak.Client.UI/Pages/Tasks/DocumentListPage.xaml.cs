@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Trak.Client.UI.Utils;
 using Trak.Client.Portable.Utils;
 using Trak.Client.UI.PDFViewer;
+using Trak.Client.Portable.Common;
 
 namespace Trak.Client.UI
 {
@@ -82,9 +83,18 @@ namespace Trak.Client.UI
 			{
                 Document[] docs = await TrakAPI.Instance.GetDocumentAsync(
                     ShipmentKey, item.StageItemTxn.Key);
+                
+                string base64 = SampleBase64.SampleData(docs[0].FileType);
+
+                // Method 0: Demo 
+                if (base64 != null)
+                {
+                    byte[] data = Convert.FromBase64String(base64);
+                    DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, data);
+                }
 
                 // Method 1: QuickLookPreviewer
-                DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, docs[0].FileData);
+                //DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, docs[0].FileData);
 
                 // Method 2: Using PDFPageViewer (aka UIWebView.LoadData)
                 //await Navigation.PushAsync(new PDFPageViewer(docs[0].FileData));
@@ -93,7 +103,7 @@ namespace Trak.Client.UI
 			}
 			else
 			{
-				await DisplayAlert("No Blockchain Information", "There is no blockchain details for this document, as the document has not been secure.", "OK");
+				await DisplayAlert("No Document", "There is no blockchain document, as the document has not been secure.", "OK");
 			}
 
 		}

@@ -14,7 +14,7 @@ namespace Trak.Client.Portable.Common
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            return Convert.FromBase64String(SampleBase64.SamplePDF());
+            return Convert.FromBase64String((string)reader.Value);
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
