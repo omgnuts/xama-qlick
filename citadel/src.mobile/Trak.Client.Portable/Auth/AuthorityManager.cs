@@ -31,6 +31,11 @@ namespace Trak.Client.Portable
 			}
 		}
 
+        public void ResetDemoCredentials() {
+            token = null;
+            Save(null);
+        }
+
 		public void InvalidateCredentials()
 		{
 			token = null;

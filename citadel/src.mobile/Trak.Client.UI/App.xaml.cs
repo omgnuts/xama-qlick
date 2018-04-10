@@ -22,7 +22,7 @@ namespace Trak.Client.UI
 			// Handle when your app starts
             Subscribe();
 
-            AuthorityManager.Instance.InvalidateCredentials();
+            AuthorityManager.Instance.ResetDemoCredentials();
         }
 
 		protected override void OnSleep()

@@ -22,10 +22,8 @@ namespace Trak.Client.UI.Pages.Tasks
             listView.ItemSelected += OnItemSelectedListener;
         }
 
-        bool started;
         void OnStart()
         {
-            started = true;
             segmentControl.TintColor = Styles.ThemeColor;
             segmentControl.SelectedSegment = 1;
 
@@ -35,7 +33,7 @@ namespace Trak.Client.UI.Pages.Tasks
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (!started)
+            if (!ViewModel.IsStarted && !ViewModel.IsBusy)
             {
                 OnStart();
             }

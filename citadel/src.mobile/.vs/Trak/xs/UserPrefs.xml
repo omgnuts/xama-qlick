@@ -1,67 +1,24 @@
 ﻿<Properties StartupConfiguration="{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.Client.Portable/Common/SampleBase64.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Trak.Client.Portable/Models/ShipmentViewModel.cs" Line="13" Column="45" />
-      <File FileName="Trak.Client.Portable/Models/Shipment.cs" Line="17" Column="40" />
-      <File FileName="Trak.Client.Portable/Models/StageItem.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.Portable/Models/Stage.cs" Line="28" Column="44" />
-      <File FileName="Trak.Client.Portable/Models/StageFactory.cs" Line="24" Column="27" />
-      <File FileName="Trak.iOS/Renderers/RouteViewRenderer.cs" Line="88" Column="9" />
-      <File FileName="Trak.Client.UI/Views/RouteView.cs" Line="20" Column="16" />
-      <File FileName="Trak.Client.Portable/Models/StageItemTxn.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.UI/Cells/ShipmentCell.xaml.cs" Line="29" Column="14" />
-      <File FileName="Trak.Client.UI/Cells/StageCell.xaml.cs" Line="28" Column="38" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml.cs" Line="25" Column="22" />
-      <File FileName="Trak.iOS/Main.cs" Line="13" Column="34" />
-      <File FileName="Trak.iOS/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.UI/App.xaml.cs" Line="27" Column="9" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/SingleTaskPage.xaml.cs" Line="174" Column="33" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/DocumentListPage.xaml.cs" Line="87" Column="51" />
-      <File FileName="Trak.Client.Portable/Auth/AuthorityManager.cs" Line="58" Column="22" />
-      <File FileName="Trak.Client.UI/Pages/LoginPage.xaml" Line="88" Column="1" />
-      <File FileName="Trak.Client.UI/Pages/LoginPage.cs" Line="24" Column="33" />
-      <File FileName="Trak.Client.Portable/TrakAPI.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.UI/Cells/StageCell.xaml" Line="61" Column="1" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml" Line="121" Column="1" />
-      <File FileName="Trak.Client.UI/obj/Debug/Trak.Client.UI.Pages.Tasks.DocumentListPage.xaml.g.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/DocumentListPage.xaml" Line="15" Column="1" />
-      <File FileName="Trak.Client.UI/Cells/DocumentCell.xaml.cs" Line="41" Column="1" />
-      <File FileName="Trak.Client.UI/Cells/DocumentCell.xaml" Line="10" Column="1" />
-      <File FileName="Trak.Client.UI/Cells/RouteCell.xaml" Line="34" Column="1" />
-      <File FileName="Trak.Client.UI/Cells/SearchCell.xaml.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.Portable/Models/Document.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.Portable/Common/JsonBase64Converter.cs" Line="13" Column="10" />
-      <File FileName="Trak.Client.UI/Utils/FileSaver.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.UI/Utils/FileConfig.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.Portable/Auth/IAuthentication.cs" Line="3" Column="27" />
-      <File FileName="Trak.iOS/Contracts/Authentication_IOS.cs" Line="10" Column="33" />
-      <File FileName="Trak.iOS/Contracts/SaveAndLoad_IOS.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.UI/PDFViewer/PDFWebView.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.UI/PDFViewer/PDFPageViewer.xaml" Line="24" Column="15" />
-      <File FileName="Trak.Client.UI/PDFViewer/PDFPageViewer.xaml.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.Portable/Utils/ISaveAndLoad.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.UI/obj/Debug/Trak.Client.UI.PDFViewer.PDFPageViewer.xaml.g.cs" Line="1" Column="1" />
+      <File FileName="Trak.Client.Portable/Auth/AuthorityManager.cs" Line="34" Column="41" />
+      <File FileName="Trak.Client.UI/Pages/LoginPage.cs" Line="27" Column="6" />
+      <File FileName="Trak.Client.UI/App.xaml.cs" Line="25" Column="42" />
       <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml" Line="45" Column="1" />
-      <File FileName="Trak.iOS/Contracts/QLPreviewer_IOS.cs" Line="1" Column="1" />
-      <File FileName="Trak.iOS/Renderers/PDFViewRenderer.cs" Line="1" Column="1" />
-      <File FileName="Trak.iOS/Renderers/JourneyViewRenderer.cs" Line="1" Column="1" />
-      <File FileName="Trak.Client.Portable/Common/SampleBase64.cs" Line="5" Column="45" />
-      <File FileName="Trak.Client.Portable/Utils/IQLPreviewer.cs" Line="1" Column="1" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml.cs" Line="30" Column="37" />
+      <File FileName="Trak.Client.Portable/Models/ShipmentViewModel.cs" Line="70" Column="26" />
+      <File FileName="Trak.Client.UI/Pages/Tasks/DocumentListPage.xaml.cs" Line="8" Column="28" />
       <File FileName="Trak.iOS/Info.plist" />
-      <File FileName="Trak.iOS/Entitlements.plist" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/jave/work/xama-qlick/citadel/src.mobile/Trak.Client.Portable/Common/SampleBase64.cs" relfile="Trak.Client.Portable/Common/SampleBase64.cs" line="7" column="42" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../Trak.Client.Portable/TrakAPI.cs" line="214" offsetX="567" offsetY="3195" expression="content" liveUpdate="False" />
     <Watch file="../../../Trak.Client.UI/Pages/Tasks/DocumentListPage.xaml.cs" line="87" offsetX="863" offsetY="1290" expression="filepath" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Targets.Trak.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F64E4FF3-A432-489C-A237-D019B58EC769" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.Targets.Trak.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.ca8fcbe4cc509e299468cd58a732885f638dd22b" automaticSigning="False" />
   <MultiItemStartupConfigurations />
 </Properties>

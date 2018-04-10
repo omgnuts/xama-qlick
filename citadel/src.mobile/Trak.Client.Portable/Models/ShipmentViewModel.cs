@@ -31,6 +31,20 @@ namespace Trak.Client.Portable.Models
 			}
 		}
 
+        bool isStarted;
+        public bool IsStarted
+        {
+            get { return isStarted; }
+            set
+            {
+                if (isStarted != value)
+                {
+                    isStarted = value;
+                    OnPropertyChanged("IsStarted");
+                }
+            }
+        }
+
 		public SeparatorVisibility HasSeparator
 		{
 			get { return Items.Count > 0 ? SeparatorVisibility.Default : SeparatorVisibility.None; }
@@ -56,6 +70,8 @@ namespace Trak.Client.Portable.Models
 			Items.AddRange(items);
 
 			IsBusy = false;
+            if (Items.Count > 0) IsStarted = true;
+
 			HasSeparator = SeparatorVisibility.Default;
 		}
 

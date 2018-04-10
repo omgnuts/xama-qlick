@@ -83,23 +83,29 @@ namespace Trak.Client.UI
 			{
                 Document[] docs = await TrakAPI.Instance.GetDocumentAsync(
                     ShipmentKey, item.StageItemTxn.Key);
-                
-                string base64 = SampleBase64.SampleData(docs[0].FileType);
-
-                // Method 0: Demo 
-                if (base64 != null)
+                if (docs != null && docs.Length > 0)
                 {
-                    byte[] data = Convert.FromBase64String(base64);
-                    DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, data);
+                    string base64 = SampleBase64.SampleData(docs[0].FileType);
+
+                    // Method 0: Demo 
+                    if (base64 != null)
+                    {
+                        byte[] data = Convert.FromBase64String(base64);
+                        DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, data);
+                    }
+
+                    // Method 1: QuickLookPreviewer
+                    //DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, docs[0].FileData);
+
+                    // Method 2: Using PDFPageViewer (aka UIWebView.LoadData)
+                    //await Navigation.PushAsync(new PDFPageViewer(docs[0].FileData));
+
+                    //Navigation.PushAsync(new DocumentDetailPage(doc));
+                } 
+                else 
+                {
+                    await DisplayAlert("Document Error", "Please check with the support team.", "OK");
                 }
-
-                // Method 1: QuickLookPreviewer
-                //DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, docs[0].FileData);
-
-                // Method 2: Using PDFPageViewer (aka UIWebView.LoadData)
-                //await Navigation.PushAsync(new PDFPageViewer(docs[0].FileData));
-
-				//Navigation.PushAsync(new DocumentDetailPage(doc));
 			}
 			else
 			{

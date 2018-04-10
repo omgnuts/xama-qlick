@@ -234,27 +234,6 @@ namespace Trak.Client.Portable
             return client;
         }
 
-		public async Task<bool> CoreCreate(BlockSchema schema, CredentialToken token)
-		{
-			string path = $"{BC_CORECREATE}/{schema.API()}";
-
-			System.Diagnostics.Debug.WriteLine(path);
-
-			HttpClient client = CreateHttpClient(BC_BASE);
-			client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token.AccessToken);
-
-
-			HttpResponseMessage resp = await client.PostAsync(path, null);
-
-			if (resp.IsSuccessStatusCode)
-			{
-				var content = await resp.Content.ReadAsStringAsync();
-				BlockResponse bresp = JsonConvert.DeserializeObject<BlockResponse>(content);
-				return bresp.ResultStatus;
-			}
-
-			return false;
-		}
 
 	}
 }

@@ -37,8 +37,6 @@
     <Compile Include="Models\Definitions.cs" />
     <Compile Include="Models\BlockDocument.cs" />
     <Compile Include="Auth\CredentialRequest.cs" />
-    <Compile Include="Block\BlockSchema.cs" />
-    <Compile Include="Block\BlockResponse.cs" />
     <Compile Include="Common\SimpleObservableList.cs" />
     <Compile Include="Models\Shipment.cs" />
     <Compile Include="Models\TaskItemViewModel.cs" />
@@ -57,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Auth\" />
-    <Folder Include="Block\" />
     <Folder Include="Common\" />
     <Folder Include="Utils\" />
   </ItemGroup>
