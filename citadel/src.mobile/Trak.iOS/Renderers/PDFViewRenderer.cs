@@ -32,9 +32,9 @@ namespace Trak.iOS.Renderers
                 NSData data = NSData.FromArray(pdfViewer.Uri);
 
                 //string fileName = Path.Combine(NSBundle.MainBundle.BundlePath, string.Format("Content/{0}", WebUtility.UrlEncode(pdfViewer.Uri)));
-                //Control.LoadRequest(new NSUrlRequest(new NSUrl(fileName, false)));
+                //Control.LoadRequest(new NSUrlRequest(new NSUrl("https://1citadel-shipping-demo.azurewebsites.net/idms/download2/newshipment1/c453aeb3-10fc-403f-86ac-777aa154dbd5", false)));
         
-                Control.LoadData(data, "application/pdf", "utf-8", new NSUrl(""));
+                Control.LoadData(data, @"application/pdf", "UTF-8", new NSUrl(""));
                 Control.ScalesPageToFit = true;
             }
         }

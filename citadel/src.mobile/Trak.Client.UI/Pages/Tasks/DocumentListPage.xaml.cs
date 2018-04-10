@@ -82,14 +82,12 @@ namespace Trak.Client.UI
 			{
                 Document[] docs = await TrakAPI.Instance.GetDocumentAsync(
                     ShipmentKey, item.StageItemTxn.Key);
-                //System.Diagnostics.Debug.WriteLine(docs[0].FileData);
 
-                //DependencyService.Get<IQLPreviewer>().Preview("foo.pdf", docs[0].FileData);
+                // Method 1: QuickLookPreviewer
+                DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, docs[0].FileData);
 
-                //string filepath = DependencyService.Get<ISaveAndLoad>().SaveFile("foo.pdf", docs[0].FileData);
-                await Navigation.PushAsync(new PDFPageViewer(docs[0].FileData));
-
-                //await Navigation.PushAsync(new WebViewPage(filepath));
+                // Method 2: Using PDFPageViewer (aka UIWebView.LoadData)
+                //await Navigation.PushAsync(new PDFPageViewer(docs[0].FileData));
 
 				//Navigation.PushAsync(new DocumentDetailPage(doc));
 			}

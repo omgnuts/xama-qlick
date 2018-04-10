@@ -13,10 +13,12 @@
         HeightRequest="1000"
         />-->
 <StackLayout>
-    <Label Text="test" />
     <pdf:PDFWebView 
         x:Name="pdfViewer"
-        HeightRequest="200"
-        WidthRequest="200" />
+        HorizontalOptions="FillAndExpand" 
+        VerticalOptions="FillAndExpand" 
+        HeightRequest="1000"
+        WidthRequest="1000" 
+        />
 </StackLayout>
 </ContentPage>

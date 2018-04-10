@@ -27,7 +27,7 @@ namespace Trak.Client.Portable.Models
         //"FileId": "0001-01-01T00:00:00",
 
         [JsonProperty("FileData")]
-        [JsonConverter(typeof(CustomBase64Converter))]
+        [JsonConverter(typeof(JsonBase64Converter))]
         public byte[] FileData { get; set; }
 
         [JsonProperty("id")]
@@ -37,6 +37,18 @@ namespace Trak.Client.Portable.Models
         [JsonProperty("timestamp")]
         public DateTime? TxnDT { get; set; }
         //"timestamp": "2018-04-04T11:39:33+00:00",
+
+        public string FilenameWithExtension {
+            get {
+                if (Filename == null) return null;
+                string[] tokens = Filename.Split('\\');
+                if (tokens.Length == 0) return null;
+                return tokens[tokens.Length - 1];
+            }
+        }
+
+
+
 
     }
 }

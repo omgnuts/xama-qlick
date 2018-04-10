@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Trak.Client.Portable.Common
 {
-    internal class CustomBase64Converter : JsonConverter
+    internal class JsonBase64Converter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {
@@ -14,7 +14,7 @@ namespace Trak.Client.Portable.Common
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            return Convert.FromBase64String((string)reader.Value);
+            return Convert.FromBase64String(SampleBase64.SamplePDF());
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

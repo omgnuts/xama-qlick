@@ -50,9 +50,10 @@
     <Compile Include="Models\Document.cs" />
     <Compile Include="Models\StageItemTxn.cs" />
     <Compile Include="Models\StageFactory.cs" />
-    <Compile Include="Common\CustomBase64Converter.cs" />
+    <Compile Include="Common\JsonBase64Converter.cs" />
     <Compile Include="Utils\ISaveAndLoad.cs" />
     <Compile Include="Utils\IQLPreviewer.cs" />
+    <Compile Include="Common\SampleBase64.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Auth\" />
