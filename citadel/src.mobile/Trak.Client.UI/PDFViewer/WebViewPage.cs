@@ -6,13 +6,14 @@ namespace Trak.Client.UI.PDFViewer
 {
     public class WebViewPage : ContentPage
     {
-        PDFWebView _webView;
+        WebView _webView;
 
         public WebViewPage(string uri)
         {
-            _webView = new PDFWebView()
+            _webView = new WebView()
             {
                 Source = uri,
+
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.FillAndExpand
 

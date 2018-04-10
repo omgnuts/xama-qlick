@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{F08C8A01-FC25-41A1-912E-6A9B6A15BC85}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.iOS/Contracts/QLPreviewer_IOS.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Trak.iOS/Renderers/PDFViewRenderer.cs">
     <Files>
       <File FileName="Trak.Client.Portable/Models/ShipmentViewModel.cs" Line="13" Column="45" />
       <File FileName="Trak.Client.Portable/Models/Shipment.cs" Line="17" Column="40" />
@@ -38,16 +38,18 @@
       <File FileName="Trak.iOS/Contracts/Authentication_IOS.cs" Line="10" Column="33" />
       <File FileName="Trak.iOS/Contracts/SaveAndLoad_IOS.cs" Line="30" Column="2" />
       <File FileName="Trak.Client.UI/PDFViewer/PDFWebView.cs" Line="5" Column="28" />
-      <File FileName="Trak.Client.UI/PDFViewer/PDFPageViewer.xaml" Line="21" Column="15" />
-      <File FileName="Trak.Client.UI/PDFViewer/PDFPageViewer.xaml.cs" Line="13" Column="13" />
+      <File FileName="Trak.Client.UI/PDFViewer/PDFPageViewer.xaml" Line="18" Column="9" />
+      <File FileName="Trak.Client.UI/PDFViewer/PDFPageViewer.xaml.cs" Line="14" Column="17" />
       <File FileName="Trak.Client.Portable/Utils/ISaveAndLoad.cs" Line="9" Column="1" />
-      <File FileName="Trak.Client.UI/obj/Debug/Trak.Client.UI.PDFViewer.PDFPageViewer.xaml.g.cs" Line="14" Column="75" />
+      <File FileName="Trak.Client.UI/obj/Debug/Trak.Client.UI.PDFViewer.PDFPageViewer.xaml.g.cs" Line="1" Column="1" />
       <File FileName="Trak.Client.UI/Pages/Tasks/ShipmentList.xaml" Line="45" Column="1" />
-      <File FileName="Trak.Client.UI/PDFViewer/WebViewPage.cs" Line="19" Column="15" />
+      <File FileName="Trak.Client.UI/PDFViewer/WebViewPage.cs" Line="10" Column="9" />
       <File FileName="Trak.Client.Portable/Utils/IQLPreviewer.cs" Line="6" Column="53" />
-      <File FileName="Trak.iOS/Contracts/QLPreviewer_IOS.cs" Line="70" Column="38" />
+      <File FileName="Trak.iOS/Contracts/QLPreviewer_IOS.cs" Line="53" Column="57" />
       <File FileName="Trak.iOS/Info.plist" />
       <File FileName="Trak.iOS/Entitlements.plist" />
+      <File FileName="Trak.iOS/Renderers/PDFViewRenderer.cs" Line="8" Column="33" />
+      <File FileName="Trak.iOS/Renderers/JourneyViewRenderer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
@@ -58,6 +60,6 @@
     <Watch file="../../../Trak.Client.Portable/TrakAPI.cs" line="214" offsetX="567" offsetY="3195" expression="content" liveUpdate="False" />
     <Watch file="../../../Trak.Client.UI/Pages/Tasks/DocumentListPage.xaml.cs" line="87" offsetX="863" offsetY="1290" expression="filepath" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Targets.Trak.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.40662F50-4463-45AE-BC69-1D3351121204" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.Targets.Trak.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F64E4FF3-A432-489C-A237-D019B58EC769" automaticSigning="False" />
   <MultiItemStartupConfigurations />
 </Properties>

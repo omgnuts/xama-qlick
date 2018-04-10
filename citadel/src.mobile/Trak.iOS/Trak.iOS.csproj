@@ -208,6 +208,7 @@
     <Compile Include="Renderers\TintedImageRenderer.cs" />
     <Compile Include="Contracts\SaveAndLoad_IOS.cs" />
     <Compile Include="Contracts\QLPreviewer_IOS.cs" />
+    <Compile Include="Renderers\PDFViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\tab-clarify.png" />

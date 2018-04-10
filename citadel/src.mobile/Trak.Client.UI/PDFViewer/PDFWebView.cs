@@ -6,13 +6,13 @@ namespace Trak.Client.UI.PDFViewer
     {
         public static readonly BindableProperty UriProperty 
             = BindableProperty.Create(propertyName: "Uri",
-                returnType: typeof(string),
+                returnType: typeof(byte[]),
                 declaringType: typeof(PDFWebView),
-                defaultValue: default(string));
+                defaultValue: default(byte[]));
 
-        public string Uri
+        public byte[] Uri
         {
-            get { return (string)GetValue(UriProperty); }
+            get { return (byte[])GetValue(UriProperty); }
             set { SetValue(UriProperty, value); }
         }
     }

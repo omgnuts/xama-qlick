@@ -7,11 +7,11 @@ namespace Trak.Client.UI.PDFViewer
 {
     public partial class PDFPageViewer : ContentPage
     {
-        public PDFPageViewer(string uri)
+        public PDFPageViewer(byte[] uri)
         {
             InitializeComponent();
 
-            //pdfViewer.Uri = uri;
+            pdfViewer.Uri = uri;
         }
     }
 }
