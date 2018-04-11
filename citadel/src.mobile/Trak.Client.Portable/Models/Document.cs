@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Trak.Client.Portable.Common;
+using Trak.Client.Portable.Utils;
 
 namespace Trak.Client.Portable.Models
 {
@@ -38,6 +39,13 @@ namespace Trak.Client.Portable.Models
         public DateTime? TxnDT { get; set; }
         //"timestamp": "2018-04-04T11:39:33+00:00",
 
+        public byte[] DecompressedData
+        {
+            get {
+                return Gzip.Decompress(FileData);
+            }
+        }
+
         public string FilenameWithExtension {
             get {
                 if (Filename == null) return null;
@@ -46,9 +54,6 @@ namespace Trak.Client.Portable.Models
                 return tokens[tokens.Length - 1];
             }
         }
-
-
-
 
     }
 }

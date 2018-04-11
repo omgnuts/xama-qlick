@@ -52,6 +52,7 @@
     <Compile Include="Utils\ISaveAndLoad.cs" />
     <Compile Include="Utils\IQLPreviewer.cs" />
     <Compile Include="Common\SampleBase64.cs" />
+    <Compile Include="Utils\Gzip.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Auth\" />

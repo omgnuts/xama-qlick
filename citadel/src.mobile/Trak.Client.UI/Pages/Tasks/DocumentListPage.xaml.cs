@@ -85,17 +85,16 @@ namespace Trak.Client.UI
                     ShipmentKey, item.StageItemTxn.Key);
                 if (docs != null && docs.Length > 0)
                 {
-                    string base64 = SampleBase64.SampleData(docs[0].FileType);
-
-                    // Method 0: Demo 
-                    if (base64 != null)
-                    {
-                        byte[] data = Convert.FromBase64String(base64);
-                        DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, data);
-                    }
+                    //// Method 0: Demo 
+                    ///string base64 = SampleBase64.SampleData(docs[0].FileType);
+                    //if (base64 != null)
+                    //{
+                    //    byte[] data = Convert.FromBase64String(base64);
+                    //    DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, data);
+                    //}
 
                     // Method 1: QuickLookPreviewer
-                    //DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, docs[0].FileData);
+                    DependencyService.Get<IQLPreviewer>().Preview(docs[0].FilenameWithExtension, docs[0].DecompressedData);
 
                     // Method 2: Using PDFPageViewer (aka UIWebView.LoadData)
                     //await Navigation.PushAsync(new PDFPageViewer(docs[0].FileData));
