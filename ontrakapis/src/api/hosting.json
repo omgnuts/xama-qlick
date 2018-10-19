@@ -1,4 +1,0 @@
-{
-  //"server.urls": "http://localhost:8000; http://localhost:8001; http://localhost:8003"
-  "server.urls": "http://0.0.0.0:8000"    
-}
